@@ -1,2 +1,2 @@
 # jpo2025
-let me live
+plan dzia³ania:
