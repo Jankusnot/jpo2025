@@ -4,6 +4,8 @@
 #include <iostream>
 #include <locale.h>
 #include <curl/curl.h>
+#include <json/json.h>
+#include <string>
 
 
 // Funkcja przetwarzająca dane z CURL
@@ -41,9 +43,21 @@ bool performCurlRequest(const std::string& url, std::string& response) {
 }
 
 
+// Funkcja analizująca dane zwrotne JSON
+bool parseJsonResponse(const std::string& jsonResponse, Json::Value& parsedRoot) {
+	Json::Reader reader; // Tworzenie obiektu JSON, który parsuje tekstu JSON na Json::Value
 
-int main()
-{
+	bool parsingSuccessful = reader.parse(jsonResponse, parsedRoot); // Parsowanie tekstu
+
+	if (!parsingSuccessful) {
+		std::cerr << "Failed to parse JSON: " << std::endl;
+		return false;
+	}
+
+	return true;
+}
+
+int main() {
 	setlocale(LC_CTYPE, "Polish"); // Poprawne wyświetlanie polskich zanaków
 
 	//std::string api_url = "google.com";
@@ -53,7 +67,13 @@ int main()
 	curl_global_init(CURL_GLOBAL_DEFAULT); // Globalna inicjalizacja CURL
 
 	if(performCurlRequest(api_url, response)) {
-		std::cout << response;
+		Json::Value root; // Inicjowanie zmiennej biblioteki JSON
+		if (parseJsonResponse(response, root)) {
+			for (Json::Value::const_iterator outer = root.begin(); outer != root.end(); outer++)
+			{
+				std::cout << "Station: " << root[outer.index()]["stationName"] << std::endl;
+			}
+		}
 	}
 
 	curl_global_cleanup(); // Globalne zwalnianie zasobów CURL
