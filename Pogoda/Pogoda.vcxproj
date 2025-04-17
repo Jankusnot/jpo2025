@@ -141,6 +141,7 @@
     <ClCompile Include="FileSelectionDialog.cpp" />
     <ClCompile Include="InfoPanel.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Networking.cpp" />
     <ClCompile Include="SensorSelectionDialog.cpp" />
     <ClCompile Include="StationSelectionDialog.cpp" />
   </ItemGroup>
@@ -148,6 +149,7 @@
     <ClInclude Include="ChartPanel.h" />
     <ClInclude Include="FileSelectionDialog.h" />
     <ClInclude Include="InfoPanel.h" />
+    <ClInclude Include="Networking.h" />
     <ClInclude Include="SensorSelectionDialog.h" />
     <ClInclude Include="StationSelectionDialog.h" />
   </ItemGroup>

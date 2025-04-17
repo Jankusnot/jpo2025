@@ -14,17 +14,18 @@
 #include "StationSelectionDialog.h"
 #include "SensorSelectionDialog.h"
 #include "FileSelectionDialog.h"
+
 #include "ChartPanel.h"
 #include "InfoPanel.h"
+
+#include "Networking.h"
 
 
 class SidePanel : public wxPanel {
 private:
     // UI Components
     wxButton* btn1;
-    //wxButton* btn2;
     wxButton* btn3;
-    //wxButton* btn4;
     wxButton* btn5;
     wxStaticText* selectedStationText;
     wxStaticText* selectedSensorText;
@@ -78,18 +79,14 @@ private:
     void InitializeUI() {
         wxBoxSizer* btnSizer = new wxBoxSizer(wxVERTICAL);
 
-        btn1 = new wxButton(this, wxID_ANY, "Download stations");
-        //btn2 = new wxButton(this, wxID_ANY, "Chose station");
+        btn1 = new wxButton(this, wxID_ANY, "Chose station");
         btn3 = new wxButton(this, wxID_ANY, "Chose sensor");
-        //btn4 = new wxButton(this, wxID_ANY, "Collect data");
-        btn5 = new wxButton(this, wxID_ANY, "Show data files");
+        btn5 = new wxButton(this, wxID_ANY, "Select data");
 
         // Set button fonts
         wxFont buttonFont(10, wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_BOLD);
         btn1->SetFont(buttonFont);
-        //btn2->SetFont(buttonFont);
         btn3->SetFont(buttonFont);
-        //btn4->SetFont(buttonFont);
         btn5->SetFont(buttonFont);
 
         // Initialize status text controls
@@ -106,9 +103,7 @@ private:
 
         // Add components to sizer
         btnSizer->Add(btn1, 0, wxALL | wxEXPAND, 10);
-        //btnSizer->Add(btn2, 0, wxALL | wxEXPAND, 10);
         btnSizer->Add(btn3, 0, wxALL | wxEXPAND, 10);
-        //btnSizer->Add(btn4, 0, wxALL | wxEXPAND, 10);
         btnSizer->Add(btn5, 0, wxALL | wxEXPAND, 10);
         btnSizer->Add(selectedStationText, 0, wxALL | wxEXPAND, 10);
         btnSizer->Add(selectedSensorText, 0, wxALL | wxEXPAND, 10);
@@ -118,10 +113,8 @@ private:
     }
 
     void BindEvents() {
-        btn1->Bind(wxEVT_BUTTON, &SidePanel::OnDownloadStations, this);
-        //btn2->Bind(wxEVT_BUTTON, &SidePanel::OnChooseStation, this);
+        btn1->Bind(wxEVT_BUTTON, &SidePanel::OnChoseStation, this);
         btn3->Bind(wxEVT_BUTTON, &SidePanel::OnChooseSensor, this);
-        //btn4->Bind(wxEVT_BUTTON, &SidePanel::OnCollectData, this);
         btn5->Bind(wxEVT_BUTTON, &SidePanel::OnShowDataFiles, this);
     }
 
@@ -158,151 +151,8 @@ private:
         }
     }
 
-    // Network operations
-    static size_t WriteCallback(void* contents, size_t size, size_t nmemb, std::string* s) {
-        size_t newLength = size * nmemb;
-        try {
-            s->append((char*)contents, newLength);
-            return newLength;
-        }
-        catch (std::bad_alloc& e) {
-            return 0;
-        }
-    }
-
-    bool PerformHttpGet(const std::string& url, std::string& outputBuffer) {
-        CURL* curl = curl_easy_init();
-        if (!curl) {
-            return false;
-        }
-
-        CURLcode res;
-        curl_easy_setopt(curl, CURLOPT_URL, url.c_str());
-        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, WriteCallback);
-        curl_easy_setopt(curl, CURLOPT_WRITEDATA, &outputBuffer);
-        curl_easy_setopt(curl, CURLOPT_TIMEOUT, 10);
-        curl_easy_setopt(curl, CURLOPT_SSL_VERIFYPEER, 0L);
-        curl_easy_setopt(curl, CURLOPT_SSL_VERIFYHOST, 0L);
-
-        res = curl_easy_perform(curl);
-        curl_easy_cleanup(curl);
-
-        return (res == CURLE_OK);
-    }
-
-    bool DownloadJsonAndSaveToFile(const std::string& url, const std::string& filePath,
-        std::function<Json::Value(const Json::Value&)> transformer = nullptr) {
-        std::string readBuffer;
-        if (!PerformHttpGet(url, readBuffer)) {
-            return false;
-        }
-
-        Json::Value root;
-        Json::CharReaderBuilder builder;
-        std::string errors;
-        std::istringstream jsonStream(readBuffer);
-
-        bool parsingSuccessful = Json::parseFromStream(builder, jsonStream, &root, &errors);
-        if (!parsingSuccessful) {
-            return false;
-        }
-
-        // Apply transformer if provided
-        Json::Value outputJson = transformer ? transformer(root) : root;
-
-        // Save to file
-        std::ofstream file(filePath);
-        if (!file.is_open()) {
-            return false;
-        }
-
-        Json::StreamWriterBuilder writerBuilder;
-        writerBuilder["indentation"] = "  ";
-        std::unique_ptr<Json::StreamWriter> writer(writerBuilder.newStreamWriter());
-        writer->write(outputJson, &file);
-        file.close();
-
-        return true;
-    }
-
-    // Button event handlers
-    //void OnDownloadStations(wxCommandEvent& event) {
-    //    std::filesystem::create_directories("pomiary");
-
-    //    if (std::filesystem::exists(STATIONS_FILE_PATH)) {
-    //        wxMessageBox("List of existing stations have already been downloaded.", "List info", wxOK | wxICON_INFORMATION);
-    //        return;
-    //    }
-
-    //    wxBusyCursor busy;
-
-    //    // Transform function to filter station data
-    //    auto stationTransformer = [](const Json::Value& root) {
-    //        Json::Value filteredStations(Json::arrayValue);
-
-    //        for (Json::Value::ArrayIndex i = 0; i < root.size(); i++) {
-    //            const Json::Value& station = root[i];
-    //            Json::Value filteredStation;
-
-    //            if (station.isMember("id"))
-    //                filteredStation["id"] = station["id"];
-
-    //            if (station.isMember("stationName"))
-    //                filteredStation["stationName"] = station["stationName"];
-
-    //            if (station.isMember("gegrLat"))
-    //                filteredStation["gegrLat"] = station["gegrLat"];
-
-    //            if (station.isMember("gegrLon"))
-    //                filteredStation["gegrLon"] = station["gegrLon"];
-
-    //            filteredStations.append(filteredStation);
-    //        }
-
-    //        return filteredStations;
-    //    };
-
-    //    bool success = DownloadJsonAndSaveToFile(STATIONS_API_URL, STATIONS_FILE_PATH, stationTransformer);
-
-    //    if (success) {
-    //        wxMessageBox("Successfully downloaded stations data and saved to pomiary/stacje.json", "Success", wxOK | wxICON_INFORMATION);
-    //    }
-    //    else {
-    //        wxMessageBox("Failed to download stations data. Please check your internet connection and try again.", "Error", wxOK | wxICON_ERROR);
-    //    }
-    //}
-
-    //void OnChooseStation(wxCommandEvent& event) {
-    //    if (!std::filesystem::exists(STATIONS_FILE_PATH)) {
-    //        wxMessageBox("Stations data not found. Please download stations first.",
-    //            "Error", wxOK | wxICON_ERROR);
-    //        return;
-    //    }
-
-    //    Json::Value stations;
-    //    if (!LoadJsonFromFile(STATIONS_FILE_PATH, stations)) {
-    //        wxMessageBox("Could not open or parse stations file.", "Error", wxOK | wxICON_ERROR);
-    //        return;
-    //    }
-
-    //    StationSelectionDialog dialog(this, stations);
-    //    if (dialog.ShowModal() == wxID_OK) {
-    //        int id;
-    //        wxString name;
-    //        if (dialog.GetSelectedStation(id, name)) {
-    //            selectedStationId = id;
-    //            selectedStationName = name;
-    //            UpdateSelectedStationDisplay();
-
-    //            // Reset sensor selection
-    //            selectedSensorId = -1;
-    //            selectedSensorParamName = "";
-    //            UpdateSelectedSensorDisplay();
-    //        }
-    //    }
-    //}
-
-    void OnDownloadStations(wxCommandEvent& event) {
+    //Button binded functions
+    void OnChoseStation(wxCommandEvent& event) {
         std::filesystem::create_directories("pomiary");
 
         if (!std::filesystem::exists(STATIONS_FILE_PATH)) {
@@ -360,83 +210,6 @@ private:
         }
     }
 
-    //void OnChooseSensor(wxCommandEvent& event) {
-    //    if (selectedStationId == -1) {
-    //        wxMessageBox("Please select a station first.", "No Station Selected", wxOK | wxICON_INFORMATION);
-    //        return;
-    //    }
-
-    //    std::string stationDirPath = "pomiary/" + std::to_string(selectedStationId);
-    //    std::string sensorsFilePath = stationDirPath + "/sensors.json";
-
-    //    std::filesystem::create_directories(stationDirPath);
-
-    //    // Download sensors data if it doesn't exist
-    //    if (!std::filesystem::exists(sensorsFilePath)) {
-    //        std::string apiUrl = "http://api.gios.gov.pl/pjp-api/rest/station/sensors/" + std::to_string(selectedStationId);
-
-    //        if (!DownloadJsonAndSaveToFile(apiUrl, sensorsFilePath)) {
-    //            wxMessageBox("Failed to download sensors data.", "Error", wxOK | wxICON_ERROR);
-    //            return;
-    //        }
-    //    }
-
-    //    Json::Value sensors;
-    //    if (!LoadJsonFromFile(sensorsFilePath, sensors)) {
-    //        wxMessageBox("Could not open or parse sensors file.", "Error", wxOK | wxICON_ERROR);
-    //        return;
-    //    }
-
-    //    SensorSelectionDialog dialog(this, sensors);
-    //    if (dialog.ShowModal() == wxID_OK) {
-    //        int id;
-    //        wxString paramName;
-    //        if (dialog.GetSelectedSensor(id, paramName)) {
-    //            selectedSensorId = id;
-    //            selectedSensorParamName = paramName;
-    //            UpdateSelectedSensorDisplay();
-    //        }
-    //    }
-    //}
-
-    //void OnCollectData(wxCommandEvent& event) {
-    //    if (selectedSensorId == -1) {
-    //        wxMessageBox("Please select a sensor first.", "No Sensor Selected", wxOK | wxICON_INFORMATION);
-    //        return;
-    //    }
-
-    //    std::string sensorDirPath = "pomiary/" + std::to_string(selectedStationId) + "/" + std::to_string(selectedSensorId);
-    //    std::filesystem::create_directories(sensorDirPath);
-
-    //    // Download sensor data
-    //    std::string apiUrl = "http://api.gios.gov.pl/pjp-api/rest/data/getData/" + std::to_string(selectedSensorId);
-    //    std::string readBuffer;
-
-    //    if (!PerformHttpGet(apiUrl, readBuffer)) {
-    //        wxMessageBox("Failed to download sensor data.", "Error", wxOK | wxICON_ERROR);
-    //        return;
-    //    }
-
-    //    Json::Value root;
-    //    Json::CharReaderBuilder builder;
-    //    std::string errors;
-    //    std::istringstream jsonStream(readBuffer);
-
-    //    bool parsingSuccessful = Json::parseFromStream(builder, jsonStream, &root, &errors);
-    //    if (!parsingSuccessful || !root.isMember("values") || !root["values"].isArray()) {
-    //        wxMessageBox("Failed to parse sensor data.", "Error", wxOK | wxICON_ERROR);
-    //        return;
-    //    }
-
-    //    if (!ProcessAndSaveSensorData(root, sensorDirPath)) {
-    //        wxMessageBox("Failed to process or save sensor data.", "Error", wxOK | wxICON_ERROR);
-    //        return;
-    //    }
-
-    //    wxMessageBox("Successfully collected and saved sensor data.", "Success", wxOK | wxICON_INFORMATION);
-    //}
-
-
     void OnChooseSensor(wxCommandEvent& event) {
         if (selectedStationId == -1) {
             wxMessageBox("Please select a station first.", "No Station Selected", wxOK | wxICON_INFORMATION);
@@ -448,9 +221,7 @@ private:
 
         std::filesystem::create_directories(stationDirPath);
 
-        // Download sensors data if it doesn't exist
         if (!std::filesystem::exists(sensorsFilePath)) {
-            wxBusyCursor busy;
             std::string apiUrl = "http://api.gios.gov.pl/pjp-api/rest/station/sensors/" + std::to_string(selectedStationId);
 
             if (!DownloadJsonAndSaveToFile(apiUrl, sensorsFilePath)) {
@@ -479,7 +250,6 @@ private:
         std::string sensorDirPath = "pomiary/" + std::to_string(selectedStationId) + "/" + std::to_string(selectedSensorId);
         std::filesystem::create_directories(sensorDirPath);
 
-        // Download sensor data
         std::string apiUrl = "http://api.gios.gov.pl/pjp-api/rest/data/getData/" + std::to_string(selectedSensorId);
         std::string readBuffer;
 
@@ -544,6 +314,7 @@ private:
             }
         }
     }
+
 
     // Helper methods
     bool LoadJsonFromFile(const std::string& filePath, Json::Value& output) {
@@ -752,20 +523,6 @@ private:
         }
     }
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 class MyFrame : public wxFrame {
