@@ -21,7 +21,7 @@ SensorSelectionDialog::SensorSelectionDialog(wxWindow* parent, const Json::Value
         for (Json::Value::ArrayIndex i = 0; i < sensors.size(); i++) {
             const Json::Value& sensor = sensors[i];
             if (sensor.isMember("id") && sensor.isMember("param") && sensor["param"].isMember("paramName")) {
-                wxString paramName = sensor["param"]["paramName"].asString();
+                wxString paramName = wxString::FromUTF8(sensor["param"]["paramName"].asString());
                 int id = sensor["id"].asInt();
                 // Store the sensor ID corresponding to this listbox item
                 sensorIds.push_back(id);

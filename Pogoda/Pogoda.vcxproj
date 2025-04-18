@@ -138,19 +138,23 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ChartPanel.cpp" />
+    <ClCompile Include="DataProcessing.cpp" />
     <ClCompile Include="FileSelectionDialog.cpp" />
     <ClCompile Include="InfoPanel.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Networking.cpp" />
+    <ClCompile Include="NetworkingAndFileHandling.cpp" />
     <ClCompile Include="SensorSelectionDialog.cpp" />
+    <ClCompile Include="SidePanel.cpp" />
     <ClCompile Include="StationSelectionDialog.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ChartPanel.h" />
+    <ClInclude Include="DataProcessing.h" />
     <ClInclude Include="FileSelectionDialog.h" />
     <ClInclude Include="InfoPanel.h" />
-    <ClInclude Include="Networking.h" />
+    <ClInclude Include="NetworkingAndFileHandling.h" />
     <ClInclude Include="SensorSelectionDialog.h" />
+    <ClInclude Include="SidePanel.h" />
     <ClInclude Include="StationSelectionDialog.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

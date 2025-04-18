@@ -21,7 +21,8 @@ StationSelectionDialog::StationSelectionDialog(wxWindow* parent, const Json::Val
         for (Json::Value::ArrayIndex i = 0; i < stations.size(); i++) {
             const Json::Value& station = stations[i];
             if (station.isMember("id") && station.isMember("stationName")) {
-                wxString name = station["stationName"].asString();
+                // Convert to wxString using proper UTF-8 handling
+                wxString name = wxString::FromUTF8(station["stationName"].asString().c_str());
                 int id = station["id"].asInt();
                 // Store the station ID corresponding to this listbox item
                 stationIds.push_back(id);
