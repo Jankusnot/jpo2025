@@ -1,19 +1,20 @@
 #ifndef SIDE_PANEL_H
 #define SIDE_PANEL_H
 
+#define _CRT_SECURE_NO_WARNINGS
+
 
 #include <wx/wx.h>
-#include <wx/sizer.h>
 #include <wx/font.h>
+#include <wx/sizer.h>
 #include <wx/msgdlg.h>
-#include <curl/curl.h>
-#include <json/json.h>
-#include <fstream>
-#include <string>
-#include <filesystem>
 #include <wx/listbox.h>
 #include <wx/stattext.h>
-#include <vector>
+
+#include <thread>
+#include <mutex>
+#include <json/json.h>
+#include <filesystem>
 
 #include "StationSelectionDialog.h"
 #include "SensorSelectionDialog.h"

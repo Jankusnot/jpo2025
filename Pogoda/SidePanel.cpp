@@ -108,7 +108,6 @@ void SidePanel::OnChoseStation(wxCommandEvent& event) {
     std::filesystem::create_directories(DATABASE_DIRECTORRY);
 
     if (!std::filesystem::exists(DATABASE_STATIONS)) {
-        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// wypierdol to do funkcji
         auto stationTransformer = [](const Json::Value& root) {
             Json::Value filteredStations(Json::arrayValue);
 
@@ -144,7 +143,7 @@ void SidePanel::OnChoseStation(wxCommandEvent& event) {
         wxMessageBox("Could not open or parse stations file.", "Error", wxOK | wxICON_ERROR);
         return;
     }
-    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// try to unify dialog classes
+    
     StationSelectionDialog dialog(this, stations);
     if (dialog.ShowModal() == wxID_OK) {
         int id;
@@ -170,22 +169,47 @@ void SidePanel::OnChooseSensor(wxCommandEvent& event) {
     std::string STATION_DIRECTORY = DATABASE_DIRECTORRY + "/" + std::to_string(selectedStationId);
     std::string DATABASE_SENSORS = STATION_DIRECTORY + "/sensors.json";
     std::string apiUrl = SENSORS_API_URL + std::to_string(selectedStationId);
-
     std::filesystem::create_directories(STATION_DIRECTORY);
 
     if (!std::filesystem::exists(DATABASE_SENSORS)) {
-
         if (!DownloadJsonAndSaveToFile(apiUrl, DATABASE_SENSORS)) {
             return;
         }
     }
-
     Json::Value sensors;
     if (!LoadJsonFromFile(DATABASE_SENSORS, sensors)) {
         wxMessageBox("Could not open or parse sensors file.", "Error", wxOK | wxICON_ERROR);
         return;
     }
 
+    // Start downloading data for all sensors in parallel
+    std::vector<std::thread> downloadThreads;
+    std::mutex downloadMutex;
+    std::vector<std::string> failedSensors;
+
+    // Function to download data for a single sensor
+    auto downloadSensorData = [&](int sensorId) {
+        std::string SENSORS_DIRECTORY = STATION_DIRECTORY + "/" + std::to_string(sensorId);
+        std::filesystem::create_directories(SENSORS_DIRECTORY);
+        std::string sensorApiUrl = SENSOR_API_URL + std::to_string(sensorId);
+
+        bool success = DownloadJsonAndSaveData(sensorApiUrl, SENSORS_DIRECTORY);
+
+        if (!success) {
+            std::lock_guard<std::mutex> lock(downloadMutex);
+            failedSensors.push_back(std::to_string(sensorId));
+        }
+    };
+
+    // Create and start threads for each sensor
+    for (auto const& sensor : sensors) {
+        if (sensor.isMember("id") && sensor["id"].isInt()) {
+            int sensorId = sensor["id"].asInt();
+            downloadThreads.push_back(std::thread(downloadSensorData, sensorId));
+        }
+    }
+
+    // Show a dialog to let the user select a sensor while downloads are in progress
     SensorSelectionDialog dialog(this, sensors);
     if (dialog.ShowModal() == wxID_OK) {
         int id;
@@ -197,14 +221,36 @@ void SidePanel::OnChooseSensor(wxCommandEvent& event) {
         }
     }
 
-    std::string SENSORS_DIRECTORY = STATION_DIRECTORY + "/" + std::to_string(selectedSensorId);
-    std::filesystem::create_directories(SENSORS_DIRECTORY);
+    // Wait for all downloads to complete
+    for (auto& thread : downloadThreads) {
+        if (thread.joinable()) {
+            thread.join();
+        }
+    }
 
-    apiUrl = SENSOR_API_URL + std::to_string(selectedSensorId);
+    // Report any download failures
+    if (!failedSensors.empty()) {
+        std::string failedList = "Failed to download data for sensors: ";
+        for (size_t i = 0; i < failedSensors.size(); i++) {
+            failedList += failedSensors[i];
+            if (i < failedSensors.size() - 1) {
+                failedList += ", ";
+            }
+        }
+        wxMessageBox(failedList, "Download Warnings", wxOK | wxICON_WARNING);
+    }
 
-    if (!DownloadJsonAndSaveData(apiUrl, SENSORS_DIRECTORY)) {
-        wxMessageBox("Failed to download data.", "Error", wxOK | wxICON_ERROR);
-        return;
+    // Handle the selected sensor (which is now already downloaded along with all others)
+    if (selectedSensorId != -1) {
+        std::string SENSORS_DIRECTORY = STATION_DIRECTORY + "/" + std::to_string(selectedSensorId);
+        // Check if the selected sensor's data was downloaded successfully
+        if (std::find(failedSensors.begin(), failedSensors.end(), std::to_string(selectedSensorId)) != failedSensors.end()) {
+            // If the selected sensor's download failed, try one more time directly
+            std::string apiUrl = SENSOR_API_URL + std::to_string(selectedSensorId);
+            if (!DownloadJsonAndSaveData(apiUrl, SENSORS_DIRECTORY)) {
+                wxMessageBox("Failed to download data for the selected sensor.", "Error", wxOK | wxICON_ERROR);
+            }
+        }
     }
 }
 

@@ -15,9 +15,7 @@ private:
 
 public:
     StationSelectionDialog(wxWindow* parent, const Json::Value& stations);
-
     void OnDoubleClick(wxCommandEvent& event);
-
     bool GetSelectedStation(int& id, wxString& name);
 };
 
