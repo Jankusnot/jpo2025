@@ -16,23 +16,88 @@ StationSelectionDialog::StationSelectionDialog(wxWindow* parent, const Json::Val
 
     SetSizer(mainSizer);
 
-    // Load stations into the listbox
+    // Read reference coordinates from config.ini
+    ReadReferenceCoordinates();
+
+    // Load and sort stations by distance
     if (!stations.isNull() && stations.isArray()) {
         for (Json::Value::ArrayIndex i = 0; i < stations.size(); i++) {
             const Json::Value& station = stations[i];
-            if (station.isMember("id") && station.isMember("stationName")) {
-                // Convert to wxString using proper UTF-8 handling
-                wxString name = wxString::FromUTF8(station["stationName"].asString().c_str());
-                int id = station["id"].asInt();
-                // Store the station ID corresponding to this listbox item
-                stationIds.push_back(id);
-                stationListBox->Append(name);
+            if (station.isMember("id") && station.isMember("stationName") &&
+                station.isMember("gegrLat") && station.isMember("gegrLon")) {
+
+                StationInfo info;
+                info.id = station["id"].asInt();
+                info.name = wxString::FromUTF8(station["stationName"].asString().c_str());
+                info.latitude = std::stod(station["gegrLat"].asString());
+                info.longitude = std::stod(station["gegrLon"].asString());
+
+                // Calculate distance from reference point
+                info.distance = CalculateDistance(
+                    refLatitude, refLongitude,
+                    info.latitude, info.longitude
+                );
+
+                this->stations.push_back(info);
             }
+        }
+
+        // Sort stations by distance
+        std::sort(this->stations.begin(), this->stations.end(),
+            [](const StationInfo& a, const StationInfo& b) {
+                return a.distance < b.distance;
+            });
+
+        // Add sorted stations to the listbox
+        for (const auto& station : this->stations) {
+            // Format: Station Name (Distance: X.XX km)
+            wxString displayStr = wxString::Format(
+                "%s (Distance: %.2f km)",
+                station.name,
+                station.distance
+            );
+            stationListBox->Append(displayStr);
         }
     }
 
     // Bind events
     stationListBox->Bind(wxEVT_LISTBOX_DCLICK, &StationSelectionDialog::OnDoubleClick, this);
+}
+
+void StationSelectionDialog::ReadReferenceCoordinates() {
+    // Default values in case reading fails
+    refLatitude = 0.0;
+    refLongitude = 0.0;
+
+    // Create a file config object pointing to config.ini in the application directory
+    wxString configPath = wxFileName::GetCwd() + wxFileName::GetPathSeparator() + "config.ini";
+    wxFileConfig config(wxEmptyString, wxEmptyString, configPath, wxEmptyString, wxCONFIG_USE_LOCAL_FILE);
+
+    // Read coordinates
+    config.Read("/Location/Latitude", &refLatitude);
+    config.Read("/Location/Longitude", &refLongitude);
+}
+
+double StationSelectionDialog::CalculateDistance(double lat1, double lon1, double lat2, double lon2) {
+    // Convert degrees to radians
+    const double toRad = M_PI / 180.0;
+    lat1 *= toRad;
+    lon1 *= toRad;
+    lat2 *= toRad;
+    lon2 *= toRad;
+
+    // Haversine formula to calculate distance between two points on Earth
+    const double R = 6371.0; // Earth radius in kilometers
+    double dLat = lat2 - lat1;
+    double dLon = lon2 - lon1;
+
+    double a = sin(dLat / 2) * sin(dLat / 2) +
+        cos(lat1) * cos(lat2) *
+        sin(dLon / 2) * sin(dLon / 2);
+    double c = 2 * atan2(sqrt(a), sqrt(1 - a));
+    double distance = R * c;
+
+    return distance;
 }
 
 void StationSelectionDialog::OnDoubleClick(wxCommandEvent& event) {
@@ -41,9 +106,9 @@ void StationSelectionDialog::OnDoubleClick(wxCommandEvent& event) {
 
 bool StationSelectionDialog::GetSelectedStation(int& id, wxString& name) {
     int selection = stationListBox->GetSelection();
-    if (selection != wxNOT_FOUND && selection < stationIds.size()) {
-        id = stationIds[selection];
-        name = stationListBox->GetString(selection);
+    if (selection != wxNOT_FOUND && selection < stations.size()) {
+        id = stations[selection].id;
+        name = stations[selection].name;
         return true;
     }
     return false;
