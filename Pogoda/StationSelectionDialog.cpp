@@ -1,6 +1,7 @@
 #include "StationSelectionDialog.h"
 
-StationSelectionDialog::StationSelectionDialog(wxWindow* parent, const Json::Value& stations)
+// Constructor that creates a dialog for selecting a station from JSON data and sorts by distance
+StationSelectionDialog::StationSelectionDialog(wxWindow * parent, const Json::Value & stations)
     : wxDialog(parent, wxID_ANY, "Select Station", wxDefaultPosition, wxSize(500, 400)) {
     wxBoxSizer* mainSizer = new wxBoxSizer(wxVERTICAL);
 
@@ -26,17 +27,15 @@ StationSelectionDialog::StationSelectionDialog(wxWindow* parent, const Json::Val
             if (station.isMember("id") && station.isMember("stationName") &&
                 station.isMember("gegrLat") && station.isMember("gegrLon")) {
 
-                StationInfo info;
+                // Creates container for station information
+                StationInfo info; 
                 info.id = station["id"].asInt();
                 info.name = wxString::FromUTF8(station["stationName"].asString().c_str());
                 info.latitude = std::stod(station["gegrLat"].asString());
                 info.longitude = std::stod(station["gegrLon"].asString());
 
                 // Calculate distance from reference point
-                info.distance = CalculateDistance(
-                    refLatitude, refLongitude,
-                    info.latitude, info.longitude
-                );
+                info.distance = CalculateDistance(refLatitude, refLongitude, info.latitude, info.longitude);
 
                 this->stations.push_back(info);
             }
@@ -51,23 +50,21 @@ StationSelectionDialog::StationSelectionDialog(wxWindow* parent, const Json::Val
         // Add sorted stations to the listbox
         for (const auto& station : this->stations) {
             // Format: Station Name (Distance: X.XX km)
-            wxString displayStr = wxString::Format(
-                "%s (Distance: %.2f km)",
-                station.name,
-                station.distance
+            wxString displayStr = wxString::Format("%s (Distance: %.2f km)",
+                station.name, station.distance
             );
             stationListBox->Append(displayStr);
         }
     }
 
     // Bind events
-    stationListBox->Bind(wxEVT_LISTBOX_DCLICK, &StationSelectionDialog::OnDoubleClick, this);
+    stationListBox->Bind(wxEVT_LISTBOX_DCLICK, &StationSelectionDialog::OnDoubleClick, this); // Connects double-click event to handler
 }
 
+// Reads user location coordinates from config file or sets defaults if not found
 void StationSelectionDialog::ReadReferenceCoordinates() {
-    // Default values in case reading fails
-    refLatitude = 0.0;
-    refLongitude = 0.0;
+    refLatitude = 52.11433;
+    refLongitude = 19.42367;
 
     // Create a file config object pointing to config.ini in the application directory
     wxString configPath = wxFileName::GetCwd() + wxFileName::GetPathSeparator() + "config.ini";
@@ -78,9 +75,10 @@ void StationSelectionDialog::ReadReferenceCoordinates() {
     config.Read("/Location/Longitude", &refLongitude);
 }
 
+// Calculates distance between two geographical coordinates using the Haversine formula
 double StationSelectionDialog::CalculateDistance(double lat1, double lon1, double lat2, double lon2) {
     // Convert degrees to radians
-    const double toRad = M_PI / 180.0;
+    const double toRad = M_PI / 180.0; // Conversion constant
     lat1 *= toRad;
     lon1 *= toRad;
     lat2 *= toRad;
@@ -91,19 +89,19 @@ double StationSelectionDialog::CalculateDistance(double lat1, double lon1, doubl
     double dLat = lat2 - lat1;
     double dLon = lon2 - lon1;
 
-    double a = sin(dLat / 2) * sin(dLat / 2) +
-        cos(lat1) * cos(lat2) *
-        sin(dLon / 2) * sin(dLon / 2);
+    double a = sin(dLat / 2) * sin(dLat / 2) + cos(lat1) * cos(lat2) * sin(dLon / 2) * sin(dLon / 2);
     double c = 2 * atan2(sqrt(a), sqrt(1 - a));
     double distance = R * c;
 
     return distance;
 }
 
+// Handler for double-click events that confirms selection and closes the dialog
 void StationSelectionDialog::OnDoubleClick(wxCommandEvent& event) {
     EndModal(wxID_OK);
 }
 
+// Retrieves selected station information if a valid selection exists
 bool StationSelectionDialog::GetSelectedStation(int& id, wxString& name) {
     int selection = stationListBox->GetSelection();
     if (selection != wxNOT_FOUND && selection < stations.size()) {

@@ -1,20 +1,18 @@
-#ifndef FILE_SELECTION_DIALOG_H
-#define FILE_SELECTION_DIALOG_H
+#pragma once
 
 #include <wx/wx.h>
-#include <wx/listbox.h>
 #include <vector>
 #include <string>
 
 class FileSelectionDialog : public wxDialog {
+public:
+    FileSelectionDialog(wxWindow* parent, const std::vector<std::string>& files);
+    wxString GetSelectedFile() const;
+
 private:
     wxListBox* fileListBox;
     wxString selectedFile;
 
-public:
-    FileSelectionDialog(wxWindow* parent, const std::vector<std::string>& files);
-
-    wxString GetSelectedFile() const;
+    void OnDoubleClick(wxCommandEvent& event);
+    void OnOK(wxCommandEvent& event);
 };
-
-#endif // FILE_SELECTION_DIALOG_H

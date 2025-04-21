@@ -3,7 +3,6 @@
 #define SENSOR_SELECTION_DIALOG_H
 
 #include <wx/wx.h>
-#include <wx/listbox.h>
 #include <vector>
 #include <json/json.h>
 
@@ -16,9 +15,7 @@ private:
 
 public:
     SensorSelectionDialog(wxWindow* parent, const Json::Value& sensors);
-
     void OnDoubleClick(wxCommandEvent& event);
-
     bool GetSelectedSensor(int& id, wxString& paramName);
 };
 

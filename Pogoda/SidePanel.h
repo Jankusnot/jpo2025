@@ -73,6 +73,21 @@ private:
     void OnChoseStation(wxCommandEvent& event);
     void OnChooseSensor(wxCommandEvent& event);
     void OnShowDataFiles(wxCommandEvent& event);
-    void OnViewDownloadedData(wxCommandEvent& event);
+    void OnViewStoredData(wxCommandEvent& event);
+
+    //Helper functions for OnChooseSensor
+    bool InitializeSensorDatabase(const std::string& STATION_DIRECTORY, const std::string& databasePath, const std::string& apiUrl);
+    bool LoadSensorsData(const std::string& databasePath, Json::Value& sensors);
+    void DownloadAllSensorsData(const std::string& STATION_DIRECTORY, const Json::Value& sensors, std::vector<std::string>& failedSensors);
+    void ReportFailedDownloads(const std::vector<std::string>& failedSensors);
+    void EnsureSelectedSensorData(const std::string& STATION_DIRECTORY, const std::vector<std::string>& failedSensors);
+    bool DownloadSensorData(int sensorId, const std::string& STATION_DIRECTORY, std::vector<std::string>& failedSensors, std::mutex& mutex);
+
+    //Helper functions for OnViewStoredData
+    bool CheckForDownloadedData();
+    std::vector<int> GetNumericDirectories(const std::string& directory);
+    Json::Value FilterItemsByExistingDirectories(const Json::Value& allItems, const std::vector<int>& dirIds);
+    bool SelectStation(Json::Value& filteredStations);
+    bool SelectSensor();
 };
 #endif

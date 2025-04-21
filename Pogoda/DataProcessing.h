@@ -3,6 +3,7 @@
 
 #include <wx/wx.h>
 #include <Json/json.h>
+#include <algorithm>
 #include <string>
 #include <vector>
 

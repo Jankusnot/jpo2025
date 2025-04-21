@@ -1,11 +1,12 @@
 #include "SensorSelectionDialog.h"
 
+// Constructor that creates a dialog for selecting a sensor from JSON data
 SensorSelectionDialog::SensorSelectionDialog(wxWindow* parent, const Json::Value& sensors)
-    : wxDialog(parent, wxID_ANY, "Select Sensor", wxDefaultPosition, wxSize(500, 400)) {
+    : wxDialog(parent, wxID_ANY, "Select Sensor", wxDefaultPosition, wxSize(300, 200)) {
     wxBoxSizer* mainSizer = new wxBoxSizer(wxVERTICAL);
 
     // Create listbox to display sensors
-    sensorListBox = new wxListBox(this, wxID_ANY, wxDefaultPosition, wxSize(480, 300));
+    sensorListBox = new wxListBox(this, wxID_ANY, wxDefaultPosition, wxSize(280, 150));
     mainSizer->Add(sensorListBox, 1, wxEXPAND | wxALL, 10);
 
     // Add OK and Cancel buttons
@@ -23,7 +24,6 @@ SensorSelectionDialog::SensorSelectionDialog(wxWindow* parent, const Json::Value
             if (sensor.isMember("id") && sensor.isMember("param") && sensor["param"].isMember("paramName")) {
                 wxString paramName = wxString::FromUTF8(sensor["param"]["paramName"].asString());
                 int id = sensor["id"].asInt();
-                // Store the sensor ID corresponding to this listbox item
                 sensorIds.push_back(id);
                 sensorListBox->Append(paramName);
             }
@@ -34,10 +34,12 @@ SensorSelectionDialog::SensorSelectionDialog(wxWindow* parent, const Json::Value
     sensorListBox->Bind(wxEVT_LISTBOX_DCLICK, &SensorSelectionDialog::OnDoubleClick, this);
 }
 
+// Handler for double-click events that confirms selection and closes the dialog
 void SensorSelectionDialog::OnDoubleClick(wxCommandEvent& event) {
     EndModal(wxID_OK);
 }
 
+// Retrieves selected sensor information if a valid selection exists
 bool SensorSelectionDialog::GetSelectedSensor(int& id, wxString& paramName) {
     int selection = sensorListBox->GetSelection();
     if (selection != wxNOT_FOUND && selection < sensorIds.size()) {
