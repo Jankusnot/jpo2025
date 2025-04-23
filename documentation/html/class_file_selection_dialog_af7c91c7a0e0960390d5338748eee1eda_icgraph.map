@@ -1,0 +1,5 @@
+<map id="FileSelectionDialog::OnDoubleClick" name="FileSelectionDialog::OnDoubleClick">
+<area shape="rect" id="Node000001" title="Event handler for double&#45;click events on the file list." alt="" coords="195,5,328,48"/>
+<area shape="rect" id="Node000002" href="$class_file_selection_dialog.html#a75931c333739f3045f3c5b8a59bf982a" title="Constructor that creates a file selection dialog." alt="" coords="5,5,147,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="179,29,147,29,147,24,179,24"/>
+</map>

@@ -1,0 +1,13 @@
+<map id="SidePanel::EnsureSelectedSensorData" name="SidePanel::EnsureSelectedSensorData">
+<area shape="rect" id="Node000001" title="Ensures the selected sensor data is available." alt="" coords="5,48,186,91"/>
+<area shape="rect" id="Node000002" href="$_networking_and_file_handling_8cpp.html#a5d1292ab7578bba9ebca794b2ab58e01" title="Downloads air quality data, filters valid entries, and saves to a file with date&#45;based name." alt="" coords="234,56,422,83"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="186,67,218,67,218,72,186,72"/>
+<area shape="rect" id="Node000003" href="$_networking_and_file_handling_8cpp.html#a8f708e900743cda467d4319beac4238c" title="Formats a date string into a filename&#45;friendly format (YYYY&#45;MM&#45;DD_HH)" alt="" coords="470,5,632,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="389,53,474,33,475,39,391,58"/>
+<area shape="rect" id="Node000004" href="$_networking_and_file_handling_8cpp.html#a63aea19c2fbd7abdc744bd541562c5fd" title="Performs an HTTP GET request to the specified URL and returns parsed JSON." alt="" coords="494,56,608,83"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="422,67,479,67,479,72,422,72"/>
+<area shape="rect" id="Node000006" href="$_networking_and_file_handling_8cpp.html#a68628279954d524a9bbbd035bad37465" title="Saves JSON data to a file with indentation." alt="" coords="508,107,594,133"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="391,81,493,104,492,110,389,86"/>
+<area shape="rect" id="Node000005" href="$_networking_and_file_handling_8cpp.html#adfe4aa3ee2d2b8a4376b59dbe5c48535" title="Callback function for CURL to handle received data by appending to a string." alt="" coords="680,56,783,83"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="608,67,665,67,665,72,608,72"/>
+</map>

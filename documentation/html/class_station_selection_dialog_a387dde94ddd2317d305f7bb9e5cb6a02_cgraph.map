@@ -1,0 +1,9 @@
+<map id="StationSelectionDialog::StationSelectionDialog" name="StationSelectionDialog::StationSelectionDialog">
+<area shape="rect" id="Node000001" title="Constructor that creates a station selection dialog." alt="" coords="5,72,167,115"/>
+<area shape="rect" id="Node000002" href="$class_station_selection_dialog.html#a1da9a4530e7ae9a4eb51508f007e774f" title="Calculates distance between two geographical coordinates using the Haversine formula." alt="" coords="233,5,386,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="159,69,220,50,222,56,161,74"/>
+<area shape="rect" id="Node000003" href="$class_station_selection_dialog.html#aa2f1b4ecef94e424a5cd735e50bdbf0c" title="Event handler for double&#45;click events on the station list." alt="" coords="233,72,386,115"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="167,91,218,91,218,96,167,96"/>
+<area shape="rect" id="Node000004" href="$class_station_selection_dialog.html#ac40707e4ad5279551fb189087de4c131" title="Reads reference coordinates from config.ini file." alt="" coords="215,139,405,181"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="161,113,222,131,220,136,159,118"/>
+</map>

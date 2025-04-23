@@ -1,0 +1,17 @@
+<map id="SidePanel::OnShowDataFiles" name="SidePanel::OnShowDataFiles">
+<area shape="rect" id="Node000001" title="Handles the &quot;Show Data Files&quot; button click." alt="" coords="5,81,200,108"/>
+<area shape="rect" id="Node000002" href="$class_file_selection_dialog.html#a9160da26782cc11ba79d5b20db8046d0" title="Gets the name of the file that was selected." alt="" coords="272,15,405,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="158,78,256,54,258,59,160,83"/>
+<area shape="rect" id="Node000003" href="$_data_processing_8cpp.html#aa30c0ce422e91e08cf64b21250c9332a" title="Processes JSON data from a file and updates the info and chart panels with the results." alt="" coords="279,81,398,108"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="200,92,264,92,264,97,200,97"/>
+<area shape="rect" id="Node000008" href="$class_side_panel.html#af64945eecdaa255c963bd8b6fb941eab" title="Updates the selected file display text." alt="" coords="248,132,429,175"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="160,106,236,125,234,130,158,111"/>
+<area shape="rect" id="Node000004" href="$_data_processing_8cpp.html#a67190f314f5c8c9a3625244c7d22e6ed" title="Analyzes time series data to determine and describe the trend direction and magnitude." alt="" coords="513,5,622,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="395,78,428,67,476,42,497,34,499,39,478,46,430,72,396,83"/>
+<area shape="rect" id="Node000005" href="$_networking_and_file_handling_8cpp.html#afef78a69dbcc72ef6d453ae87b8b196e" title="Loads and parses JSON data from a file into the provided output value." alt="" coords="504,56,632,83"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="398,85,488,75,488,81,398,91"/>
+<area shape="rect" id="Node000006" href="$class_chart_panel.html#a761109a895ecc2421165e7c6c4467abb" title="Sets the data to be displayed in the chart." alt="" coords="480,107,655,133"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="398,99,465,106,465,111,398,104"/>
+<area shape="rect" id="Node000007" href="$class_info_panel.html#a22cfb29d4ad8089386ce33ebe4b0ccae" title="Updates the displayed statistics with new data." alt="" coords="477,157,658,184"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="396,106,430,118,478,143,497,150,495,155,476,148,428,122,395,111"/>
+</map>

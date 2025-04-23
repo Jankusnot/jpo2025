@@ -1,0 +1,87 @@
+\doxysection{My\+App Class Reference}
+\hypertarget{class_my_app}{}\label{class_my_app}\index{MyApp@{MyApp}}
+
+
+Application class that handles initialization and cleanup.  
+
+
+
+
+Inheritance diagram for My\+App\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=127pt]{class_my_app__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for My\+App\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=127pt]{class_my_app__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_my_app_a307eda60ebf119f9b25e9dd07a8ce513}{On\+Init}} () override
+\begin{DoxyCompactList}\small\item\em Initializes application resources. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_my_app_ac5b0cf342efb5936fa130264b2668b37}{On\+Exit}} () override
+\begin{DoxyCompactList}\small\item\em Cleans up application resources. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+wx\+Locale \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_my_app_a4e7ae9ce24730bd2678cb3a8b05d3259}{m\+\_\+locale}} = nullptr
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Application class that handles initialization and cleanup. 
+
+The \doxylink{class_my_app}{My\+App} class is responsible for initializing application resources, creating the main window, and cleaning up resources when the application exits. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_my_app_ac5b0cf342efb5936fa130264b2668b37}\index{MyApp@{MyApp}!OnExit@{OnExit}}
+\index{OnExit@{OnExit}!MyApp@{MyApp}}
+\doxysubsubsection{\texorpdfstring{OnExit()}{OnExit()}}
+{\footnotesize\ttfamily \label{class_my_app_ac5b0cf342efb5936fa130264b2668b37} 
+int My\+App\+::\+On\+Exit (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}}
+
+
+
+Cleans up application resources. 
+
+\begin{DoxyReturn}{Returns}
+Exit code for the application
+\end{DoxyReturn}
+This method frees resources used by the application including the locale object and curl library resources. \Hypertarget{class_my_app_a307eda60ebf119f9b25e9dd07a8ce513}\index{MyApp@{MyApp}!OnInit@{OnInit}}
+\index{OnInit@{OnInit}!MyApp@{MyApp}}
+\doxysubsubsection{\texorpdfstring{OnInit()}{OnInit()}}
+{\footnotesize\ttfamily \label{class_my_app_a307eda60ebf119f9b25e9dd07a8ce513} 
+bool My\+App\+::\+On\+Init (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}}
+
+
+
+Initializes application resources. 
+
+\begin{DoxyReturn}{Returns}
+true if initialization succeeded, false otherwise
+\end{DoxyReturn}
+This method initializes the curl library for HTTP requests and sets up localization. It also creates and displays the main application window. 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_my_app_a4e7ae9ce24730bd2678cb3a8b05d3259}\index{MyApp@{MyApp}!m\_locale@{m\_locale}}
+\index{m\_locale@{m\_locale}!MyApp@{MyApp}}
+\doxysubsubsection{\texorpdfstring{m\_locale}{m\_locale}}
+{\footnotesize\ttfamily \label{class_my_app_a4e7ae9ce24730bd2678cb3a8b05d3259} 
+wx\+Locale\texorpdfstring{$\ast$}{*} My\+App\+::m\+\_\+locale = nullptr\hspace{0.3cm}{\ttfamily [private]}}
+
+Localization support for the application 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+NIC/\+Desktop/jpo2025/\+Air\+\_\+quality\+\_\+app/\mbox{\hyperlink{main_8cpp}{main.\+cpp}}\end{DoxyCompactItemize}

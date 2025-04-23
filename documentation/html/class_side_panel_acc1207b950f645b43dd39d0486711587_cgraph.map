@@ -1,0 +1,19 @@
+<map id="SidePanel::OnChoseStation" name="SidePanel::OnChoseStation">
+<area shape="rect" id="Node000001" title="Handles the &quot;Choose Station&quot; button click." alt="" coords="5,148,190,175"/>
+<area shape="rect" id="Node000002" href="$_networking_and_file_handling_8cpp.html#ab72b7149ef19e7fd22902fb3f296c8c2" title="Downloads JSON from URL, optionally transforms it, and saves to file." alt="" coords="238,31,433,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="114,145,167,107,237,67,254,60,256,65,239,72,170,111,117,150"/>
+<area shape="rect" id="Node000006" href="$class_station_selection_dialog.html#abeceef97887c7044707f6fc3c1ffe245" title="Gets information about the selected station." alt="" coords="259,81,412,124"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="154,145,243,123,244,128,155,150"/>
+<area shape="rect" id="Node000007" href="$_networking_and_file_handling_8cpp.html#afef78a69dbcc72ef6d453ae87b8b196e" title="Loads and parses JSON data from a file into the provided output value." alt="" coords="271,148,400,175"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="190,159,256,159,256,164,190,164"/>
+<area shape="rect" id="Node000008" href="$class_side_panel.html#a51518c4623d1cb91c5fbc146d7b3ef71" title="Updates the selected sensor display text." alt="" coords="245,199,426,241"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="155,173,232,192,231,197,154,178"/>
+<area shape="rect" id="Node000009" href="$class_side_panel.html#a1ea056aa76ef1305594e117d8d970875" title="Updates the selected station display text." alt="" coords="245,265,426,308"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="118,173,171,211,239,251,251,256,248,261,236,256,168,215,115,177"/>
+<area shape="rect" id="Node000003" href="$_networking_and_file_handling_8cpp.html#a63aea19c2fbd7abdc744bd541562c5fd" title="Performs an HTTP GET request to the specified URL and returns parsed JSON." alt="" coords="481,5,594,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="433,29,465,25,466,30,434,34"/>
+<area shape="rect" id="Node000005" href="$_networking_and_file_handling_8cpp.html#a68628279954d524a9bbbd035bad37465" title="Saves JSON data to a file with indentation." alt="" coords="494,56,581,83"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="434,54,480,59,479,65,433,59"/>
+<area shape="rect" id="Node000004" href="$_networking_and_file_handling_8cpp.html#adfe4aa3ee2d2b8a4376b59dbe5c48535" title="Callback function for CURL to handle received data by appending to a string." alt="" coords="642,5,745,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="595,16,627,16,627,21,595,21"/>
+</map>

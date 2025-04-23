@@ -1,0 +1,15 @@
+<map id="C:/Users/NIC/Desktop/jpo2025/Air_quality_app/NetworkingAndFileHandling.cpp" name="C:/Users/NIC/Desktop/jpo2025/Air_quality_app/NetworkingAndFileHandling.cpp">
+<area shape="rect" id="Node000001" title="Implementation of networking and file handling functionality." alt="" coords="125,5,364,64"/>
+<area shape="rect" id="Node000002" href="$_networking_and_file_handling_8h.html" title="Header file defining networking and file handling functionality." alt="" coords="148,112,341,139"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="247,64,247,96,242,96,242,64"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,187,76,213"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="210,142,92,183,90,178,208,137"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="100,187,178,213"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="228,141,172,180,169,175,225,137"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="202,187,287,213"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="247,139,247,171,242,171,242,139"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="310,187,376,213"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="263,137,316,175,313,180,260,141"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="400,187,454,213"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="277,137,387,180,385,185,275,142"/>
+</map>

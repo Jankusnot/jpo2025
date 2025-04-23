@@ -1,0 +1,368 @@
+\doxysection{C\+:/\+Users/\+NIC/\+Desktop/jpo2025/\+Air\+\_\+quality\+\_\+app/\+Networking\+And\+File\+Handling.h File Reference}
+\hypertarget{_networking_and_file_handling_8h}{}\label{_networking_and_file_handling_8h}\index{C:/Users/NIC/Desktop/jpo2025/Air\_quality\_app/NetworkingAndFileHandling.h@{C:/Users/NIC/Desktop/jpo2025/Air\_quality\_app/NetworkingAndFileHandling.h}}
+
+
+Header file defining networking and file handling functionality.  
+
+
+{\ttfamily \#include $<$wx/wx.\+h$>$}\newline
+{\ttfamily \#include $<$curl/curl.\+h$>$}\newline
+{\ttfamily \#include $<$json/json.\+h$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+Include dependency graph for Networking\+And\+File\+Handling.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_networking_and_file_handling_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_networking_and_file_handling_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_networking_and_file_handling_8h_af08ec37a8c99d747fb60fa15bc28678b}{\+\_\+\+CRT\+\_\+\+SECURE\+\_\+\+NO\+\_\+\+WARNINGS}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{_networking_and_file_handling_8h_a8f708e900743cda467d4319beac4238c}{Format\+Date\+For\+Filename}} (const std\+::string \&date\+Str)
+\begin{DoxyCompactList}\small\item\em Formats a date string into a filename-\/friendly format. \end{DoxyCompactList}\item 
+static size\+\_\+t \mbox{\hyperlink{_networking_and_file_handling_8h_a412076dc9057b61c2607ad9f30b0416d}{Write\+Callback}} (void \texorpdfstring{$\ast$}{*}contents, size\+\_\+t size, size\+\_\+t nmemb, std\+::string \texorpdfstring{$\ast$}{*}s)
+\begin{DoxyCompactList}\small\item\em Callback function for CURL to handle received data. \end{DoxyCompactList}\item 
+Json\+::\+Value \mbox{\hyperlink{_networking_and_file_handling_8h_a63aea19c2fbd7abdc744bd541562c5fd}{Perform\+Http\+Get}} (const std\+::string \&url)
+\begin{DoxyCompactList}\small\item\em Performs an HTTP GET request to the specified URL. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{_networking_and_file_handling_8h_a68628279954d524a9bbbd035bad37465}{Save\+To\+File}} (Json\+::\+Value \&data, const std\+::string \&file\+Path)
+\begin{DoxyCompactList}\small\item\em Saves JSON data to a file with indentation. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{_networking_and_file_handling_8h_a25763df7523e3d7e655e6c93b8d5a6f0}{Download\+Json\+And\+Save\+To\+File}} (const std\+::string \&url, const std\+::string \&file\+Path, std\+::function$<$ Json\+::\+Value(const Json\+::\+Value \&)$>$ transformer=nullptr)
+\begin{DoxyCompactList}\small\item\em Downloads JSON from URL, optionally transforms it, and saves to file. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{_networking_and_file_handling_8h_a5d1292ab7578bba9ebca794b2ab58e01}{Download\+Json\+And\+Save\+Data}} (const std\+::string \&url, const std\+::string \&dir\+Path)
+\begin{DoxyCompactList}\small\item\em Downloads air quality data, filters valid entries, and saves to a file with date-\/based name. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{_networking_and_file_handling_8h_afef78a69dbcc72ef6d453ae87b8b196e}{Load\+Json\+From\+File}} (const std\+::string \&file\+Path, Json\+::\+Value \&output)
+\begin{DoxyCompactList}\small\item\em Loads and parses JSON data from a file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header file defining networking and file handling functionality. 
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_networking_and_file_handling_8h_af08ec37a8c99d747fb60fa15bc28678b}\index{NetworkingAndFileHandling.h@{NetworkingAndFileHandling.h}!\_CRT\_SECURE\_NO\_WARNINGS@{\_CRT\_SECURE\_NO\_WARNINGS}}
+\index{\_CRT\_SECURE\_NO\_WARNINGS@{\_CRT\_SECURE\_NO\_WARNINGS}!NetworkingAndFileHandling.h@{NetworkingAndFileHandling.h}}
+\doxysubsubsection{\texorpdfstring{\_CRT\_SECURE\_NO\_WARNINGS}{\_CRT\_SECURE\_NO\_WARNINGS}}
+{\footnotesize\ttfamily \label{_networking_and_file_handling_8h_af08ec37a8c99d747fb60fa15bc28678b} 
+\#define \+\_\+\+CRT\+\_\+\+SECURE\+\_\+\+NO\+\_\+\+WARNINGS}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_networking_and_file_handling_8h_a5d1292ab7578bba9ebca794b2ab58e01}\index{NetworkingAndFileHandling.h@{NetworkingAndFileHandling.h}!DownloadJsonAndSaveData@{DownloadJsonAndSaveData}}
+\index{DownloadJsonAndSaveData@{DownloadJsonAndSaveData}!NetworkingAndFileHandling.h@{NetworkingAndFileHandling.h}}
+\doxysubsubsection{\texorpdfstring{DownloadJsonAndSaveData()}{DownloadJsonAndSaveData()}}
+{\footnotesize\ttfamily \label{_networking_and_file_handling_8h_a5d1292ab7578bba9ebca794b2ab58e01} 
+bool Download\+Json\+And\+Save\+Data (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{url}{, }\item[{const std\+::string \&}]{dir\+Path}{}\end{DoxyParamCaption})}
+
+
+
+Downloads air quality data, filters valid entries, and saves to a file with date-\/based name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em url} & The URL to download air quality data from \\
+\hline
+{\em dir\+Path} & Directory path where the file will be saved \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if download and save were successful, false otherwise
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em url} & The URL to download air quality data from \\
+\hline
+{\em dir\+Path} & Directory path where the file will be saved \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if download and save were successful, false otherwise
+\end{DoxyReturn}
+Downloads air quality data in JSON format, filters out invalid entries, creates a filename based on the date range of the data, and saves the filtered data to the specified directory. Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_networking_and_file_handling_8h_a5d1292ab7578bba9ebca794b2ab58e01_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_networking_and_file_handling_8h_a5d1292ab7578bba9ebca794b2ab58e01_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_networking_and_file_handling_8h_a25763df7523e3d7e655e6c93b8d5a6f0}\index{NetworkingAndFileHandling.h@{NetworkingAndFileHandling.h}!DownloadJsonAndSaveToFile@{DownloadJsonAndSaveToFile}}
+\index{DownloadJsonAndSaveToFile@{DownloadJsonAndSaveToFile}!NetworkingAndFileHandling.h@{NetworkingAndFileHandling.h}}
+\doxysubsubsection{\texorpdfstring{DownloadJsonAndSaveToFile()}{DownloadJsonAndSaveToFile()}}
+{\footnotesize\ttfamily \label{_networking_and_file_handling_8h_a25763df7523e3d7e655e6c93b8d5a6f0} 
+bool Download\+Json\+And\+Save\+To\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{url}{, }\item[{const std\+::string \&}]{file\+Path}{, }\item[{std\+::function$<$ Json\+::\+Value(const Json\+::\+Value \&)$>$}]{transformer}{}\end{DoxyParamCaption})}
+
+
+
+Downloads JSON from URL, optionally transforms it, and saves to file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em url} & The URL to download JSON from \\
+\hline
+{\em file\+Path} & Path where the file will be saved \\
+\hline
+{\em transformer} & Optional function to transform the JSON before saving \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if download and save were successful, false otherwise
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em url} & The URL to download JSON from \\
+\hline
+{\em file\+Path} & Path where the file will be saved \\
+\hline
+{\em transformer} & Optional function to transform the JSON before saving \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if download and save were successful, false otherwise
+\end{DoxyReturn}
+Fetches JSON data from a URL, applies an optional transformation function, and saves the result to a file. Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_networking_and_file_handling_8h_a25763df7523e3d7e655e6c93b8d5a6f0_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_networking_and_file_handling_8h_a25763df7523e3d7e655e6c93b8d5a6f0_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_networking_and_file_handling_8h_a8f708e900743cda467d4319beac4238c}\index{NetworkingAndFileHandling.h@{NetworkingAndFileHandling.h}!FormatDateForFilename@{FormatDateForFilename}}
+\index{FormatDateForFilename@{FormatDateForFilename}!NetworkingAndFileHandling.h@{NetworkingAndFileHandling.h}}
+\doxysubsubsection{\texorpdfstring{FormatDateForFilename()}{FormatDateForFilename()}}
+{\footnotesize\ttfamily \label{_networking_and_file_handling_8h_a8f708e900743cda467d4319beac4238c} 
+std\+::string Format\+Date\+For\+Filename (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{date\+Str}{}\end{DoxyParamCaption})}
+
+
+
+Formats a date string into a filename-\/friendly format. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em date\+Str} & A date string in ISO format \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A formatted string suitable for filenames (e.\+g., "{}2025-\/04-\/22\+\_\+15"{})
+\end{DoxyReturn}
+Formats a date string into a filename-\/friendly format.
+
+
+\begin{DoxyParams}{Parameters}
+{\em date\+Str} & A date string in ISO format \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A formatted string suitable for filenames (e.\+g., "{}2025-\/04-\/22\+\_\+15"{})
+\end{DoxyReturn}
+Extracts the date part and hour from an ISO format date string and combines them with an underscore to create a filename-\/friendly format. Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_networking_and_file_handling_8h_a8f708e900743cda467d4319beac4238c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_networking_and_file_handling_8h_afef78a69dbcc72ef6d453ae87b8b196e}\index{NetworkingAndFileHandling.h@{NetworkingAndFileHandling.h}!LoadJsonFromFile@{LoadJsonFromFile}}
+\index{LoadJsonFromFile@{LoadJsonFromFile}!NetworkingAndFileHandling.h@{NetworkingAndFileHandling.h}}
+\doxysubsubsection{\texorpdfstring{LoadJsonFromFile()}{LoadJsonFromFile()}}
+{\footnotesize\ttfamily \label{_networking_and_file_handling_8h_afef78a69dbcc72ef6d453ae87b8b196e} 
+bool Load\+Json\+From\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+Path}{, }\item[{Json\+::\+Value \&}]{output}{}\end{DoxyParamCaption})}
+
+
+
+Loads and parses JSON data from a file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Path} & Path of the file to load \\
+\hline
+{\em output} & Json\+::\+Value object where parsed data will be stored \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if file loading and parsing were successful, false otherwise
+\end{DoxyReturn}
+Loads and parses JSON data from a file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Path} & Path of the file to load \\
+\hline
+{\em output} & Json\+::\+Value object where parsed data will be stored \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if file loading and parsing were successful, false otherwise
+\end{DoxyReturn}
+Opens a file, reads its contents, and parses it as JSON into the provided output parameter. Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_networking_and_file_handling_8h_afef78a69dbcc72ef6d453ae87b8b196e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_networking_and_file_handling_8h_a63aea19c2fbd7abdc744bd541562c5fd}\index{NetworkingAndFileHandling.h@{NetworkingAndFileHandling.h}!PerformHttpGet@{PerformHttpGet}}
+\index{PerformHttpGet@{PerformHttpGet}!NetworkingAndFileHandling.h@{NetworkingAndFileHandling.h}}
+\doxysubsubsection{\texorpdfstring{PerformHttpGet()}{PerformHttpGet()}}
+{\footnotesize\ttfamily \label{_networking_and_file_handling_8h_a63aea19c2fbd7abdc744bd541562c5fd} 
+Json\+::\+Value Perform\+Http\+Get (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{url}{}\end{DoxyParamCaption})}
+
+
+
+Performs an HTTP GET request to the specified URL. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em url} & The URL to request data from \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Json\+::\+Value object containing the parsed JSON response 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if the request fails or JSON parsing fails\\
+\hline
+\end{DoxyExceptions}
+Performs an HTTP GET request to the specified URL.
+
+
+\begin{DoxyParams}{Parameters}
+{\em url} & The URL to request data from \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Json\+::\+Value object containing the parsed JSON response 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if the request fails or JSON parsing fails\\
+\hline
+\end{DoxyExceptions}
+Uses libcurl to perform an HTTP GET request and parses the response as JSON. Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=278pt]{_networking_and_file_handling_8h_a63aea19c2fbd7abdc744bd541562c5fd_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_networking_and_file_handling_8h_a63aea19c2fbd7abdc744bd541562c5fd_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_networking_and_file_handling_8h_a68628279954d524a9bbbd035bad37465}\index{NetworkingAndFileHandling.h@{NetworkingAndFileHandling.h}!SaveToFile@{SaveToFile}}
+\index{SaveToFile@{SaveToFile}!NetworkingAndFileHandling.h@{NetworkingAndFileHandling.h}}
+\doxysubsubsection{\texorpdfstring{SaveToFile()}{SaveToFile()}}
+{\footnotesize\ttfamily \label{_networking_and_file_handling_8h_a68628279954d524a9bbbd035bad37465} 
+bool Save\+To\+File (\begin{DoxyParamCaption}\item[{Json\+::\+Value \&}]{data}{, }\item[{const std\+::string \&}]{file\+Path}{}\end{DoxyParamCaption})}
+
+
+
+Saves JSON data to a file with indentation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Json\+::\+Value object to save \\
+\hline
+{\em file\+Path} & Path where the file will be saved \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if successful, false otherwise 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if the file cannot be opened for writing\\
+\hline
+\end{DoxyExceptions}
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Json\+::\+Value object to save \\
+\hline
+{\em file\+Path} & Path where the file will be saved \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if successful, false otherwise 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if the file cannot be opened for writing\\
+\hline
+\end{DoxyExceptions}
+Writes JSON data to a file with proper indentation for readability. Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_networking_and_file_handling_8h_a68628279954d524a9bbbd035bad37465_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_networking_and_file_handling_8h_a412076dc9057b61c2607ad9f30b0416d}\index{NetworkingAndFileHandling.h@{NetworkingAndFileHandling.h}!WriteCallback@{WriteCallback}}
+\index{WriteCallback@{WriteCallback}!NetworkingAndFileHandling.h@{NetworkingAndFileHandling.h}}
+\doxysubsubsection{\texorpdfstring{WriteCallback()}{WriteCallback()}}
+{\footnotesize\ttfamily \label{_networking_and_file_handling_8h_a412076dc9057b61c2607ad9f30b0416d} 
+static size\+\_\+t Write\+Callback (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{contents}{, }\item[{size\+\_\+t}]{size}{, }\item[{size\+\_\+t}]{nmemb}{, }\item[{std\+::string \texorpdfstring{$\ast$}{*}}]{s}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Callback function for CURL to handle received data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em contents} & Pointer to the received data \\
+\hline
+{\em size} & Size of each data element \\
+\hline
+{\em nmemb} & Number of data elements \\
+\hline
+{\em s} & Pointer to string where data will be stored \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Total size of received data
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+This function is called by libcurl when data is received during an HTTP request 
+\end{DoxyNote}

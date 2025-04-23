@@ -1,0 +1,48 @@
+\doxysection{Station\+Selection\+Dialog.\+h}
+\hypertarget{_station_selection_dialog_8h_source}{}\label{_station_selection_dialog_8h_source}\index{C:/Users/NIC/Desktop/jpo2025/Air\_quality\_app/StationSelectionDialog.h@{C:/Users/NIC/Desktop/jpo2025/Air\_quality\_app/StationSelectionDialog.h}}
+\mbox{\hyperlink{_station_selection_dialog_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ STATION\_SELECTION\_DIALOG\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ STATION\_SELECTION\_DIALOG\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <wx/wx.h>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <wx/fileconf.h>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <wx/filename.h>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <json/json.h>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_station_info}{StationInfo}}\ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_station_info_a48c8425b0fad13c87e329f51eed20e85}{id}};\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00022\ \ \ \ \ wxString\ \mbox{\hyperlink{struct_station_info_ad86e107e109807cf386048830487e155}{name}};\ \ \ \ \ \ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_station_info_a5162f632f4bf3e1c64d8b606b36a819e}{latitude}};\ \ \ \ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_station_info_ad25a27ef0caf3bb2ce6858dce8e56a1e}{longitude}};\ \ \ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_station_info_a099efe55b38e26c30bf7ce4c9b11cb2c}{distance}};\ \ \ \ }
+\DoxyCodeLine{00026\ \};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_station_selection_dialog_a387dde94ddd2317d305f7bb9e5cb6a02}{StationSelectionDialog}}\ :\ \textcolor{keyword}{public}\ wxDialog\ \{}
+\DoxyCodeLine{00037\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00041\ \ \ \ \ wxListBox*\ \mbox{\hyperlink{class_station_selection_dialog_ac0ed7e9861f81d2a3f4e698649d2a438}{stationListBox}};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00046\ \ \ \ \ std::vector<StationInfo>\ \mbox{\hyperlink{class_station_selection_dialog_afd26db7543e0eff6c2d89fa5ecd8ee61}{stations}};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_station_selection_dialog_aafaf748eba79a0c91edcc6bc656bbe21}{refLatitude}};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_station_selection_dialog_a84a2f3dc3b13e52d4f1210824bd0debe}{refLongitude}};}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_station_selection_dialog_ac40707e4ad5279551fb189087de4c131}{ReadReferenceCoordinates}}();}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_station_selection_dialog_a1da9a4530e7ae9a4eb51508f007e774f}{CalculateDistance}}(\textcolor{keywordtype}{double}\ lat1,\ \textcolor{keywordtype}{double}\ lon1,\ \textcolor{keywordtype}{double}\ lat2,\ \textcolor{keywordtype}{double}\ lon2);}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_station_selection_dialog_aa2f1b4ecef94e424a5cd735e50bdbf0c}{OnDoubleClick}}(wxCommandEvent\&\ event);}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00095\ \ \ \ \ \mbox{\hyperlink{class_station_selection_dialog_a387dde94ddd2317d305f7bb9e5cb6a02}{StationSelectionDialog}}(wxWindow*\ parent,\ \textcolor{keyword}{const}\ Json::Value\&\ stationsData);}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_station_selection_dialog_abeceef97887c7044707f6fc3c1ffe245}{GetSelectedStation}}(\textcolor{keywordtype}{int}\&\ \textcolor{keywordtype}{id},\ wxString\&\ name);}
+\DoxyCodeLine{00107\ \};}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ STATION\_SELECTION\_DIALOG\_H}}
+
+\end{DoxyCode}

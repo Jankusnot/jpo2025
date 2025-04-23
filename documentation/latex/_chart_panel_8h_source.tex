@@ -1,0 +1,54 @@
+\doxysection{Chart\+Panel.\+h}
+\hypertarget{_chart_panel_8h_source}{}\label{_chart_panel_8h_source}\index{C:/Users/NIC/Desktop/jpo2025/Air\_quality\_app/ChartPanel.h@{C:/Users/NIC/Desktop/jpo2025/Air\_quality\_app/ChartPanel.h}}
+\mbox{\hyperlink{_chart_panel_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#ifndef\ CHART\_PANEL\_H}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#define\ CHART\_PANEL\_H}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <wx/wx.h>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <utility>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <limits>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_chart_panel_af4d12480f516ac3f934fe55f6c3d7e24}{ChartPanel}}\ :\ \textcolor{keyword}{public}\ wxPanel\ \{}
+\DoxyCodeLine{00025\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00026\ \ \ \ \ std::vector<std::pair<wxString,\ double>>\ \mbox{\hyperlink{class_chart_panel_a2be0819ed68f1ff8c48cacc2f2f9310b}{chartData}};\ }
+\DoxyCodeLine{00027\ \ \ \ \ wxString\ \mbox{\hyperlink{class_chart_panel_a5f63bf8457a5e20b3e7a866c1dd3c2cc}{chartTitle}};\ }
+\DoxyCodeLine{00028\ \ \ \ \ wxString\ \mbox{\hyperlink{class_chart_panel_a527ec529f3527894276f6c2aaea44647}{xAxisLabel}};\ }
+\DoxyCodeLine{00029\ \ \ \ \ wxString\ \mbox{\hyperlink{class_chart_panel_adc98701f830cb56a07d962a719100fc4}{yAxisLabel}};\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_chart_panel_a37df3c42caa5a36c276a151bd870ec08}{hasData}};\ }
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_chart_panel_a875f6801746bed41b20bac4bc023afa0}{OnPaint}}(wxPaintEvent\&\ event);}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{class_chart_panel_af4d12480f516ac3f934fe55f6c3d7e24}{ChartPanel}}(wxWindow*\ parent);}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_chart_panel_a761109a895ecc2421165e7c6c4467abb}{SetChartData}}(\textcolor{keyword}{const}\ std::vector<std::pair<wxString,\ double>>\&\ data,\ \textcolor{keyword}{const}\ wxString\&\ title,\ \textcolor{keyword}{const}\ wxString\&\ xLabel,\ \textcolor{keyword}{const}\ wxString\&\ yLabel);}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_chart_panel_ad6a881f896ebf3be8724ea7d60c9a348}{DrawNoDataMessage}}(wxPaintDC\&\ dc);}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_chart_panel_a3f4454aa94da5cadeb7c52195203c266}{SetupChartDimensions}}(\textcolor{keywordtype}{int}\&\ chartLeft,\ \textcolor{keywordtype}{int}\&\ chartTop,\ \textcolor{keywordtype}{int}\&\ chartWidth,\ \textcolor{keywordtype}{int}\&\ chartHeight,\ \textcolor{keywordtype}{int}\&\ chartBottom,\ \textcolor{keywordtype}{int}\&\ chartRight);}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_chart_panel_a708077d60c17e27b6dfc17dcc626e36b}{DrawChartBackground}}(wxPaintDC\&\ dc,\ \textcolor{keywordtype}{int}\ chartLeft,\ \textcolor{keywordtype}{int}\ chartTop,\ \textcolor{keywordtype}{int}\ chartWidth,\ \textcolor{keywordtype}{int}\ chartHeight);}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_chart_panel_a9739e25b0b2927bf98f83e284e31c97e}{CalculateValueRange}}(\textcolor{keywordtype}{double}\&\ minValue,\ \textcolor{keywordtype}{double}\&\ maxValue);}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_chart_panel_a691485b7115f950b794c62741809e0c5}{DrawChartTitle}}(wxPaintDC\&\ dc,\ \textcolor{keywordtype}{int}\ chartLeft,\ \textcolor{keywordtype}{int}\ chartWidth,\ \textcolor{keywordtype}{int}\ chartTop);}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_chart_panel_a91942981ddfc20339495a720c30ea6b4}{DrawAxisLabels}}(wxPaintDC\&\ dc,\ \textcolor{keywordtype}{int}\ chartLeft,\ \textcolor{keywordtype}{int}\ chartTop,\ \textcolor{keywordtype}{int}\ chartWidth,\ \textcolor{keywordtype}{int}\ chartHeight,\ \textcolor{keywordtype}{int}\ chartBottom);}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_chart_panel_a44a3473d10e4dc248f17d3660975e34d}{DrawYAxisTicksAndGrid}}(wxPaintDC\&\ dc,\ \textcolor{keywordtype}{int}\ chartLeft,\ \textcolor{keywordtype}{int}\ chartRight,\ \textcolor{keywordtype}{int}\ chartBottom,\ \textcolor{keywordtype}{int}\ chartHeight,\ \textcolor{keywordtype}{double}\ minValue,\ \textcolor{keywordtype}{double}\ maxValue);}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_chart_panel_ad9868fb8b5f29cacb99a40dc89d0d525}{DrawXAxisTicksAndGrid}}(wxPaintDC\&\ dc,\ \textcolor{keywordtype}{int}\ chartLeft,\ \textcolor{keywordtype}{int}\ chartTop,\ \textcolor{keywordtype}{int}\ chartBottom,\ \textcolor{keywordtype}{int}\ chartWidth);}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00147\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_chart_panel_ad478b91dba469494ab9ddbefbc3387a2}{DrawDataPointsAndLines}}(wxPaintDC\&\ dc,\ \textcolor{keywordtype}{int}\ chartLeft,\ \textcolor{keywordtype}{int}\ chartBottom,\ \textcolor{keywordtype}{int}\ chartWidth,\ \textcolor{keywordtype}{int}\ chartHeight,\ \textcolor{keywordtype}{double}\ minValue,\ \textcolor{keywordtype}{double}\ maxValue);}
+\DoxyCodeLine{00148\ \};}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00150\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ CHART\_PANEL\_H}}
+
+\end{DoxyCode}

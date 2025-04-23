@@ -1,0 +1,11 @@
+<map id="C:/Users/NIC/Desktop/jpo2025/Air_quality_app/DataProcessing.h" name="C:/Users/NIC/Desktop/jpo2025/Air_quality_app/DataProcessing.h">
+<area shape="rect" id="Node000001" title="Functions for processing data from JSON files and calculating statistics." alt="" coords="106,5,263,64"/>
+<area shape="rect" id="Node000002" href="$_data_processing_8cpp.html" title="Implementation of data processing functions for JSON time series data." alt="" coords="5,112,177,171"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="151,77,118,113,114,110,147,74"/>
+<area shape="rect" id="Node000003" href="$_side_panel_8h.html" title=" " alt="" coords="201,112,357,171"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="222,74,255,110,251,113,218,77"/>
+<area shape="rect" id="Node000004" href="$_side_panel_8cpp.html" title="Implementation of the SidePanel class." alt="" coords="111,219,266,277"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="246,184,215,220,211,217,242,181"/>
+<area shape="rect" id="Node000005" href="$main_8cpp.html" title="Main application file for the Air Quality monitoring application." alt="" coords="291,219,446,277"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="315,181,346,217,342,220,311,184"/>
+</map>

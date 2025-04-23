@@ -1,0 +1,9 @@
+<map id="C:/Users/NIC/Desktop/jpo2025/Air_quality_app/SensorSelectionDialog.h" name="C:/Users/NIC/Desktop/jpo2025/Air_quality_app/SensorSelectionDialog.h">
+<area shape="rect" id="Node000001" title="Dialog for selecting a sensor from a list." alt="" coords="30,5,227,64"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,112,76,139"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="102,66,66,103,62,99,98,62"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="100,112,157,139"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="131,64,131,96,126,96,126,64"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="181,112,265,139"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="161,62,200,99,197,103,157,66"/>
+</map>

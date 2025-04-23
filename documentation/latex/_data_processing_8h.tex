@@ -1,0 +1,153 @@
+\doxysection{C\+:/\+Users/\+NIC/\+Desktop/jpo2025/\+Air\+\_\+quality\+\_\+app/\+Data\+Processing.h File Reference}
+\hypertarget{_data_processing_8h}{}\label{_data_processing_8h}\index{C:/Users/NIC/Desktop/jpo2025/Air\_quality\_app/DataProcessing.h@{C:/Users/NIC/Desktop/jpo2025/Air\_quality\_app/DataProcessing.h}}
+
+
+Functions for processing data from JSON files and calculating statistics.  
+
+
+{\ttfamily \#include $<$wx/wx.\+h$>$}\newline
+{\ttfamily \#include $<$Json/json.\+h$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include "{}Info\+Panel.\+h"{}}\newline
+{\ttfamily \#include "{}Chart\+Panel.\+h"{}}\newline
+{\ttfamily \#include "{}Networking\+And\+File\+Handling.\+h"{}}\newline
+Include dependency graph for Data\+Processing.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_data_processing_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_data_processing_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_data_processing_8h_aa30c0ce422e91e08cf64b21250c9332a}{Process\+File\+Data}} (const std\+::string \&file\+Path, \mbox{\hyperlink{class_info_panel}{Info\+Panel}} \texorpdfstring{$\ast$}{*}info\+Panel, \mbox{\hyperlink{class_chart_panel}{Chart\+Panel}} \texorpdfstring{$\ast$}{*}chart\+Panel)
+\begin{DoxyCompactList}\small\item\em Processes JSON data from a file and updates UI components. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{_data_processing_8h_a67190f314f5c8c9a3625244c7d22e6ed}{Calculate\+Trend}} (const std\+::vector$<$ std\+::pair$<$ std\+::string, double $>$ $>$ \&data)
+\begin{DoxyCompactList}\small\item\em Analyzes time series data to determine the trend. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Functions for processing data from JSON files and calculating statistics. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_data_processing_8h_a67190f314f5c8c9a3625244c7d22e6ed}\index{DataProcessing.h@{DataProcessing.h}!CalculateTrend@{CalculateTrend}}
+\index{CalculateTrend@{CalculateTrend}!DataProcessing.h@{DataProcessing.h}}
+\doxysubsubsection{\texorpdfstring{CalculateTrend()}{CalculateTrend()}}
+{\footnotesize\ttfamily \label{_data_processing_8h_a67190f314f5c8c9a3625244c7d22e6ed} 
+std\+::string Calculate\+Trend (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::pair$<$ std\+::string, double $>$ $>$ \&}]{data}{}\end{DoxyParamCaption})}
+
+
+
+Analyzes time series data to determine the trend. 
+
+Performs linear regression on the time series data to calculate the slope and describes the trend as "{}stable"{}, "{}increasing"{}, "{}strongly increasing"{}, "{}decreasing"{}, or "{}strongly decreasing"{}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Vector of date-\/value pairs representing time series data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::string Description of the trend
+\end{DoxyReturn}
+Analyzes time series data to determine the trend.
+
+Uses linear regression to calculate the slope of the time series data and categorizes the trend based on the percentage change relative to the average value.
+
+The function returns one of the following trend descriptions\+:
+\begin{DoxyItemize}
+\item "{}insufficient data for trend analysis"{}\+: When there are fewer than 2 data points
+\item "{}stable"{}\+: When the percentage change is less than 5\%
+\item "{}increasing"{}\+: When the percentage change is between 5\% and 20\%
+\item "{}strongly increasing"{}\+: When the percentage change is greater than 20\%
+\item "{}decreasing"{}\+: When the percentage change is between -\/5\% and -\/20\%
+\item "{}strongly decreasing"{}\+: When the percentage change is less than -\/20\%
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Vector of date-\/value pairs representing time series data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::string Description of the trend 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_data_processing_8h_a67190f314f5c8c9a3625244c7d22e6ed_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_data_processing_8h_aa30c0ce422e91e08cf64b21250c9332a}\index{DataProcessing.h@{DataProcessing.h}!ProcessFileData@{ProcessFileData}}
+\index{ProcessFileData@{ProcessFileData}!DataProcessing.h@{DataProcessing.h}}
+\doxysubsubsection{\texorpdfstring{ProcessFileData()}{ProcessFileData()}}
+{\footnotesize\ttfamily \label{_data_processing_8h_aa30c0ce422e91e08cf64b21250c9332a} 
+void Process\+File\+Data (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+Path}{, }\item[{\mbox{\hyperlink{class_info_panel}{Info\+Panel}} \texorpdfstring{$\ast$}{*}}]{info\+Panel}{, }\item[{\mbox{\hyperlink{class_chart_panel}{Chart\+Panel}} \texorpdfstring{$\ast$}{*}}]{chart\+Panel}{}\end{DoxyParamCaption})}
+
+
+
+Processes JSON data from a file and updates UI components. 
+
+This function loads a JSON file, extracts time series data, calculates statistics, and updates the provided info and chart panels with the results.
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Path} & Path to the JSON file containing the data \\
+\hline
+{\em info\+Panel} & Pointer to the \doxylink{class_info_panel}{Info\+Panel} to update with statistics (can be nullptr) \\
+\hline
+{\em chart\+Panel} & Pointer to the \doxylink{class_chart_panel}{Chart\+Panel} to update with chart data (can be nullptr)\\
+\hline
+\end{DoxyParams}
+Processes JSON data from a file and updates UI components.
+
+This function\+:
+\begin{DoxyEnumerate}
+\item Loads and parses a JSON file
+\item Validates the JSON structure for required elements
+\item Extracts time series data points
+\item Calculates statistics (min, max, average, trend)
+\item Updates the UI components with processed data
+\end{DoxyEnumerate}
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Path} & Path to the JSON file containing the data \\
+\hline
+{\em info\+Panel} & Pointer to the \doxylink{class_info_panel}{Info\+Panel} to update with statistics (can be nullptr) \\
+\hline
+{\em chart\+Panel} & Pointer to the \doxylink{class_chart_panel}{Chart\+Panel} to update with chart data (can be nullptr) \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=341pt]{_data_processing_8h_aa30c0ce422e91e08cf64b21250c9332a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_data_processing_8h_aa30c0ce422e91e08cf64b21250c9332a_icgraph}
+\end{center}
+\end{figure}

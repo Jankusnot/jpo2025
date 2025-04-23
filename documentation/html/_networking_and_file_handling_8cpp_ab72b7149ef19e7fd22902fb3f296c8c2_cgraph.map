@@ -1,0 +1,9 @@
+<map id="DownloadJsonAndSaveToFile" name="DownloadJsonAndSaveToFile">
+<area shape="rect" id="Node000001" title="Downloads JSON from URL, optionally transforms it, and saves to file." alt="" coords="5,31,201,57"/>
+<area shape="rect" id="Node000002" href="$_networking_and_file_handling_8cpp.html#a63aea19c2fbd7abdc744bd541562c5fd" title="Performs an HTTP GET request to the specified URL and returns parsed JSON." alt="" coords="249,5,362,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="201,29,233,25,233,30,202,34"/>
+<area shape="rect" id="Node000004" href="$_networking_and_file_handling_8cpp.html#a68628279954d524a9bbbd035bad37465" title="Saves JSON data to a file with indentation." alt="" coords="262,56,348,83"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="202,54,247,59,247,65,201,59"/>
+<area shape="rect" id="Node000003" href="$_networking_and_file_handling_8cpp.html#adfe4aa3ee2d2b8a4376b59dbe5c48535" title="Callback function for CURL to handle received data by appending to a string." alt="" coords="410,5,512,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="362,16,394,16,394,21,362,21"/>
+</map>

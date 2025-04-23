@@ -1,0 +1,11 @@
+<map id="C:/Users/NIC/Desktop/jpo2025/Air_quality_app/FileSelectionDialog.h" name="C:/Users/NIC/Desktop/jpo2025/Air_quality_app/FileSelectionDialog.h">
+<area shape="rect" id="Node000001" title="Dialog for selecting a file from a list." alt="" coords="111,5,287,64"/>
+<area shape="rect" id="Node000002" href="$_file_selection_dialog_8cpp.html" title="Implementation of the FileSelectionDialog class." alt="" coords="5,112,196,171"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="164,77,129,113,125,110,160,74"/>
+<area shape="rect" id="Node000003" href="$_side_panel_8h.html" title=" " alt="" coords="220,112,376,171"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="239,74,273,110,269,113,235,77"/>
+<area shape="rect" id="Node000004" href="$_side_panel_8cpp.html" title="Implementation of the SidePanel class." alt="" coords="130,219,285,277"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="265,184,234,220,230,217,261,181"/>
+<area shape="rect" id="Node000005" href="$main_8cpp.html" title="Main application file for the Air Quality monitoring application." alt="" coords="310,219,465,277"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="334,181,365,217,361,220,330,184"/>
+</map>

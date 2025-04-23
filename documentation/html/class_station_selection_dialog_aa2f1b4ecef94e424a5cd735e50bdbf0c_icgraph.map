@@ -1,0 +1,5 @@
+<map id="StationSelectionDialog::OnDoubleClick" name="StationSelectionDialog::OnDoubleClick">
+<area shape="rect" id="Node000001" title="Event handler for double&#45;click events on the station list." alt="" coords="215,5,368,48"/>
+<area shape="rect" id="Node000002" href="$class_station_selection_dialog.html#a387dde94ddd2317d305f7bb9e5cb6a02" title="Constructor that creates a station selection dialog." alt="" coords="5,5,167,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="200,29,167,29,167,24,200,24"/>
+</map>

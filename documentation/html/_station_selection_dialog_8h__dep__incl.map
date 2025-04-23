@@ -1,0 +1,11 @@
+<map id="C:/Users/NIC/Desktop/jpo2025/Air_quality_app/StationSelectionDialog.h" name="C:/Users/NIC/Desktop/jpo2025/Air_quality_app/StationSelectionDialog.h">
+<area shape="rect" id="Node000001" title="Dialog for selecting a station sorted by distance from reference location." alt="" coords="177,5,373,64"/>
+<area shape="rect" id="Node000002" href="$_side_panel_8h.html" title=" " alt="" coords="95,112,250,171"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="238,77,202,113,198,110,234,73"/>
+<area shape="rect" id="Node000005" href="$_station_selection_dialog_8cpp.html" title="Implementation of the StationSelectionDialog class." alt="" coords="274,112,484,171"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="316,73,353,110,349,114,312,77"/>
+<area shape="rect" id="Node000003" href="$_side_panel_8cpp.html" title="Implementation of the SidePanel class." alt="" coords="5,219,161,277"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="140,184,109,220,105,217,136,181"/>
+<area shape="rect" id="Node000004" href="$main_8cpp.html" title="Main application file for the Air Quality monitoring application." alt="" coords="185,219,341,277"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="209,181,240,217,236,220,205,184"/>
+</map>

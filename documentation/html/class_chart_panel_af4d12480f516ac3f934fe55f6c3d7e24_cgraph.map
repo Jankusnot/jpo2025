@@ -1,0 +1,23 @@
+<map id="ChartPanel::ChartPanel" name="ChartPanel::ChartPanel">
+<area shape="rect" id="Node000001" title="Constructor for ChartPanel." alt="" coords="5,232,165,259"/>
+<area shape="rect" id="Node000002" href="$class_chart_panel.html#a875f6801746bed41b20bac4bc023afa0" title="Event handler for paint events." alt="" coords="213,232,354,259"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="165,243,197,243,197,248,165,248"/>
+<area shape="rect" id="Node000003" href="$class_chart_panel.html#a9739e25b0b2927bf98f83e284e31c97e" title="Determines the minimum and maximum data values with padding." alt="" coords="426,5,607,48"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="287,231,301,196,325,149,358,100,400,58,411,51,414,55,404,62,362,104,329,152,306,198,292,233"/>
+<area shape="rect" id="Node000004" href="$class_chart_panel.html#a91942981ddfc20339495a720c30ea6b4" title="Draws the X and Y axis labels." alt="" coords="422,72,611,99"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="290,230,332,171,363,137,401,108,412,103,414,107,403,113,367,141,336,174,295,233"/>
+<area shape="rect" id="Node000005" href="$class_chart_panel.html#a708077d60c17e27b6dfc17dcc626e36b" title="Draws the chart background and border." alt="" coords="404,123,630,149"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="298,229,342,194,401,159,419,152,421,157,403,164,345,198,301,234"/>
+<area shape="rect" id="Node000006" href="$class_chart_panel.html#a691485b7115f950b794c62741809e0c5" title="Draws the chart title centered above the chart." alt="" coords="426,173,608,200"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="331,229,401,209,434,201,436,207,403,215,332,234"/>
+<area shape="rect" id="Node000007" href="$class_chart_panel.html#ad478b91dba469494ab9ddbefbc3387a2" title="Draws data points and the line connecting them." alt="" coords="422,224,612,267"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="355,243,406,243,406,248,355,248"/>
+<area shape="rect" id="Node000008" href="$class_chart_panel.html#ad6a881f896ebf3be8724ea7d60c9a348" title="Displays a message when no data is available." alt="" coords="405,291,628,317"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="332,257,403,276,436,284,434,289,401,281,331,262"/>
+<area shape="rect" id="Node000009" href="$class_chart_panel.html#ad9868fb8b5f29cacb99a40dc89d0d525" title="Draws X&#45;axis tick marks, labels, and vertical grid lines." alt="" coords="420,341,613,384"/>
+<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="302,257,346,292,403,327,417,333,414,338,401,332,343,296,299,261"/>
+<area shape="rect" id="Node000010" href="$class_chart_panel.html#a44a3473d10e4dc248f17d3660975e34d" title="Draws Y&#45;axis tick marks, labels, and horizontal grid lines." alt="" coords="421,408,612,451"/>
+<area shape="poly" id="edge9_Node000002_Node000010" title=" " alt="" coords="294,257,334,323,366,361,404,394,411,398,408,403,400,398,362,365,330,326,289,260"/>
+<area shape="rect" id="Node000011" href="$class_chart_panel.html#a3f4454aa94da5cadeb7c52195203c266" title="Calculates chart dimensions and positioning based on panel size." alt="" coords="402,475,631,501"/>
+<area shape="poly" id="edge10_Node000002_Node000011" title=" " alt="" coords="290,258,302,299,324,354,358,412,379,438,404,461,410,465,407,469,400,465,375,442,353,415,319,356,297,301,285,260"/>
+</map>

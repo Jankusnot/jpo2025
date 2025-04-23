@@ -1,0 +1,11 @@
+<map id="C:/Users/NIC/Desktop/jpo2025/Air_quality_app/SensorSelectionDialog.cpp" name="C:/Users/NIC/Desktop/jpo2025/Air_quality_app/SensorSelectionDialog.cpp">
+<area shape="rect" id="Node000001" title="Implementation of the SensorSelectionDialog class." alt="" coords="23,5,234,64"/>
+<area shape="rect" id="Node000002" href="$_sensor_selection_dialog_8h.html" title="Dialog for selecting a sensor from a list." alt="" coords="46,112,211,139"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="131,64,131,96,126,96,126,64"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,187,76,213"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="115,141,69,179,66,175,111,137"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="100,187,157,213"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="131,139,131,171,126,171,126,139"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="181,187,265,213"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="147,137,196,175,193,179,143,141"/>
+</map>

@@ -1,0 +1,229 @@
+\doxysection{Sensor\+Selection\+Dialog Class Reference}
+\hypertarget{class_sensor_selection_dialog}{}\label{class_sensor_selection_dialog}\index{SensorSelectionDialog@{SensorSelectionDialog}}
+
+
+A dialog that displays a list of sensors and allows the user to select one.  
+
+
+
+
+{\ttfamily \#include $<$Sensor\+Selection\+Dialog.\+h$>$}
+
+
+
+Inheritance diagram for Sensor\+Selection\+Dialog\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=195pt]{class_sensor_selection_dialog__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Sensor\+Selection\+Dialog\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=195pt]{class_sensor_selection_dialog__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_sensor_selection_dialog_a33476ee8af7794fd1863048242b7771b}{Sensor\+Selection\+Dialog}} (wx\+Window \texorpdfstring{$\ast$}{*}parent, const Json\+::\+Value \&sensors)
+\begin{DoxyCompactList}\small\item\em Constructor that creates a sensor selection dialog. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_sensor_selection_dialog_a6856be4b5d18cefdec62b9e164b4ccf8}{On\+Double\+Click}} (wx\+Command\+Event \&event)
+\begin{DoxyCompactList}\small\item\em Event handler for double-\/click events on the sensor list. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_sensor_selection_dialog_a0822560809bae236798279dd8c52007d}{Get\+Selected\+Sensor}} (int \&id, wx\+String \&param\+Name)
+\begin{DoxyCompactList}\small\item\em Gets information about the selected sensor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+wx\+List\+Box \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_sensor_selection_dialog_a9cbb1dedb8105226560eabbd9799c2fb}{sensor\+List\+Box}}
+\begin{DoxyCompactList}\small\item\em List\+Box widget that displays the sensor names. \end{DoxyCompactList}\item 
+std\+::vector$<$ int $>$ \mbox{\hyperlink{class_sensor_selection_dialog_a4d8802899654ff91b7e232e94794bb2e}{sensor\+Ids}}
+\begin{DoxyCompactList}\small\item\em Vector storing the IDs of sensors in the same order as they appear in the list. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_sensor_selection_dialog_a0ff925a421f2b891e96914c15bb7fa5e}{selected\+Id}}
+\begin{DoxyCompactList}\small\item\em Stores the ID of the selected sensor. \end{DoxyCompactList}\item 
+wx\+String \mbox{\hyperlink{class_sensor_selection_dialog_ad7dfaef258dda75b503c304f240c7dbf}{selected\+Param\+Name}}
+\begin{DoxyCompactList}\small\item\em Stores the parameter name of the selected sensor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A dialog that displays a list of sensors and allows the user to select one. 
+
+This dialog presents a list of sensors parsed from JSON data and provides functionality for selecting a sensor either by double-\/clicking on it or by selecting it and clicking the OK button. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_sensor_selection_dialog_a33476ee8af7794fd1863048242b7771b}\index{SensorSelectionDialog@{SensorSelectionDialog}!SensorSelectionDialog@{SensorSelectionDialog}}
+\index{SensorSelectionDialog@{SensorSelectionDialog}!SensorSelectionDialog@{SensorSelectionDialog}}
+\doxysubsubsection{\texorpdfstring{SensorSelectionDialog()}{SensorSelectionDialog()}}
+{\footnotesize\ttfamily \label{class_sensor_selection_dialog_a33476ee8af7794fd1863048242b7771b} 
+Sensor\+Selection\+Dialog\+::\+Sensor\+Selection\+Dialog (\begin{DoxyParamCaption}\item[{wx\+Window \texorpdfstring{$\ast$}{*}}]{parent}{, }\item[{const Json\+::\+Value \&}]{sensors}{}\end{DoxyParamCaption})}
+
+
+
+Constructor that creates a sensor selection dialog. 
+
+Constructor that creates a dialog for selecting a sensor from JSON data.
+
+Creates a dialog with a list of sensors parsed from JSON data.
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & Pointer to the parent window \\
+\hline
+{\em sensors} & JSON value containing the sensor data array\\
+\hline
+\end{DoxyParams}
+Creates a modal dialog with a listbox containing sensor names extracted from the provided JSON data, along with OK and Cancel buttons.
+
+The constructor parses the JSON data, extracts sensor information (ID and parameter name), and populates the listbox with the parameter names while storing the corresponding IDs.
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & Pointer to the parent window \\
+\hline
+{\em sensors} & JSON value containing an array of sensor objects, each with an "{}id"{} field and a "{}param"{} object that contains a "{}param\+Name"{} field \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sensor_selection_dialog_a33476ee8af7794fd1863048242b7771b_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_sensor_selection_dialog_a0822560809bae236798279dd8c52007d}\index{SensorSelectionDialog@{SensorSelectionDialog}!GetSelectedSensor@{GetSelectedSensor}}
+\index{GetSelectedSensor@{GetSelectedSensor}!SensorSelectionDialog@{SensorSelectionDialog}}
+\doxysubsubsection{\texorpdfstring{GetSelectedSensor()}{GetSelectedSensor()}}
+{\footnotesize\ttfamily \label{class_sensor_selection_dialog_a0822560809bae236798279dd8c52007d} 
+bool Sensor\+Selection\+Dialog\+::\+Get\+Selected\+Sensor (\begin{DoxyParamCaption}\item[{int \&}]{id}{, }\item[{wx\+String \&}]{param\+Name}{}\end{DoxyParamCaption})}
+
+
+
+Gets information about the selected sensor. 
+
+Retrieves selected sensor information if a valid selection exists.
+
+Retrieves the ID and parameter name of the selected sensor.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em id} & Reference to store the ID of the selected sensor \\
+\hline
+\mbox{\texttt{ out}}  & {\em param\+Name} & Reference to store the parameter name of the selected sensor \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool True if a sensor was selected, false otherwise
+\end{DoxyReturn}
+This method should be called after the dialog has been closed with wx\+ID\+\_\+\+OK status to retrieve information about the sensor that was selected.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em id} & Reference to store the ID of the selected sensor \\
+\hline
+\mbox{\texttt{ out}}  & {\em param\+Name} & Reference to store the parameter name of the selected sensor \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool True if a sensor was selected and valid information was retrieved, false if no selection was made or the selection is invalid 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sensor_selection_dialog_a0822560809bae236798279dd8c52007d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_sensor_selection_dialog_a6856be4b5d18cefdec62b9e164b4ccf8}\index{SensorSelectionDialog@{SensorSelectionDialog}!OnDoubleClick@{OnDoubleClick}}
+\index{OnDoubleClick@{OnDoubleClick}!SensorSelectionDialog@{SensorSelectionDialog}}
+\doxysubsubsection{\texorpdfstring{OnDoubleClick()}{OnDoubleClick()}}
+{\footnotesize\ttfamily \label{class_sensor_selection_dialog_a6856be4b5d18cefdec62b9e164b4ccf8} 
+void Sensor\+Selection\+Dialog\+::\+On\+Double\+Click (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event}{}\end{DoxyParamCaption})}
+
+
+
+Event handler for double-\/click events on the sensor list. 
+
+Handler for double-\/click events that confirms selection and closes the dialog.
+
+Closes the dialog with OK status when a sensor is double-\/clicked.
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & The wx\+Command\+Event associated with the double-\/click\\
+\hline
+\end{DoxyParams}
+When a sensor is double-\/clicked, the dialog is closed with an OK status. The selected sensor can then be retrieved using \doxylink{class_sensor_selection_dialog_a0822560809bae236798279dd8c52007d}{Get\+Selected\+Sensor()}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & The wx\+Command\+Event associated with the double-\/click \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sensor_selection_dialog_a6856be4b5d18cefdec62b9e164b4ccf8_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_sensor_selection_dialog_a0ff925a421f2b891e96914c15bb7fa5e}\index{SensorSelectionDialog@{SensorSelectionDialog}!selectedId@{selectedId}}
+\index{selectedId@{selectedId}!SensorSelectionDialog@{SensorSelectionDialog}}
+\doxysubsubsection{\texorpdfstring{selectedId}{selectedId}}
+{\footnotesize\ttfamily \label{class_sensor_selection_dialog_a0ff925a421f2b891e96914c15bb7fa5e} 
+int Sensor\+Selection\+Dialog\+::selected\+Id\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Stores the ID of the selected sensor. 
+
+\Hypertarget{class_sensor_selection_dialog_ad7dfaef258dda75b503c304f240c7dbf}\index{SensorSelectionDialog@{SensorSelectionDialog}!selectedParamName@{selectedParamName}}
+\index{selectedParamName@{selectedParamName}!SensorSelectionDialog@{SensorSelectionDialog}}
+\doxysubsubsection{\texorpdfstring{selectedParamName}{selectedParamName}}
+{\footnotesize\ttfamily \label{class_sensor_selection_dialog_ad7dfaef258dda75b503c304f240c7dbf} 
+wx\+String Sensor\+Selection\+Dialog\+::selected\+Param\+Name\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Stores the parameter name of the selected sensor. 
+
+\Hypertarget{class_sensor_selection_dialog_a4d8802899654ff91b7e232e94794bb2e}\index{SensorSelectionDialog@{SensorSelectionDialog}!sensorIds@{sensorIds}}
+\index{sensorIds@{sensorIds}!SensorSelectionDialog@{SensorSelectionDialog}}
+\doxysubsubsection{\texorpdfstring{sensorIds}{sensorIds}}
+{\footnotesize\ttfamily \label{class_sensor_selection_dialog_a4d8802899654ff91b7e232e94794bb2e} 
+std\+::vector$<$int$>$ Sensor\+Selection\+Dialog\+::sensor\+Ids\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Vector storing the IDs of sensors in the same order as they appear in the list. 
+
+\Hypertarget{class_sensor_selection_dialog_a9cbb1dedb8105226560eabbd9799c2fb}\index{SensorSelectionDialog@{SensorSelectionDialog}!sensorListBox@{sensorListBox}}
+\index{sensorListBox@{sensorListBox}!SensorSelectionDialog@{SensorSelectionDialog}}
+\doxysubsubsection{\texorpdfstring{sensorListBox}{sensorListBox}}
+{\footnotesize\ttfamily \label{class_sensor_selection_dialog_a9cbb1dedb8105226560eabbd9799c2fb} 
+wx\+List\+Box\texorpdfstring{$\ast$}{*} Sensor\+Selection\+Dialog\+::sensor\+List\+Box\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+List\+Box widget that displays the sensor names. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+NIC/\+Desktop/jpo2025/\+Air\+\_\+quality\+\_\+app/\mbox{\hyperlink{_sensor_selection_dialog_8h}{Sensor\+Selection\+Dialog.\+h}}\item 
+C\+:/\+Users/\+NIC/\+Desktop/jpo2025/\+Air\+\_\+quality\+\_\+app/\mbox{\hyperlink{_sensor_selection_dialog_8cpp}{Sensor\+Selection\+Dialog.\+cpp}}\end{DoxyCompactItemize}

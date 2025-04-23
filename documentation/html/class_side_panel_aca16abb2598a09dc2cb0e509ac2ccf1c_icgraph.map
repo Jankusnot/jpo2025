@@ -1,0 +1,9 @@
+<map id="SidePanel::SelectSensor" name="SidePanel::SelectSensor">
+<area shape="rect" id="Node000001" title="Prompts the user to select a sensor." alt="" coords="652,5,819,32"/>
+<area shape="rect" id="Node000002" href="$class_side_panel.html#ab30d1e67ae65f13f47c578b22ee5cbc9" title="Handles the &quot;View Stored Data&quot; button click." alt="" coords="404,5,604,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="637,21,605,21,605,16,637,16"/>
+<area shape="rect" id="Node000003" href="$class_side_panel.html#a88e71582eb561d8a3d79a3d3122a3bf0" title="Binds event handlers to UI components." alt="" coords="201,5,356,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="388,21,356,21,356,16,388,16"/>
+<area shape="rect" id="Node000004" href="$class_side_panel.html#a59c59232b2f6429074af7491737de164" title="Constructor for the SidePanel." alt="" coords="5,5,153,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="185,21,153,21,153,16,185,16"/>
+</map>

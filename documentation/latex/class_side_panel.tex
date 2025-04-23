@@ -1,0 +1,1140 @@
+\doxysection{Side\+Panel Class Reference}
+\hypertarget{class_side_panel}{}\label{class_side_panel}\index{SidePanel@{SidePanel}}
+
+
+Panel containing controls for station, sensor, and file selection.  
+
+
+
+
+{\ttfamily \#include $<$Side\+Panel.\+h$>$}
+
+
+
+Inheritance diagram for Side\+Panel\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=140pt]{class_side_panel__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Side\+Panel\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{class_side_panel__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_side_panel_a59c59232b2f6429074af7491737de164}{Side\+Panel}} (wx\+Window \texorpdfstring{$\ast$}{*}parent)
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{class_side_panel}{Side\+Panel}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_side_panel_a4cfc93c7d7f9da39ff5b6efb963c838f}{Connect\+To\+Panels}} (\mbox{\hyperlink{class_info_panel}{Info\+Panel}} \texorpdfstring{$\ast$}{*}info, \mbox{\hyperlink{class_chart_panel}{Chart\+Panel}} \texorpdfstring{$\ast$}{*}chart)
+\begin{DoxyCompactList}\small\item\em Connects this panel to the info and chart panels. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{Indent}\textbf{ UI initialization methods}\par
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_side_panel_a10d70023343f82fd48c9c8c04ee4bf74}{Initialize\+UI}} ()
+\begin{DoxyCompactList}\small\item\em Initializes all UI components. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_side_panel_a88e71582eb561d8a3d79a3d3122a3bf0}{Bind\+Events}} ()
+\begin{DoxyCompactList}\small\item\em Binds event handlers to UI components. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Status display update methods}\par
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_side_panel_a1ea056aa76ef1305594e117d8d970875}{Update\+Selected\+Station\+Display}} ()
+\begin{DoxyCompactList}\small\item\em Updates the selected station display text. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_side_panel_a51518c4623d1cb91c5fbc146d7b3ef71}{Update\+Selected\+Sensor\+Display}} ()
+\begin{DoxyCompactList}\small\item\em Updates the selected sensor display text. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_side_panel_af64945eecdaa255c963bd8b6fb941eab}{Update\+Selected\+File\+Display}} ()
+\begin{DoxyCompactList}\small\item\em Updates the selected file display text. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Button event handlers}\par
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_side_panel_acc1207b950f645b43dd39d0486711587}{On\+Chose\+Station}} (wx\+Command\+Event \&event)
+\begin{DoxyCompactList}\small\item\em Handles the "{}\+Choose Station"{} button click. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_side_panel_a9611a48ab1140b6cec16b7242245e51f}{On\+Choose\+Sensor}} (wx\+Command\+Event \&event)
+\begin{DoxyCompactList}\small\item\em Handles the "{}\+Choose Sensor"{} button click. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_side_panel_a04d8efdd1526e3d19ac6818ebe5094e7}{On\+Show\+Data\+Files}} (wx\+Command\+Event \&event)
+\begin{DoxyCompactList}\small\item\em Handles the "{}\+Show Data Files"{} button click. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_side_panel_ab30d1e67ae65f13f47c578b22ee5cbc9}{On\+View\+Stored\+Data}} (wx\+Command\+Event \&event)
+\begin{DoxyCompactList}\small\item\em Handles the "{}\+View Stored Data"{} button click. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Helper functions for sensor selection}\par
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_side_panel_a920e04991a93a73bd552e0ec5f4c9de7}{Initialize\+Sensor\+Database}} (const std\+::string \&STATION\+\_\+\+DIRECTORY, const std\+::string \&database\+Path, const std\+::string \&api\+Url)
+\begin{DoxyCompactList}\small\item\em Initializes the sensor database. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_side_panel_a94d1d4ebb8acdd782724a69f9dc62249}{Load\+Sensors\+Data}} (const std\+::string \&database\+Path, Json\+::\+Value \&sensors)
+\begin{DoxyCompactList}\small\item\em Loads sensor data from the database. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_side_panel_a1e35e96cbbed4b2d36532adf205e99e9}{Download\+All\+Sensors\+Data}} (const std\+::string \&STATION\+\_\+\+DIRECTORY, const Json\+::\+Value \&sensors, std\+::vector$<$ std\+::string $>$ \&failed\+Sensors)
+\begin{DoxyCompactList}\small\item\em Downloads data for all sensors. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_side_panel_a64ce4e4f8cd027604a861f850b70de09}{Report\+Failed\+Downloads}} (const std\+::vector$<$ std\+::string $>$ \&failed\+Sensors)
+\begin{DoxyCompactList}\small\item\em Reports sensors that failed to download. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_side_panel_aea36bfda2a4231651e4f095f739078d1}{Ensure\+Selected\+Sensor\+Data}} (const std\+::string \&STATION\+\_\+\+DIRECTORY, const std\+::vector$<$ std\+::string $>$ \&failed\+Sensors)
+\begin{DoxyCompactList}\small\item\em Ensures the selected sensor data is available. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_side_panel_ac63b6cf557796685317d3439ce8d5aef}{Download\+Sensor\+Data}} (int sensor\+Id, const std\+::string \&STATION\+\_\+\+DIRECTORY, std\+::vector$<$ std\+::string $>$ \&failed\+Sensors, std\+::mutex \&mutex)
+\begin{DoxyCompactList}\small\item\em Downloads data for a specific sensor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Helper functions for viewing stored data}\par
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_side_panel_a806ca5efc5c8b7e37a8aca3cf2fc6010}{Check\+For\+Downloaded\+Data}} ()
+\begin{DoxyCompactList}\small\item\em Checks if downloaded data is available. \end{DoxyCompactList}\item 
+std\+::vector$<$ int $>$ \mbox{\hyperlink{class_side_panel_a078a7b9380c48c56550a703042d15c2e}{Get\+Numeric\+Directories}} (const std\+::string \&directory)
+\begin{DoxyCompactList}\small\item\em Gets a list of numeric directories in the specified path. \end{DoxyCompactList}\item 
+Json\+::\+Value \mbox{\hyperlink{class_side_panel_a6fd78ed8a429dd762f970d2d91b85d25}{Filter\+Items\+By\+Existing\+Directories}} (const Json\+::\+Value \&all\+Items, const std\+::vector$<$ int $>$ \&dir\+Ids)
+\begin{DoxyCompactList}\small\item\em Filters JSON items by existing directory IDs. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_side_panel_ae67c71d129ba553da7212c85441c56d1}{Select\+Station}} (Json\+::\+Value \&filtered\+Stations)
+\begin{DoxyCompactList}\small\item\em Prompts the user to select a station. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_side_panel_aca16abb2598a09dc2cb0e509ac2ccf1c}{Select\+Sensor}} ()
+\begin{DoxyCompactList}\small\item\em Prompts the user to select a sensor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsubsection*{Private Attributes}
+\begin{Indent}\textbf{ UI Components}\par
+\begin{DoxyCompactItemize}
+\item 
+wx\+Button \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_side_panel_ab75d6b2fccf141a4bb29b60a0b8e3bbe}{btn1}}
+\begin{DoxyCompactList}\small\item\em Button for station selection. \end{DoxyCompactList}\item 
+wx\+Button \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_side_panel_a6ae1ae5d777e05ab55c1d55d92a50e4f}{btn2}}
+\begin{DoxyCompactList}\small\item\em Button for sensor selection. \end{DoxyCompactList}\item 
+wx\+Button \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_side_panel_ad2144732d669a93389bb16e5635308bf}{btn3}}
+\begin{DoxyCompactList}\small\item\em Button for showing data files. \end{DoxyCompactList}\item 
+wx\+Button \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_side_panel_aeebc55137ea47dc8244844f90be8dd93}{btn4}}
+\begin{DoxyCompactList}\small\item\em Button for viewing stored data. \end{DoxyCompactList}\item 
+wx\+Static\+Text \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_side_panel_ad9c912525eee37472a73960254d07c7b}{selected\+Station\+Text}}
+\begin{DoxyCompactList}\small\item\em Display text for selected station. \end{DoxyCompactList}\item 
+wx\+Static\+Text \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_side_panel_ac85240294d0db3052c7d4702cbf7c6ce}{selected\+Sensor\+Text}}
+\begin{DoxyCompactList}\small\item\em Display text for selected sensor. \end{DoxyCompactList}\item 
+wx\+Static\+Text \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_side_panel_a4208f006b8b9821b3f5586e51fb9a3bc}{selected\+File\+Text}}
+\begin{DoxyCompactList}\small\item\em Display text for selected file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Selection state}\par
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_side_panel_a83298b36ec294e39ca0ff7c4285329c3}{selected\+Station\+Id}}
+\begin{DoxyCompactList}\small\item\em ID of the currently selected station. \end{DoxyCompactList}\item 
+wx\+String \mbox{\hyperlink{class_side_panel_a4cd4e657afe9de55b7a9336208ec43ae}{selected\+Station\+Name}}
+\begin{DoxyCompactList}\small\item\em Name of the currently selected station. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_side_panel_a13a858f4af67d6a4af18170c502baefe}{selected\+Sensor\+Id}}
+\begin{DoxyCompactList}\small\item\em ID of the currently selected sensor. \end{DoxyCompactList}\item 
+wx\+String \mbox{\hyperlink{class_side_panel_a01c4978abe60d650704d0e9ecb377c22}{selected\+Sensor\+Param\+Name}}
+\begin{DoxyCompactList}\small\item\em Parameter name of the currently selected sensor. \end{DoxyCompactList}\item 
+wx\+String \mbox{\hyperlink{class_side_panel_a36638731096fc58128a86830ff861d5c}{selected\+File\+Name}}
+\begin{DoxyCompactList}\small\item\em Name of the currently selected data file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Panel references}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_info_panel}{Info\+Panel}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_side_panel_ad07bb916a741273a1d80c09d0d727524}{info\+Panel}}
+\begin{DoxyCompactList}\small\item\em Reference to the information panel. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_chart_panel}{Chart\+Panel}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_side_panel_a77404fe8300b1ce9d654f2dc3e923870}{chart\+Panel}}
+\begin{DoxyCompactList}\small\item\em Reference to the chart panel. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Constants}\par
+\begin{DoxyCompactItemize}
+\item 
+const std\+::string \mbox{\hyperlink{class_side_panel_a9206fc905c039bdea90d4276173e661b}{STATIONS\+\_\+\+API\+\_\+\+URL}} = "{}http\+://api.\+gios.\+gov.\+pl/pjp-\/api/rest/station/find\+All"{}
+\begin{DoxyCompactList}\small\item\em API endpoint for all stations. \end{DoxyCompactList}\item 
+const std\+::string \mbox{\hyperlink{class_side_panel_af53a064ba327c7dc0aa2dee75bd98de4}{SENSORS\+\_\+\+API\+\_\+\+URL}} = "{}http\+://api.\+gios.\+gov.\+pl/pjp-\/api/rest/station/sensors/"{}
+\begin{DoxyCompactList}\small\item\em API endpoint prefix for station sensors. \end{DoxyCompactList}\item 
+const std\+::string \mbox{\hyperlink{class_side_panel_aa325e71ef93ab32e2d5ef3f6c2cf77f2}{SENSOR\+\_\+\+API\+\_\+\+URL}} = "{}http\+://api.\+gios.\+gov.\+pl/pjp-\/api/rest/data/get\+Data/"{}
+\begin{DoxyCompactList}\small\item\em API endpoint prefix for sensor data. \end{DoxyCompactList}\item 
+const std\+::string \mbox{\hyperlink{class_side_panel_af2076a7ea56bf756d4561a00d3a7a2f8}{DATABASE\+\_\+\+DIRECTORRY}} = "{}measurements"{}
+\begin{DoxyCompactList}\small\item\em Base directory for measurements data. \end{DoxyCompactList}\item 
+const std\+::string \mbox{\hyperlink{class_side_panel_af1fece9fa813c4f41aa2c066844c01aa}{DATABASE\+\_\+\+STATIONS}} = \mbox{\hyperlink{class_side_panel_af2076a7ea56bf756d4561a00d3a7a2f8}{DATABASE\+\_\+\+DIRECTORRY}} + "{}/stations.\+json"{}
+\begin{DoxyCompactList}\small\item\em Path to the stations database file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\doxysubsection{Detailed Description}
+Panel containing controls for station, sensor, and file selection. 
+
+This panel provides the user interface for selecting monitoring stations, sensors, and data files. It also manages the downloading and processing of sensor data through API calls. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_side_panel_a59c59232b2f6429074af7491737de164}\index{SidePanel@{SidePanel}!SidePanel@{SidePanel}}
+\index{SidePanel@{SidePanel}!SidePanel@{SidePanel}}
+\doxysubsubsection{\texorpdfstring{SidePanel()}{SidePanel()}}
+{\footnotesize\ttfamily \label{class_side_panel_a59c59232b2f6429074af7491737de164} 
+Side\+Panel\+::\+Side\+Panel (\begin{DoxyParamCaption}\item[{wx\+Window \texorpdfstring{$\ast$}{*}}]{parent}{}\end{DoxyParamCaption})}
+
+
+
+Constructor for the \doxylink{class_side_panel}{Side\+Panel}. 
+
+Constructor that initializes the side panel with default settings and UI elements.
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & The parent window\\
+\hline
+{\em parent} & The parent window that will contain this panel\\
+\hline
+\end{DoxyParams}
+Creates the panel with a fixed width of 350px and a height of 800px. Sets a light gray background color and initializes all UI elements and selection state variables. Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_side_panel_a59c59232b2f6429074af7491737de164_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_side_panel_a88e71582eb561d8a3d79a3d3122a3bf0}\index{SidePanel@{SidePanel}!BindEvents@{BindEvents}}
+\index{BindEvents@{BindEvents}!SidePanel@{SidePanel}}
+\doxysubsubsection{\texorpdfstring{BindEvents()}{BindEvents()}}
+{\footnotesize\ttfamily \label{class_side_panel_a88e71582eb561d8a3d79a3d3122a3bf0} 
+void Side\+Panel\+::\+Bind\+Events (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Binds event handlers to UI components. 
+
+Connects button events to their handler functions.
+
+Binds each button\textquotesingle{}s click event to the appropriate handler method to respond when the user interacts with the UI. Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_side_panel_a88e71582eb561d8a3d79a3d3122a3bf0_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=343pt]{class_side_panel_a88e71582eb561d8a3d79a3d3122a3bf0_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_side_panel_a806ca5efc5c8b7e37a8aca3cf2fc6010}\index{SidePanel@{SidePanel}!CheckForDownloadedData@{CheckForDownloadedData}}
+\index{CheckForDownloadedData@{CheckForDownloadedData}!SidePanel@{SidePanel}}
+\doxysubsubsection{\texorpdfstring{CheckForDownloadedData()}{CheckForDownloadedData()}}
+{\footnotesize\ttfamily \label{class_side_panel_a806ca5efc5c8b7e37a8aca3cf2fc6010} 
+bool Side\+Panel\+::\+Check\+For\+Downloaded\+Data (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Checks if downloaded data is available. 
+
+Verifies that downloaded data exists before trying to access it.
+
+\begin{DoxyReturn}{Returns}
+true if data is available, false otherwise
+
+true if data is available, false otherwise
+\end{DoxyReturn}
+Checks if the data directory exists and displays a message if no data is found. Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_side_panel_a806ca5efc5c8b7e37a8aca3cf2fc6010_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_side_panel_a4cfc93c7d7f9da39ff5b6efb963c838f}\index{SidePanel@{SidePanel}!ConnectToPanels@{ConnectToPanels}}
+\index{ConnectToPanels@{ConnectToPanels}!SidePanel@{SidePanel}}
+\doxysubsubsection{\texorpdfstring{ConnectToPanels()}{ConnectToPanels()}}
+{\footnotesize\ttfamily \label{class_side_panel_a4cfc93c7d7f9da39ff5b6efb963c838f} 
+void Side\+Panel\+::\+Connect\+To\+Panels (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_info_panel}{Info\+Panel}} \texorpdfstring{$\ast$}{*}}]{info}{, }\item[{\mbox{\hyperlink{class_chart_panel}{Chart\+Panel}} \texorpdfstring{$\ast$}{*}}]{chart}{}\end{DoxyParamCaption})}
+
+
+
+Connects this panel to the info and chart panels. 
+
+Connects this side panel to other panels for data communication.
+
+
+\begin{DoxyParams}{Parameters}
+{\em info} & Pointer to the \doxylink{class_info_panel}{Info\+Panel} instance \\
+\hline
+{\em chart} & Pointer to the \doxylink{class_chart_panel}{Chart\+Panel} instance\\
+\hline
+{\em info} & Pointer to the \doxylink{class_info_panel}{Info\+Panel} instance that displays textual information \\
+\hline
+{\em chart} & Pointer to the \doxylink{class_chart_panel}{Chart\+Panel} instance that displays graphical data\\
+\hline
+\end{DoxyParams}
+This method must be called after panel creation to establish communication channels between this panel and the information/chart display panels. Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_side_panel_a4cfc93c7d7f9da39ff5b6efb963c838f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_side_panel_a1e35e96cbbed4b2d36532adf205e99e9}\index{SidePanel@{SidePanel}!DownloadAllSensorsData@{DownloadAllSensorsData}}
+\index{DownloadAllSensorsData@{DownloadAllSensorsData}!SidePanel@{SidePanel}}
+\doxysubsubsection{\texorpdfstring{DownloadAllSensorsData()}{DownloadAllSensorsData()}}
+{\footnotesize\ttfamily \label{class_side_panel_a1e35e96cbbed4b2d36532adf205e99e9} 
+void Side\+Panel\+::\+Download\+All\+Sensors\+Data (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{STATION\+\_\+\+DIRECTORY}{, }\item[{const Json\+::\+Value \&}]{sensors}{, }\item[{std\+::vector$<$ std\+::string $>$ \&}]{failed\+Sensors}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Downloads data for all sensors. 
+
+Starts parallel downloads for all sensors in the station.
+
+
+\begin{DoxyParams}{Parameters}
+{\em STATION\+\_\+\+DIRECTORY} & Directory for the station data \\
+\hline
+{\em sensors} & JSON value containing sensor information \\
+\hline
+{\em failed\+Sensors} & Vector to store IDs of sensors that failed to download\\
+\hline
+{\em STATION\+\_\+\+DIRECTORY} & Directory path for the station data \\
+\hline
+{\em sensors} & JSON value containing the sensors data \\
+\hline
+{\em failed\+Sensors} & Vector to record failed sensor IDs\\
+\hline
+\end{DoxyParams}
+Creates and manages threads to download data for all sensors in parallel, improving the download performance by utilizing multiple connections. Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_side_panel_a1e35e96cbbed4b2d36532adf205e99e9_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_side_panel_a1e35e96cbbed4b2d36532adf205e99e9_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_side_panel_ac63b6cf557796685317d3439ce8d5aef}\index{SidePanel@{SidePanel}!DownloadSensorData@{DownloadSensorData}}
+\index{DownloadSensorData@{DownloadSensorData}!SidePanel@{SidePanel}}
+\doxysubsubsection{\texorpdfstring{DownloadSensorData()}{DownloadSensorData()}}
+{\footnotesize\ttfamily \label{class_side_panel_ac63b6cf557796685317d3439ce8d5aef} 
+bool Side\+Panel\+::\+Download\+Sensor\+Data (\begin{DoxyParamCaption}\item[{int}]{sensor\+Id}{, }\item[{const std\+::string \&}]{STATION\+\_\+\+DIRECTORY}{, }\item[{std\+::vector$<$ std\+::string $>$ \&}]{failed\+Sensors}{, }\item[{std\+::mutex \&}]{mutex}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Downloads data for a specific sensor. 
+
+Downloads data for a specific sensor and records any failures.
+
+
+\begin{DoxyParams}{Parameters}
+{\em sensor\+Id} & ID of the sensor \\
+\hline
+{\em STATION\+\_\+\+DIRECTORY} & Directory for the station data \\
+\hline
+{\em failed\+Sensors} & Vector to store IDs of sensors that failed to download \\
+\hline
+{\em mutex} & Mutex for thread synchronization \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if download was successful, false otherwise
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em sensor\+Id} & ID of the sensor to download data for \\
+\hline
+{\em STATION\+\_\+\+DIRECTORY} & Directory path for the station data \\
+\hline
+{\em failed\+Sensors} & Vector to record failed sensor IDs \\
+\hline
+{\em mutex} & Mutex for thread-\/safe access to the failed\+Sensors vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if download succeeds, false otherwise
+\end{DoxyReturn}
+Creates the directory for the sensor data and attempts to download the data. If the download fails, the sensor ID is added to the failed\+Sensors vector. Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_side_panel_ac63b6cf557796685317d3439ce8d5aef_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_side_panel_ac63b6cf557796685317d3439ce8d5aef_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_side_panel_aea36bfda2a4231651e4f095f739078d1}\index{SidePanel@{SidePanel}!EnsureSelectedSensorData@{EnsureSelectedSensorData}}
+\index{EnsureSelectedSensorData@{EnsureSelectedSensorData}!SidePanel@{SidePanel}}
+\doxysubsubsection{\texorpdfstring{EnsureSelectedSensorData()}{EnsureSelectedSensorData()}}
+{\footnotesize\ttfamily \label{class_side_panel_aea36bfda2a4231651e4f095f739078d1} 
+void Side\+Panel\+::\+Ensure\+Selected\+Sensor\+Data (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{STATION\+\_\+\+DIRECTORY}{, }\item[{const std\+::vector$<$ std\+::string $>$ \&}]{failed\+Sensors}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Ensures the selected sensor data is available. 
+
+Makes sure data for the selected sensor is available, retrying download if needed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em STATION\+\_\+\+DIRECTORY} & Directory for the station data \\
+\hline
+{\em failed\+Sensors} & Vector containing IDs of sensors that failed to download\\
+\hline
+{\em STATION\+\_\+\+DIRECTORY} & Directory path for the station data \\
+\hline
+{\em failed\+Sensors} & Vector containing IDs of sensors that failed to download\\
+\hline
+\end{DoxyParams}
+If the selected sensor\textquotesingle{}s data download failed, attempts to download it again to ensure that the user can proceed with the selected sensor. Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_side_panel_aea36bfda2a4231651e4f095f739078d1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_side_panel_aea36bfda2a4231651e4f095f739078d1_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_side_panel_a6fd78ed8a429dd762f970d2d91b85d25}\index{SidePanel@{SidePanel}!FilterItemsByExistingDirectories@{FilterItemsByExistingDirectories}}
+\index{FilterItemsByExistingDirectories@{FilterItemsByExistingDirectories}!SidePanel@{SidePanel}}
+\doxysubsubsection{\texorpdfstring{FilterItemsByExistingDirectories()}{FilterItemsByExistingDirectories()}}
+{\footnotesize\ttfamily \label{class_side_panel_a6fd78ed8a429dd762f970d2d91b85d25} 
+Json\+::\+Value Side\+Panel\+::\+Filter\+Items\+By\+Existing\+Directories (\begin{DoxyParamCaption}\item[{const Json\+::\+Value \&}]{all\+Items}{, }\item[{const std\+::vector$<$ int $>$ \&}]{dir\+Ids}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Filters JSON items by existing directory IDs. 
+
+Filters a list of items to only include those with existing directories.
+
+
+\begin{DoxyParams}{Parameters}
+{\em all\+Items} & JSON value containing all items \\
+\hline
+{\em dir\+Ids} & Vector of directory IDs \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Filtered JSON value
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em all\+Items} & JSON value containing all items \\
+\hline
+{\em dir\+Ids} & Vector of directory IDs \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Filtered JSON value containing only items with existing directories
+\end{DoxyReturn}
+Creates a filtered list of items (stations or sensors) that have corresponding directories in the file system, ensuring that only items with data are shown. Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_side_panel_a6fd78ed8a429dd762f970d2d91b85d25_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_side_panel_a078a7b9380c48c56550a703042d15c2e}\index{SidePanel@{SidePanel}!GetNumericDirectories@{GetNumericDirectories}}
+\index{GetNumericDirectories@{GetNumericDirectories}!SidePanel@{SidePanel}}
+\doxysubsubsection{\texorpdfstring{GetNumericDirectories()}{GetNumericDirectories()}}
+{\footnotesize\ttfamily \label{class_side_panel_a078a7b9380c48c56550a703042d15c2e} 
+std\+::vector$<$ int $>$ Side\+Panel\+::\+Get\+Numeric\+Directories (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{directory}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Gets a list of numeric directories in the specified path. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em directory} & Path to search for numeric directories \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector of directory IDs as integers
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em directory} & Path to search for numeric directories \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector of directory IDs as integers
+\end{DoxyReturn}
+Scans the specified directory for subdirectories with numeric names, which represent station or sensor IDs in the application\textquotesingle{}s file structure. Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_side_panel_a078a7b9380c48c56550a703042d15c2e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_side_panel_a920e04991a93a73bd552e0ec5f4c9de7}\index{SidePanel@{SidePanel}!InitializeSensorDatabase@{InitializeSensorDatabase}}
+\index{InitializeSensorDatabase@{InitializeSensorDatabase}!SidePanel@{SidePanel}}
+\doxysubsubsection{\texorpdfstring{InitializeSensorDatabase()}{InitializeSensorDatabase()}}
+{\footnotesize\ttfamily \label{class_side_panel_a920e04991a93a73bd552e0ec5f4c9de7} 
+bool Side\+Panel\+::\+Initialize\+Sensor\+Database (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{STATION\+\_\+\+DIRECTORY}{, }\item[{const std\+::string \&}]{database\+Path}{, }\item[{const std\+::string \&}]{api\+Url}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Initializes the sensor database. 
+
+Creates the sensor database directory and downloads sensor data if needed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em STATION\+\_\+\+DIRECTORY} & Directory for the station data \\
+\hline
+{\em database\+Path} & Path to the database file \\
+\hline
+{\em api\+Url} & URL for the API endpoint \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if initialization was successful, false otherwise
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em STATION\+\_\+\+DIRECTORY} & Directory path for the station data \\
+\hline
+{\em database\+Path} & Path to the sensor database file \\
+\hline
+{\em api\+Url} & URL for the API endpoint to download sensor data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if initialization succeeds, false otherwise
+\end{DoxyReturn}
+Creates the directory structure for sensor data and downloads the sensors list if it doesn\textquotesingle{}t exist locally. Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_side_panel_a920e04991a93a73bd552e0ec5f4c9de7_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_side_panel_a920e04991a93a73bd552e0ec5f4c9de7_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_side_panel_a10d70023343f82fd48c9c8c04ee4bf74}\index{SidePanel@{SidePanel}!InitializeUI@{InitializeUI}}
+\index{InitializeUI@{InitializeUI}!SidePanel@{SidePanel}}
+\doxysubsubsection{\texorpdfstring{InitializeUI()}{InitializeUI()}}
+{\footnotesize\ttfamily \label{class_side_panel_a10d70023343f82fd48c9c8c04ee4bf74} 
+void Side\+Panel\+::\+Initialize\+UI (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Initializes all UI components. 
+
+Creates and arranges all UI elements including buttons and status text displays.
+
+Sets up the vertical layout with buttons for station selection, sensor selection, data file selection, and data viewing. Also creates status text labels to display the currently selected items. Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{class_side_panel_a10d70023343f82fd48c9c8c04ee4bf74_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_side_panel_a94d1d4ebb8acdd782724a69f9dc62249}\index{SidePanel@{SidePanel}!LoadSensorsData@{LoadSensorsData}}
+\index{LoadSensorsData@{LoadSensorsData}!SidePanel@{SidePanel}}
+\doxysubsubsection{\texorpdfstring{LoadSensorsData()}{LoadSensorsData()}}
+{\footnotesize\ttfamily \label{class_side_panel_a94d1d4ebb8acdd782724a69f9dc62249} 
+bool Side\+Panel\+::\+Load\+Sensors\+Data (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{database\+Path}{, }\item[{Json\+::\+Value \&}]{sensors}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Loads sensor data from the database. 
+
+Loads sensor data from JSON file into the provided object.
+
+
+\begin{DoxyParams}{Parameters}
+{\em database\+Path} & Path to the database file \\
+\hline
+{\em sensors} & JSON value to store the loaded sensor data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if data was successfully loaded, false otherwise
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em database\+Path} & Path to the sensor database file \\
+\hline
+{\em sensors} & JSON value to load the data into \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if data was successfully loaded, false otherwise
+\end{DoxyReturn}
+Attempts to load and parse the sensor database file, displaying an error message if the operation fails. Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_side_panel_a94d1d4ebb8acdd782724a69f9dc62249_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_side_panel_a94d1d4ebb8acdd782724a69f9dc62249_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_side_panel_a9611a48ab1140b6cec16b7242245e51f}\index{SidePanel@{SidePanel}!OnChooseSensor@{OnChooseSensor}}
+\index{OnChooseSensor@{OnChooseSensor}!SidePanel@{SidePanel}}
+\doxysubsubsection{\texorpdfstring{OnChooseSensor()}{OnChooseSensor()}}
+{\footnotesize\ttfamily \label{class_side_panel_a9611a48ab1140b6cec16b7242245e51f} 
+void Side\+Panel\+::\+On\+Choose\+Sensor (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Handles the "{}\+Choose Sensor"{} button click. 
+
+Handles sensor selection by downloading sensor data and showing selection dialog.
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & The button click event\\
+\hline
+{\em event} & The button click event (unused)\\
+\hline
+\end{DoxyParams}
+This method\+:
+\begin{DoxyEnumerate}
+\item Checks if a station is selected
+\item Downloads the sensor list for the station if it doesn\textquotesingle{}t exist locally
+\item Starts parallel downloads for all sensor data
+\item Opens a dialog for the user to select a sensor
+\item Updates the selection state and display when a sensor is selected
+\item Reports any download failures and ensures the selected sensor\textquotesingle{}s data is available 
+\end{DoxyEnumerate}Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_side_panel_a9611a48ab1140b6cec16b7242245e51f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_side_panel_a9611a48ab1140b6cec16b7242245e51f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_side_panel_acc1207b950f645b43dd39d0486711587}\index{SidePanel@{SidePanel}!OnChoseStation@{OnChoseStation}}
+\index{OnChoseStation@{OnChoseStation}!SidePanel@{SidePanel}}
+\doxysubsubsection{\texorpdfstring{OnChoseStation()}{OnChoseStation()}}
+{\footnotesize\ttfamily \label{class_side_panel_acc1207b950f645b43dd39d0486711587} 
+void Side\+Panel\+::\+On\+Chose\+Station (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Handles the "{}\+Choose Station"{} button click. 
+
+Handles station selection by downloading station data if needed and showing selection dialog.
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & The button click event\\
+\hline
+{\em event} & The button click event (unused)\\
+\hline
+\end{DoxyParams}
+This method\+:
+\begin{DoxyEnumerate}
+\item Ensures the data directory exists
+\item Downloads the station list from the API if it doesn\textquotesingle{}t exist locally
+\item Opens a dialog for the user to select a station
+\item Updates the selection state and display when a station is selected
+\item Resets the sensor selection since it\textquotesingle{}s no longer valid 
+\end{DoxyEnumerate}Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_side_panel_acc1207b950f645b43dd39d0486711587_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_side_panel_acc1207b950f645b43dd39d0486711587_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_side_panel_a04d8efdd1526e3d19ac6818ebe5094e7}\index{SidePanel@{SidePanel}!OnShowDataFiles@{OnShowDataFiles}}
+\index{OnShowDataFiles@{OnShowDataFiles}!SidePanel@{SidePanel}}
+\doxysubsubsection{\texorpdfstring{OnShowDataFiles()}{OnShowDataFiles()}}
+{\footnotesize\ttfamily \label{class_side_panel_a04d8efdd1526e3d19ac6818ebe5094e7} 
+void Side\+Panel\+::\+On\+Show\+Data\+Files (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Handles the "{}\+Show Data Files"{} button click. 
+
+Handles selecting data files for the currently selected sensor.
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & The button click event\\
+\hline
+{\em event} & The button click event (unused)\\
+\hline
+\end{DoxyParams}
+This method\+:
+\begin{DoxyEnumerate}
+\item Checks if a sensor is selected
+\item Verifies that data files exist for the selected sensor
+\item Opens a dialog for the user to select a data file
+\item Updates the selection state and display when a file is selected
+\item Processes the selected file and updates the info and chart panels 
+\end{DoxyEnumerate}Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_side_panel_a04d8efdd1526e3d19ac6818ebe5094e7_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_side_panel_a04d8efdd1526e3d19ac6818ebe5094e7_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_side_panel_ab30d1e67ae65f13f47c578b22ee5cbc9}\index{SidePanel@{SidePanel}!OnViewStoredData@{OnViewStoredData}}
+\index{OnViewStoredData@{OnViewStoredData}!SidePanel@{SidePanel}}
+\doxysubsubsection{\texorpdfstring{OnViewStoredData()}{OnViewStoredData()}}
+{\footnotesize\ttfamily \label{class_side_panel_ab30d1e67ae65f13f47c578b22ee5cbc9} 
+void Side\+Panel\+::\+On\+View\+Stored\+Data (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Handles the "{}\+View Stored Data"{} button click. 
+
+Provides a workflow for viewing stored data by selecting station, sensor, and file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & The button click event\\
+\hline
+{\em event} & The button click event (passed to On\+Show\+Data\+Files)\\
+\hline
+\end{DoxyParams}
+This method creates a guided workflow for the user\+:
+\begin{DoxyEnumerate}
+\item Checks if any data exists
+\item Finds stations that have downloaded data
+\item Presents a station selection dialog
+\item After station selection, presents a sensor selection dialog
+\item After sensor selection, shows the data file selection dialog 
+\end{DoxyEnumerate}Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_side_panel_ab30d1e67ae65f13f47c578b22ee5cbc9_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_side_panel_ab30d1e67ae65f13f47c578b22ee5cbc9_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_side_panel_a64ce4e4f8cd027604a861f850b70de09}\index{SidePanel@{SidePanel}!ReportFailedDownloads@{ReportFailedDownloads}}
+\index{ReportFailedDownloads@{ReportFailedDownloads}!SidePanel@{SidePanel}}
+\doxysubsubsection{\texorpdfstring{ReportFailedDownloads()}{ReportFailedDownloads()}}
+{\footnotesize\ttfamily \label{class_side_panel_a64ce4e4f8cd027604a861f850b70de09} 
+void Side\+Panel\+::\+Report\+Failed\+Downloads (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{failed\+Sensors}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Reports sensors that failed to download. 
+
+Shows a message box listing any sensors that failed to download.
+
+
+\begin{DoxyParams}{Parameters}
+{\em failed\+Sensors} & Vector containing IDs of sensors that failed to download\\
+\hline
+{\em failed\+Sensors} & Vector containing IDs of sensors that failed to download\\
+\hline
+\end{DoxyParams}
+If any sensors failed to download, displays a warning message with the list of sensor IDs that could not be downloaded. Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_side_panel_a64ce4e4f8cd027604a861f850b70de09_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_side_panel_aca16abb2598a09dc2cb0e509ac2ccf1c}\index{SidePanel@{SidePanel}!SelectSensor@{SelectSensor}}
+\index{SelectSensor@{SelectSensor}!SidePanel@{SidePanel}}
+\doxysubsubsection{\texorpdfstring{SelectSensor()}{SelectSensor()}}
+{\footnotesize\ttfamily \label{class_side_panel_aca16abb2598a09dc2cb0e509ac2ccf1c} 
+bool Side\+Panel\+::\+Select\+Sensor (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Prompts the user to select a sensor. 
+
+Shows a dialog for selecting a sensor from the filtered list and updates the selection state.
+
+\begin{DoxyReturn}{Returns}
+true if a sensor was selected, false otherwise
+
+true if a sensor was selected, false otherwise
+\end{DoxyReturn}
+Finds sensors with data for the selected station, filters the list, and shows a dialog for the user to select a sensor. Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_side_panel_aca16abb2598a09dc2cb0e509ac2ccf1c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_side_panel_aca16abb2598a09dc2cb0e509ac2ccf1c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_side_panel_ae67c71d129ba553da7212c85441c56d1}\index{SidePanel@{SidePanel}!SelectStation@{SelectStation}}
+\index{SelectStation@{SelectStation}!SidePanel@{SidePanel}}
+\doxysubsubsection{\texorpdfstring{SelectStation()}{SelectStation()}}
+{\footnotesize\ttfamily \label{class_side_panel_ae67c71d129ba553da7212c85441c56d1} 
+bool Side\+Panel\+::\+Select\+Station (\begin{DoxyParamCaption}\item[{Json\+::\+Value \&}]{filtered\+Stations}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Prompts the user to select a station. 
+
+Shows a dialog for selecting a station and updates the selection state.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filtered\+Stations} & JSON value containing filtered station data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if a station was selected, false otherwise
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em filtered\+Stations} & JSON value containing filtered station data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if a station was selected, false otherwise
+\end{DoxyReturn}
+Opens a dialog showing available stations with data and updates the selection state if the user selects a station. Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_side_panel_ae67c71d129ba553da7212c85441c56d1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_side_panel_ae67c71d129ba553da7212c85441c56d1_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_side_panel_af64945eecdaa255c963bd8b6fb941eab}\index{SidePanel@{SidePanel}!UpdateSelectedFileDisplay@{UpdateSelectedFileDisplay}}
+\index{UpdateSelectedFileDisplay@{UpdateSelectedFileDisplay}!SidePanel@{SidePanel}}
+\doxysubsubsection{\texorpdfstring{UpdateSelectedFileDisplay()}{UpdateSelectedFileDisplay()}}
+{\footnotesize\ttfamily \label{class_side_panel_af64945eecdaa255c963bd8b6fb941eab} 
+void Side\+Panel\+::\+Update\+Selected\+File\+Display (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Updates the selected file display text. 
+
+Updates the display text showing the currently selected data file.
+
+Changes the label of the file status text to show the name of the currently selected data file, or "{}\+No file selected"{} if none is selected. Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_side_panel_af64945eecdaa255c963bd8b6fb941eab_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_side_panel_a51518c4623d1cb91c5fbc146d7b3ef71}\index{SidePanel@{SidePanel}!UpdateSelectedSensorDisplay@{UpdateSelectedSensorDisplay}}
+\index{UpdateSelectedSensorDisplay@{UpdateSelectedSensorDisplay}!SidePanel@{SidePanel}}
+\doxysubsubsection{\texorpdfstring{UpdateSelectedSensorDisplay()}{UpdateSelectedSensorDisplay()}}
+{\footnotesize\ttfamily \label{class_side_panel_a51518c4623d1cb91c5fbc146d7b3ef71} 
+void Side\+Panel\+::\+Update\+Selected\+Sensor\+Display (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Updates the selected sensor display text. 
+
+Updates the display text showing the currently selected sensor.
+
+Changes the label of the sensor status text to show the ID and parameter name of the currently selected sensor, or "{}\+No sensor selected"{} if none is selected. Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_side_panel_a51518c4623d1cb91c5fbc146d7b3ef71_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_side_panel_a1ea056aa76ef1305594e117d8d970875}\index{SidePanel@{SidePanel}!UpdateSelectedStationDisplay@{UpdateSelectedStationDisplay}}
+\index{UpdateSelectedStationDisplay@{UpdateSelectedStationDisplay}!SidePanel@{SidePanel}}
+\doxysubsubsection{\texorpdfstring{UpdateSelectedStationDisplay()}{UpdateSelectedStationDisplay()}}
+{\footnotesize\ttfamily \label{class_side_panel_a1ea056aa76ef1305594e117d8d970875} 
+void Side\+Panel\+::\+Update\+Selected\+Station\+Display (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Updates the selected station display text. 
+
+Updates the display text showing the currently selected station.
+
+Changes the label of the station status text to show the ID and name of the currently selected station, or "{}\+No station selected"{} if none is selected. Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_side_panel_a1ea056aa76ef1305594e117d8d970875_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_side_panel_ab75d6b2fccf141a4bb29b60a0b8e3bbe}\index{SidePanel@{SidePanel}!btn1@{btn1}}
+\index{btn1@{btn1}!SidePanel@{SidePanel}}
+\doxysubsubsection{\texorpdfstring{btn1}{btn1}}
+{\footnotesize\ttfamily \label{class_side_panel_ab75d6b2fccf141a4bb29b60a0b8e3bbe} 
+wx\+Button\texorpdfstring{$\ast$}{*} Side\+Panel\+::btn1\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Button for station selection. 
+
+\Hypertarget{class_side_panel_a6ae1ae5d777e05ab55c1d55d92a50e4f}\index{SidePanel@{SidePanel}!btn2@{btn2}}
+\index{btn2@{btn2}!SidePanel@{SidePanel}}
+\doxysubsubsection{\texorpdfstring{btn2}{btn2}}
+{\footnotesize\ttfamily \label{class_side_panel_a6ae1ae5d777e05ab55c1d55d92a50e4f} 
+wx\+Button\texorpdfstring{$\ast$}{*} Side\+Panel\+::btn2\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Button for sensor selection. 
+
+\Hypertarget{class_side_panel_ad2144732d669a93389bb16e5635308bf}\index{SidePanel@{SidePanel}!btn3@{btn3}}
+\index{btn3@{btn3}!SidePanel@{SidePanel}}
+\doxysubsubsection{\texorpdfstring{btn3}{btn3}}
+{\footnotesize\ttfamily \label{class_side_panel_ad2144732d669a93389bb16e5635308bf} 
+wx\+Button\texorpdfstring{$\ast$}{*} Side\+Panel\+::btn3\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Button for showing data files. 
+
+\Hypertarget{class_side_panel_aeebc55137ea47dc8244844f90be8dd93}\index{SidePanel@{SidePanel}!btn4@{btn4}}
+\index{btn4@{btn4}!SidePanel@{SidePanel}}
+\doxysubsubsection{\texorpdfstring{btn4}{btn4}}
+{\footnotesize\ttfamily \label{class_side_panel_aeebc55137ea47dc8244844f90be8dd93} 
+wx\+Button\texorpdfstring{$\ast$}{*} Side\+Panel\+::btn4\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Button for viewing stored data. 
+
+\Hypertarget{class_side_panel_a77404fe8300b1ce9d654f2dc3e923870}\index{SidePanel@{SidePanel}!chartPanel@{chartPanel}}
+\index{chartPanel@{chartPanel}!SidePanel@{SidePanel}}
+\doxysubsubsection{\texorpdfstring{chartPanel}{chartPanel}}
+{\footnotesize\ttfamily \label{class_side_panel_a77404fe8300b1ce9d654f2dc3e923870} 
+\mbox{\hyperlink{class_chart_panel}{Chart\+Panel}}\texorpdfstring{$\ast$}{*} Side\+Panel\+::chart\+Panel\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Reference to the chart panel. 
+
+\Hypertarget{class_side_panel_af2076a7ea56bf756d4561a00d3a7a2f8}\index{SidePanel@{SidePanel}!DATABASE\_DIRECTORRY@{DATABASE\_DIRECTORRY}}
+\index{DATABASE\_DIRECTORRY@{DATABASE\_DIRECTORRY}!SidePanel@{SidePanel}}
+\doxysubsubsection{\texorpdfstring{DATABASE\_DIRECTORRY}{DATABASE\_DIRECTORRY}}
+{\footnotesize\ttfamily \label{class_side_panel_af2076a7ea56bf756d4561a00d3a7a2f8} 
+const std\+::string Side\+Panel\+::\+DATABASE\+\_\+\+DIRECTORRY = "{}measurements"{}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Base directory for measurements data. 
+
+\Hypertarget{class_side_panel_af1fece9fa813c4f41aa2c066844c01aa}\index{SidePanel@{SidePanel}!DATABASE\_STATIONS@{DATABASE\_STATIONS}}
+\index{DATABASE\_STATIONS@{DATABASE\_STATIONS}!SidePanel@{SidePanel}}
+\doxysubsubsection{\texorpdfstring{DATABASE\_STATIONS}{DATABASE\_STATIONS}}
+{\footnotesize\ttfamily \label{class_side_panel_af1fece9fa813c4f41aa2c066844c01aa} 
+const std\+::string Side\+Panel\+::\+DATABASE\+\_\+\+STATIONS = \mbox{\hyperlink{class_side_panel_af2076a7ea56bf756d4561a00d3a7a2f8}{DATABASE\+\_\+\+DIRECTORRY}} + "{}/stations.\+json"{}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Path to the stations database file. 
+
+\Hypertarget{class_side_panel_ad07bb916a741273a1d80c09d0d727524}\index{SidePanel@{SidePanel}!infoPanel@{infoPanel}}
+\index{infoPanel@{infoPanel}!SidePanel@{SidePanel}}
+\doxysubsubsection{\texorpdfstring{infoPanel}{infoPanel}}
+{\footnotesize\ttfamily \label{class_side_panel_ad07bb916a741273a1d80c09d0d727524} 
+\mbox{\hyperlink{class_info_panel}{Info\+Panel}}\texorpdfstring{$\ast$}{*} Side\+Panel\+::info\+Panel\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Reference to the information panel. 
+
+\Hypertarget{class_side_panel_a36638731096fc58128a86830ff861d5c}\index{SidePanel@{SidePanel}!selectedFileName@{selectedFileName}}
+\index{selectedFileName@{selectedFileName}!SidePanel@{SidePanel}}
+\doxysubsubsection{\texorpdfstring{selectedFileName}{selectedFileName}}
+{\footnotesize\ttfamily \label{class_side_panel_a36638731096fc58128a86830ff861d5c} 
+wx\+String Side\+Panel\+::selected\+File\+Name\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Name of the currently selected data file. 
+
+\Hypertarget{class_side_panel_a4208f006b8b9821b3f5586e51fb9a3bc}\index{SidePanel@{SidePanel}!selectedFileText@{selectedFileText}}
+\index{selectedFileText@{selectedFileText}!SidePanel@{SidePanel}}
+\doxysubsubsection{\texorpdfstring{selectedFileText}{selectedFileText}}
+{\footnotesize\ttfamily \label{class_side_panel_a4208f006b8b9821b3f5586e51fb9a3bc} 
+wx\+Static\+Text\texorpdfstring{$\ast$}{*} Side\+Panel\+::selected\+File\+Text\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Display text for selected file. 
+
+\Hypertarget{class_side_panel_a13a858f4af67d6a4af18170c502baefe}\index{SidePanel@{SidePanel}!selectedSensorId@{selectedSensorId}}
+\index{selectedSensorId@{selectedSensorId}!SidePanel@{SidePanel}}
+\doxysubsubsection{\texorpdfstring{selectedSensorId}{selectedSensorId}}
+{\footnotesize\ttfamily \label{class_side_panel_a13a858f4af67d6a4af18170c502baefe} 
+int Side\+Panel\+::selected\+Sensor\+Id\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+ID of the currently selected sensor. 
+
+\Hypertarget{class_side_panel_a01c4978abe60d650704d0e9ecb377c22}\index{SidePanel@{SidePanel}!selectedSensorParamName@{selectedSensorParamName}}
+\index{selectedSensorParamName@{selectedSensorParamName}!SidePanel@{SidePanel}}
+\doxysubsubsection{\texorpdfstring{selectedSensorParamName}{selectedSensorParamName}}
+{\footnotesize\ttfamily \label{class_side_panel_a01c4978abe60d650704d0e9ecb377c22} 
+wx\+String Side\+Panel\+::selected\+Sensor\+Param\+Name\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Parameter name of the currently selected sensor. 
+
+\Hypertarget{class_side_panel_ac85240294d0db3052c7d4702cbf7c6ce}\index{SidePanel@{SidePanel}!selectedSensorText@{selectedSensorText}}
+\index{selectedSensorText@{selectedSensorText}!SidePanel@{SidePanel}}
+\doxysubsubsection{\texorpdfstring{selectedSensorText}{selectedSensorText}}
+{\footnotesize\ttfamily \label{class_side_panel_ac85240294d0db3052c7d4702cbf7c6ce} 
+wx\+Static\+Text\texorpdfstring{$\ast$}{*} Side\+Panel\+::selected\+Sensor\+Text\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Display text for selected sensor. 
+
+\Hypertarget{class_side_panel_a83298b36ec294e39ca0ff7c4285329c3}\index{SidePanel@{SidePanel}!selectedStationId@{selectedStationId}}
+\index{selectedStationId@{selectedStationId}!SidePanel@{SidePanel}}
+\doxysubsubsection{\texorpdfstring{selectedStationId}{selectedStationId}}
+{\footnotesize\ttfamily \label{class_side_panel_a83298b36ec294e39ca0ff7c4285329c3} 
+int Side\+Panel\+::selected\+Station\+Id\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+ID of the currently selected station. 
+
+\Hypertarget{class_side_panel_a4cd4e657afe9de55b7a9336208ec43ae}\index{SidePanel@{SidePanel}!selectedStationName@{selectedStationName}}
+\index{selectedStationName@{selectedStationName}!SidePanel@{SidePanel}}
+\doxysubsubsection{\texorpdfstring{selectedStationName}{selectedStationName}}
+{\footnotesize\ttfamily \label{class_side_panel_a4cd4e657afe9de55b7a9336208ec43ae} 
+wx\+String Side\+Panel\+::selected\+Station\+Name\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Name of the currently selected station. 
+
+\Hypertarget{class_side_panel_ad9c912525eee37472a73960254d07c7b}\index{SidePanel@{SidePanel}!selectedStationText@{selectedStationText}}
+\index{selectedStationText@{selectedStationText}!SidePanel@{SidePanel}}
+\doxysubsubsection{\texorpdfstring{selectedStationText}{selectedStationText}}
+{\footnotesize\ttfamily \label{class_side_panel_ad9c912525eee37472a73960254d07c7b} 
+wx\+Static\+Text\texorpdfstring{$\ast$}{*} Side\+Panel\+::selected\+Station\+Text\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Display text for selected station. 
+
+\Hypertarget{class_side_panel_aa325e71ef93ab32e2d5ef3f6c2cf77f2}\index{SidePanel@{SidePanel}!SENSOR\_API\_URL@{SENSOR\_API\_URL}}
+\index{SENSOR\_API\_URL@{SENSOR\_API\_URL}!SidePanel@{SidePanel}}
+\doxysubsubsection{\texorpdfstring{SENSOR\_API\_URL}{SENSOR\_API\_URL}}
+{\footnotesize\ttfamily \label{class_side_panel_aa325e71ef93ab32e2d5ef3f6c2cf77f2} 
+const std\+::string Side\+Panel\+::\+SENSOR\+\_\+\+API\+\_\+\+URL = "{}http\+://api.\+gios.\+gov.\+pl/pjp-\/api/rest/data/get\+Data/"{}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+API endpoint prefix for sensor data. 
+
+\Hypertarget{class_side_panel_af53a064ba327c7dc0aa2dee75bd98de4}\index{SidePanel@{SidePanel}!SENSORS\_API\_URL@{SENSORS\_API\_URL}}
+\index{SENSORS\_API\_URL@{SENSORS\_API\_URL}!SidePanel@{SidePanel}}
+\doxysubsubsection{\texorpdfstring{SENSORS\_API\_URL}{SENSORS\_API\_URL}}
+{\footnotesize\ttfamily \label{class_side_panel_af53a064ba327c7dc0aa2dee75bd98de4} 
+const std\+::string Side\+Panel\+::\+SENSORS\+\_\+\+API\+\_\+\+URL = "{}http\+://api.\+gios.\+gov.\+pl/pjp-\/api/rest/station/sensors/"{}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+API endpoint prefix for station sensors. 
+
+\Hypertarget{class_side_panel_a9206fc905c039bdea90d4276173e661b}\index{SidePanel@{SidePanel}!STATIONS\_API\_URL@{STATIONS\_API\_URL}}
+\index{STATIONS\_API\_URL@{STATIONS\_API\_URL}!SidePanel@{SidePanel}}
+\doxysubsubsection{\texorpdfstring{STATIONS\_API\_URL}{STATIONS\_API\_URL}}
+{\footnotesize\ttfamily \label{class_side_panel_a9206fc905c039bdea90d4276173e661b} 
+const std\+::string Side\+Panel\+::\+STATIONS\+\_\+\+API\+\_\+\+URL = "{}http\+://api.\+gios.\+gov.\+pl/pjp-\/api/rest/station/find\+All"{}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+API endpoint for all stations. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+NIC/\+Desktop/jpo2025/\+Air\+\_\+quality\+\_\+app/\mbox{\hyperlink{_side_panel_8h}{Side\+Panel.\+h}}\item 
+C\+:/\+Users/\+NIC/\+Desktop/jpo2025/\+Air\+\_\+quality\+\_\+app/\mbox{\hyperlink{_side_panel_8cpp}{Side\+Panel.\+cpp}}\end{DoxyCompactItemize}

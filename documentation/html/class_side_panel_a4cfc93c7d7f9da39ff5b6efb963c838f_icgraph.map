@@ -1,0 +1,5 @@
+<map id="SidePanel::ConnectToPanels" name="SidePanel::ConnectToPanels">
+<area shape="rect" id="Node000001" title="Connects this panel to the info and chart panels." alt="" coords="193,5,384,32"/>
+<area shape="rect" id="Node000002" href="$class_my_frame.html#aeb2b4ff8a8437835f3f0c394db581ebf" title="Constructor for the main application frame." alt="" coords="5,5,145,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="177,21,145,21,145,16,177,16"/>
+</map>

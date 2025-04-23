@@ -1,0 +1,601 @@
+\doxysection{Chart\+Panel Class Reference}
+\hypertarget{class_chart_panel}{}\label{class_chart_panel}\index{ChartPanel@{ChartPanel}}
+
+
+A panel that displays time-\/series data as a line chart.  
+
+
+
+
+{\ttfamily \#include $<$Chart\+Panel.\+h$>$}
+
+
+
+Inheritance diagram for Chart\+Panel\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=145pt]{class_chart_panel__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Chart\+Panel\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=145pt]{class_chart_panel__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_chart_panel_af4d12480f516ac3f934fe55f6c3d7e24}{Chart\+Panel}} (wx\+Window \texorpdfstring{$\ast$}{*}parent)
+\begin{DoxyCompactList}\small\item\em Constructor for \doxylink{class_chart_panel}{Chart\+Panel}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_chart_panel_a761109a895ecc2421165e7c6c4467abb}{Set\+Chart\+Data}} (const std\+::vector$<$ std\+::pair$<$ wx\+String, double $>$ $>$ \&data, const wx\+String \&title, const wx\+String \&x\+Label, const wx\+String \&y\+Label)
+\begin{DoxyCompactList}\small\item\em Sets the data to be displayed in the chart. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_chart_panel_a875f6801746bed41b20bac4bc023afa0}{On\+Paint}} (wx\+Paint\+Event \&event)
+\begin{DoxyCompactList}\small\item\em Event handler for paint events. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_chart_panel_ad6a881f896ebf3be8724ea7d60c9a348}{Draw\+No\+Data\+Message}} (wx\+Paint\+DC \&dc)
+\begin{DoxyCompactList}\small\item\em Displays a message when no data is available. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_chart_panel_a3f4454aa94da5cadeb7c52195203c266}{Setup\+Chart\+Dimensions}} (int \&chart\+Left, int \&chart\+Top, int \&chart\+Width, int \&chart\+Height, int \&chart\+Bottom, int \&chart\+Right)
+\begin{DoxyCompactList}\small\item\em Calculates chart dimensions and positioning based on panel size. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_chart_panel_a708077d60c17e27b6dfc17dcc626e36b}{Draw\+Chart\+Background}} (wx\+Paint\+DC \&dc, int chart\+Left, int chart\+Top, int chart\+Width, int chart\+Height)
+\begin{DoxyCompactList}\small\item\em Draws the chart background and border. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_chart_panel_a9739e25b0b2927bf98f83e284e31c97e}{Calculate\+Value\+Range}} (double \&min\+Value, double \&max\+Value)
+\begin{DoxyCompactList}\small\item\em Determines the minimum and maximum data values with padding. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_chart_panel_a691485b7115f950b794c62741809e0c5}{Draw\+Chart\+Title}} (wx\+Paint\+DC \&dc, int chart\+Left, int chart\+Width, int chart\+Top)
+\begin{DoxyCompactList}\small\item\em Draws the chart title centered above the chart. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_chart_panel_a91942981ddfc20339495a720c30ea6b4}{Draw\+Axis\+Labels}} (wx\+Paint\+DC \&dc, int chart\+Left, int chart\+Top, int chart\+Width, int chart\+Height, int chart\+Bottom)
+\begin{DoxyCompactList}\small\item\em Draws the X and Y axis labels. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_chart_panel_a44a3473d10e4dc248f17d3660975e34d}{Draw\+YAxis\+Ticks\+And\+Grid}} (wx\+Paint\+DC \&dc, int chart\+Left, int chart\+Right, int chart\+Bottom, int chart\+Height, double min\+Value, double max\+Value)
+\begin{DoxyCompactList}\small\item\em Draws Y-\/axis tick marks, labels, and horizontal grid lines. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_chart_panel_ad9868fb8b5f29cacb99a40dc89d0d525}{Draw\+XAxis\+Ticks\+And\+Grid}} (wx\+Paint\+DC \&dc, int chart\+Left, int chart\+Top, int chart\+Bottom, int chart\+Width)
+\begin{DoxyCompactList}\small\item\em Draws X-\/axis tick marks, labels, and vertical grid lines. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_chart_panel_ad478b91dba469494ab9ddbefbc3387a2}{Draw\+Data\+Points\+And\+Lines}} (wx\+Paint\+DC \&dc, int chart\+Left, int chart\+Bottom, int chart\+Width, int chart\+Height, double min\+Value, double max\+Value)
+\begin{DoxyCompactList}\small\item\em Draws data points and the line connecting them. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::pair$<$ wx\+String, double $>$ $>$ \mbox{\hyperlink{class_chart_panel_a2be0819ed68f1ff8c48cacc2f2f9310b}{chart\+Data}}
+\item 
+wx\+String \mbox{\hyperlink{class_chart_panel_a5f63bf8457a5e20b3e7a866c1dd3c2cc}{chart\+Title}}
+\item 
+wx\+String \mbox{\hyperlink{class_chart_panel_a527ec529f3527894276f6c2aaea44647}{x\+Axis\+Label}}
+\item 
+wx\+String \mbox{\hyperlink{class_chart_panel_adc98701f830cb56a07d962a719100fc4}{y\+Axis\+Label}}
+\item 
+bool \mbox{\hyperlink{class_chart_panel_a37df3c42caa5a36c276a151bd870ec08}{has\+Data}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A panel that displays time-\/series data as a line chart. 
+
+\doxylink{class_chart_panel}{Chart\+Panel} renders data points as a line chart with proper axes, labels, and grid. It supports dynamic data updates and handles proper scaling of values. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_chart_panel_af4d12480f516ac3f934fe55f6c3d7e24}\index{ChartPanel@{ChartPanel}!ChartPanel@{ChartPanel}}
+\index{ChartPanel@{ChartPanel}!ChartPanel@{ChartPanel}}
+\doxysubsubsection{\texorpdfstring{ChartPanel()}{ChartPanel()}}
+{\footnotesize\ttfamily \label{class_chart_panel_af4d12480f516ac3f934fe55f6c3d7e24} 
+Chart\+Panel\+::\+Chart\+Panel (\begin{DoxyParamCaption}\item[{wx\+Window \texorpdfstring{$\ast$}{*}}]{parent}{}\end{DoxyParamCaption})}
+
+
+
+Constructor for \doxylink{class_chart_panel}{Chart\+Panel}. 
+
+Constructor for the chart panel that initializes the panel with default settings.
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & Parent window containing this panel\\
+\hline
+\end{DoxyParams}
+Initializes a new chart panel with default settings
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & Pointer to the parent window\\
+\hline
+\end{DoxyParams}
+Creates a new chart panel with a white background and binds the paint event handler. Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_chart_panel_af4d12480f516ac3f934fe55f6c3d7e24_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_chart_panel_a9739e25b0b2927bf98f83e284e31c97e}\index{ChartPanel@{ChartPanel}!CalculateValueRange@{CalculateValueRange}}
+\index{CalculateValueRange@{CalculateValueRange}!ChartPanel@{ChartPanel}}
+\doxysubsubsection{\texorpdfstring{CalculateValueRange()}{CalculateValueRange()}}
+{\footnotesize\ttfamily \label{class_chart_panel_a9739e25b0b2927bf98f83e284e31c97e} 
+void Chart\+Panel\+::\+Calculate\+Value\+Range (\begin{DoxyParamCaption}\item[{double \&}]{min\+Value}{, }\item[{double \&}]{max\+Value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Determines the minimum and maximum data values with padding. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em min\+Value} & \mbox{[}out\mbox{]} Calculated minimum value for Y axis \\
+\hline
+{\em max\+Value} & \mbox{[}out\mbox{]} Calculated maximum value for Y axis\\
+\hline
+{\em min\+Value} & \mbox{[}out\mbox{]} Calculated minimum value for Y axis \\
+\hline
+{\em max\+Value} & \mbox{[}out\mbox{]} Calculated maximum value for Y axis\\
+\hline
+\end{DoxyParams}
+Finds the minimum and maximum values in the data set and adds padding to provide better visual display with appropriate spacing. Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_chart_panel_a9739e25b0b2927bf98f83e284e31c97e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_chart_panel_a91942981ddfc20339495a720c30ea6b4}\index{ChartPanel@{ChartPanel}!DrawAxisLabels@{DrawAxisLabels}}
+\index{DrawAxisLabels@{DrawAxisLabels}!ChartPanel@{ChartPanel}}
+\doxysubsubsection{\texorpdfstring{DrawAxisLabels()}{DrawAxisLabels()}}
+{\footnotesize\ttfamily \label{class_chart_panel_a91942981ddfc20339495a720c30ea6b4} 
+void Chart\+Panel\+::\+Draw\+Axis\+Labels (\begin{DoxyParamCaption}\item[{wx\+Paint\+DC \&}]{dc}{, }\item[{int}]{chart\+Left}{, }\item[{int}]{chart\+Top}{, }\item[{int}]{chart\+Width}{, }\item[{int}]{chart\+Height}{, }\item[{int}]{chart\+Bottom}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Draws the X and Y axis labels. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dc} & Device context for drawing \\
+\hline
+{\em chart\+Left} & Left edge position of chart area \\
+\hline
+{\em chart\+Top} & Top edge position of chart area \\
+\hline
+{\em chart\+Width} & Width of chart area \\
+\hline
+{\em chart\+Height} & Height of chart area \\
+\hline
+{\em chart\+Bottom} & Bottom edge position of chart area\\
+\hline
+{\em dc} & Device context for drawing \\
+\hline
+{\em chart\+Left} & Left edge position of chart area \\
+\hline
+{\em chart\+Top} & Top edge position of chart area \\
+\hline
+{\em chart\+Width} & Width of chart area \\
+\hline
+{\em chart\+Height} & Height of chart area \\
+\hline
+{\em chart\+Bottom} & Bottom edge position of chart area\\
+\hline
+\end{DoxyParams}
+Draws the X-\/axis label centered below the chart and the Y-\/axis label rotated vertically and centered along the left side of the chart. Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_chart_panel_a91942981ddfc20339495a720c30ea6b4_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_chart_panel_a708077d60c17e27b6dfc17dcc626e36b}\index{ChartPanel@{ChartPanel}!DrawChartBackground@{DrawChartBackground}}
+\index{DrawChartBackground@{DrawChartBackground}!ChartPanel@{ChartPanel}}
+\doxysubsubsection{\texorpdfstring{DrawChartBackground()}{DrawChartBackground()}}
+{\footnotesize\ttfamily \label{class_chart_panel_a708077d60c17e27b6dfc17dcc626e36b} 
+void Chart\+Panel\+::\+Draw\+Chart\+Background (\begin{DoxyParamCaption}\item[{wx\+Paint\+DC \&}]{dc}{, }\item[{int}]{chart\+Left}{, }\item[{int}]{chart\+Top}{, }\item[{int}]{chart\+Width}{, }\item[{int}]{chart\+Height}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Draws the chart background and border. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dc} & Device context for drawing \\
+\hline
+{\em chart\+Left} & Left edge position of chart area \\
+\hline
+{\em chart\+Top} & Top edge position of chart area \\
+\hline
+{\em chart\+Width} & Width of chart area \\
+\hline
+{\em chart\+Height} & Height of chart area\\
+\hline
+{\em dc} & Device context for drawing \\
+\hline
+{\em chart\+Left} & Left edge position of chart area \\
+\hline
+{\em chart\+Top} & Top edge position of chart area \\
+\hline
+{\em chart\+Width} & Width of chart area \\
+\hline
+{\em chart\+Height} & Height of chart area\\
+\hline
+\end{DoxyParams}
+Creates a white rectangle with a light gray border to serve as the chart background. Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_chart_panel_a708077d60c17e27b6dfc17dcc626e36b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_chart_panel_a691485b7115f950b794c62741809e0c5}\index{ChartPanel@{ChartPanel}!DrawChartTitle@{DrawChartTitle}}
+\index{DrawChartTitle@{DrawChartTitle}!ChartPanel@{ChartPanel}}
+\doxysubsubsection{\texorpdfstring{DrawChartTitle()}{DrawChartTitle()}}
+{\footnotesize\ttfamily \label{class_chart_panel_a691485b7115f950b794c62741809e0c5} 
+void Chart\+Panel\+::\+Draw\+Chart\+Title (\begin{DoxyParamCaption}\item[{wx\+Paint\+DC \&}]{dc}{, }\item[{int}]{chart\+Left}{, }\item[{int}]{chart\+Width}{, }\item[{int}]{chart\+Top}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Draws the chart title centered above the chart. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dc} & Device context for drawing \\
+\hline
+{\em chart\+Left} & Left edge position of chart area \\
+\hline
+{\em chart\+Width} & Width of chart area \\
+\hline
+{\em chart\+Top} & Top edge position of chart area\\
+\hline
+{\em dc} & Device context for drawing \\
+\hline
+{\em chart\+Left} & Left edge position of chart area \\
+\hline
+{\em chart\+Width} & Width of chart area \\
+\hline
+{\em chart\+Top} & Top edge position of chart area\\
+\hline
+\end{DoxyParams}
+Draws the chart title centered horizontally above the chart area. Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_chart_panel_a691485b7115f950b794c62741809e0c5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_chart_panel_ad478b91dba469494ab9ddbefbc3387a2}\index{ChartPanel@{ChartPanel}!DrawDataPointsAndLines@{DrawDataPointsAndLines}}
+\index{DrawDataPointsAndLines@{DrawDataPointsAndLines}!ChartPanel@{ChartPanel}}
+\doxysubsubsection{\texorpdfstring{DrawDataPointsAndLines()}{DrawDataPointsAndLines()}}
+{\footnotesize\ttfamily \label{class_chart_panel_ad478b91dba469494ab9ddbefbc3387a2} 
+void Chart\+Panel\+::\+Draw\+Data\+Points\+And\+Lines (\begin{DoxyParamCaption}\item[{wx\+Paint\+DC \&}]{dc}{, }\item[{int}]{chart\+Left}{, }\item[{int}]{chart\+Bottom}{, }\item[{int}]{chart\+Width}{, }\item[{int}]{chart\+Height}{, }\item[{double}]{min\+Value}{, }\item[{double}]{max\+Value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Draws data points and the line connecting them. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dc} & Device context for drawing \\
+\hline
+{\em chart\+Left} & Left edge position of chart area \\
+\hline
+{\em chart\+Bottom} & Bottom edge position of chart area \\
+\hline
+{\em chart\+Width} & Width of chart area \\
+\hline
+{\em chart\+Height} & Height of chart area \\
+\hline
+{\em min\+Value} & Minimum value for Y axis \\
+\hline
+{\em max\+Value} & Maximum value for Y axis\\
+\hline
+{\em dc} & Device context for drawing \\
+\hline
+{\em chart\+Left} & Left edge position of chart area \\
+\hline
+{\em chart\+Bottom} & Bottom edge position of chart area \\
+\hline
+{\em chart\+Width} & Width of chart area \\
+\hline
+{\em chart\+Height} & Height of chart area \\
+\hline
+{\em min\+Value} & Minimum value for Y axis \\
+\hline
+{\em max\+Value} & Maximum value for Y axis\\
+\hline
+\end{DoxyParams}
+Creates a line graph by plotting data points as circles and connecting them with a continuous line. Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_chart_panel_ad478b91dba469494ab9ddbefbc3387a2_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_chart_panel_ad6a881f896ebf3be8724ea7d60c9a348}\index{ChartPanel@{ChartPanel}!DrawNoDataMessage@{DrawNoDataMessage}}
+\index{DrawNoDataMessage@{DrawNoDataMessage}!ChartPanel@{ChartPanel}}
+\doxysubsubsection{\texorpdfstring{DrawNoDataMessage()}{DrawNoDataMessage()}}
+{\footnotesize\ttfamily \label{class_chart_panel_ad6a881f896ebf3be8724ea7d60c9a348} 
+void Chart\+Panel\+::\+Draw\+No\+Data\+Message (\begin{DoxyParamCaption}\item[{wx\+Paint\+DC \&}]{dc}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Displays a message when no data is available. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dc} & Device context for drawing\\
+\hline
+{\em dc} & Device context for drawing\\
+\hline
+\end{DoxyParams}
+Draws a centered message instructing the user to select a data file when no data is available to display. Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_chart_panel_ad6a881f896ebf3be8724ea7d60c9a348_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_chart_panel_ad9868fb8b5f29cacb99a40dc89d0d525}\index{ChartPanel@{ChartPanel}!DrawXAxisTicksAndGrid@{DrawXAxisTicksAndGrid}}
+\index{DrawXAxisTicksAndGrid@{DrawXAxisTicksAndGrid}!ChartPanel@{ChartPanel}}
+\doxysubsubsection{\texorpdfstring{DrawXAxisTicksAndGrid()}{DrawXAxisTicksAndGrid()}}
+{\footnotesize\ttfamily \label{class_chart_panel_ad9868fb8b5f29cacb99a40dc89d0d525} 
+void Chart\+Panel\+::\+Draw\+XAxis\+Ticks\+And\+Grid (\begin{DoxyParamCaption}\item[{wx\+Paint\+DC \&}]{dc}{, }\item[{int}]{chart\+Left}{, }\item[{int}]{chart\+Top}{, }\item[{int}]{chart\+Bottom}{, }\item[{int}]{chart\+Width}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Draws X-\/axis tick marks, labels, and vertical grid lines. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dc} & Device context for drawing \\
+\hline
+{\em chart\+Left} & Left edge position of chart area \\
+\hline
+{\em chart\+Top} & Top edge position of chart area \\
+\hline
+{\em chart\+Bottom} & Bottom edge position of chart area \\
+\hline
+{\em chart\+Width} & Width of chart area\\
+\hline
+{\em dc} & Device context for drawing \\
+\hline
+{\em chart\+Left} & Left edge position of chart area \\
+\hline
+{\em chart\+Top} & Top edge position of chart area \\
+\hline
+{\em chart\+Bottom} & Bottom edge position of chart area \\
+\hline
+{\em chart\+Width} & Width of chart area\\
+\hline
+\end{DoxyParams}
+Creates evenly spaced tick marks along the X-\/axis with timestamp labels and dotted vertical grid lines across the chart area. Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_chart_panel_ad9868fb8b5f29cacb99a40dc89d0d525_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_chart_panel_a44a3473d10e4dc248f17d3660975e34d}\index{ChartPanel@{ChartPanel}!DrawYAxisTicksAndGrid@{DrawYAxisTicksAndGrid}}
+\index{DrawYAxisTicksAndGrid@{DrawYAxisTicksAndGrid}!ChartPanel@{ChartPanel}}
+\doxysubsubsection{\texorpdfstring{DrawYAxisTicksAndGrid()}{DrawYAxisTicksAndGrid()}}
+{\footnotesize\ttfamily \label{class_chart_panel_a44a3473d10e4dc248f17d3660975e34d} 
+void Chart\+Panel\+::\+Draw\+YAxis\+Ticks\+And\+Grid (\begin{DoxyParamCaption}\item[{wx\+Paint\+DC \&}]{dc}{, }\item[{int}]{chart\+Left}{, }\item[{int}]{chart\+Right}{, }\item[{int}]{chart\+Bottom}{, }\item[{int}]{chart\+Height}{, }\item[{double}]{min\+Value}{, }\item[{double}]{max\+Value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Draws Y-\/axis tick marks, labels, and horizontal grid lines. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dc} & Device context for drawing \\
+\hline
+{\em chart\+Left} & Left edge position of chart area \\
+\hline
+{\em chart\+Right} & Right edge position of chart area \\
+\hline
+{\em chart\+Bottom} & Bottom edge position of chart area \\
+\hline
+{\em chart\+Height} & Height of chart area \\
+\hline
+{\em min\+Value} & Minimum value for Y axis \\
+\hline
+{\em max\+Value} & Maximum value for Y axis\\
+\hline
+{\em dc} & Device context for drawing \\
+\hline
+{\em chart\+Left} & Left edge position of chart area \\
+\hline
+{\em chart\+Right} & Right edge position of chart area \\
+\hline
+{\em chart\+Bottom} & Bottom edge position of chart area \\
+\hline
+{\em chart\+Height} & Height of chart area \\
+\hline
+{\em min\+Value} & Minimum value for Y axis \\
+\hline
+{\em max\+Value} & Maximum value for Y axis\\
+\hline
+\end{DoxyParams}
+Creates evenly spaced tick marks along the Y-\/axis with appropriate labels and dotted horizontal grid lines across the chart area. Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_chart_panel_a44a3473d10e4dc248f17d3660975e34d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_chart_panel_a875f6801746bed41b20bac4bc023afa0}\index{ChartPanel@{ChartPanel}!OnPaint@{OnPaint}}
+\index{OnPaint@{OnPaint}!ChartPanel@{ChartPanel}}
+\doxysubsubsection{\texorpdfstring{OnPaint()}{OnPaint()}}
+{\footnotesize\ttfamily \label{class_chart_panel_a875f6801746bed41b20bac4bc023afa0} 
+void Chart\+Panel\+::\+On\+Paint (\begin{DoxyParamCaption}\item[{wx\+Paint\+Event \&}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Event handler for paint events. 
+
+Main paint handler that orchestrates the drawing of all chart elements.
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & The paint event\\
+\hline
+\end{DoxyParams}
+Coordinates the drawing of all chart elements when the panel needs to be repainted
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & The paint event\\
+\hline
+\end{DoxyParams}
+Coordinates the drawing of all chart components in the correct order when the panel needs to be repainted. Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_chart_panel_a875f6801746bed41b20bac4bc023afa0_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{class_chart_panel_a875f6801746bed41b20bac4bc023afa0_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_chart_panel_a761109a895ecc2421165e7c6c4467abb}\index{ChartPanel@{ChartPanel}!SetChartData@{SetChartData}}
+\index{SetChartData@{SetChartData}!ChartPanel@{ChartPanel}}
+\doxysubsubsection{\texorpdfstring{SetChartData()}{SetChartData()}}
+{\footnotesize\ttfamily \label{class_chart_panel_a761109a895ecc2421165e7c6c4467abb} 
+void Chart\+Panel\+::\+Set\+Chart\+Data (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::pair$<$ wx\+String, double $>$ $>$ \&}]{data}{, }\item[{const wx\+String \&}]{title}{, }\item[{const wx\+String \&}]{x\+Label}{, }\item[{const wx\+String \&}]{y\+Label}{}\end{DoxyParamCaption})}
+
+
+
+Sets the data to be displayed in the chart. 
+
+Sets chart data and properties for rendering and triggers a redraw.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Vector of data points (timestamp, value pairs) \\
+\hline
+{\em title} & Title for the chart \\
+\hline
+{\em x\+Label} & Label for the X axis \\
+\hline
+{\em y\+Label} & Label for the Y axis\\
+\hline
+\end{DoxyParams}
+Updates the chart with new data and triggers a redraw
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Vector of timestamp-\/value pairs to be displayed \\
+\hline
+{\em title} & Title of the chart \\
+\hline
+{\em x\+Label} & Label for the X axis \\
+\hline
+{\em y\+Label} & Label for the Y axis\\
+\hline
+\end{DoxyParams}
+Updates the chart with new data and properties, then triggers a redraw to display the changes. Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_chart_panel_a761109a895ecc2421165e7c6c4467abb_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_chart_panel_a3f4454aa94da5cadeb7c52195203c266}\index{ChartPanel@{ChartPanel}!SetupChartDimensions@{SetupChartDimensions}}
+\index{SetupChartDimensions@{SetupChartDimensions}!ChartPanel@{ChartPanel}}
+\doxysubsubsection{\texorpdfstring{SetupChartDimensions()}{SetupChartDimensions()}}
+{\footnotesize\ttfamily \label{class_chart_panel_a3f4454aa94da5cadeb7c52195203c266} 
+void Chart\+Panel\+::\+Setup\+Chart\+Dimensions (\begin{DoxyParamCaption}\item[{int \&}]{chart\+Left}{, }\item[{int \&}]{chart\+Top}{, }\item[{int \&}]{chart\+Width}{, }\item[{int \&}]{chart\+Height}{, }\item[{int \&}]{chart\+Bottom}{, }\item[{int \&}]{chart\+Right}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Calculates chart dimensions and positioning based on panel size. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em chart\+Left} & \mbox{[}out\mbox{]} Left edge position of chart area \\
+\hline
+{\em chart\+Top} & \mbox{[}out\mbox{]} Top edge position of chart area \\
+\hline
+{\em chart\+Width} & \mbox{[}out\mbox{]} Width of chart area \\
+\hline
+{\em chart\+Height} & \mbox{[}out\mbox{]} Height of chart area \\
+\hline
+{\em chart\+Bottom} & \mbox{[}out\mbox{]} Bottom edge position of chart area \\
+\hline
+{\em chart\+Right} & \mbox{[}out\mbox{]} Right edge position of chart area\\
+\hline
+{\em chart\+Left} & \mbox{[}out\mbox{]} Left edge position of chart area \\
+\hline
+{\em chart\+Top} & \mbox{[}out\mbox{]} Top edge position of chart area \\
+\hline
+{\em chart\+Width} & \mbox{[}out\mbox{]} Width of chart area \\
+\hline
+{\em chart\+Height} & \mbox{[}out\mbox{]} Height of chart area \\
+\hline
+{\em chart\+Bottom} & \mbox{[}out\mbox{]} Bottom edge position of chart area \\
+\hline
+{\em chart\+Right} & \mbox{[}out\mbox{]} Right edge position of chart area\\
+\hline
+\end{DoxyParams}
+Sets up the chart dimensions with appropriate margins and calculates all important coordinates for rendering the chart. Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_chart_panel_a3f4454aa94da5cadeb7c52195203c266_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_chart_panel_a2be0819ed68f1ff8c48cacc2f2f9310b}\index{ChartPanel@{ChartPanel}!chartData@{chartData}}
+\index{chartData@{chartData}!ChartPanel@{ChartPanel}}
+\doxysubsubsection{\texorpdfstring{chartData}{chartData}}
+{\footnotesize\ttfamily \label{class_chart_panel_a2be0819ed68f1ff8c48cacc2f2f9310b} 
+std\+::vector$<$std\+::pair$<$wx\+String, double$>$ $>$ Chart\+Panel\+::chart\+Data\hspace{0.3cm}{\ttfamily [private]}}
+
+Data points to be displayed (timestamp, value) \Hypertarget{class_chart_panel_a5f63bf8457a5e20b3e7a866c1dd3c2cc}\index{ChartPanel@{ChartPanel}!chartTitle@{chartTitle}}
+\index{chartTitle@{chartTitle}!ChartPanel@{ChartPanel}}
+\doxysubsubsection{\texorpdfstring{chartTitle}{chartTitle}}
+{\footnotesize\ttfamily \label{class_chart_panel_a5f63bf8457a5e20b3e7a866c1dd3c2cc} 
+wx\+String Chart\+Panel\+::chart\+Title\hspace{0.3cm}{\ttfamily [private]}}
+
+Title displayed at the top of the chart \Hypertarget{class_chart_panel_a37df3c42caa5a36c276a151bd870ec08}\index{ChartPanel@{ChartPanel}!hasData@{hasData}}
+\index{hasData@{hasData}!ChartPanel@{ChartPanel}}
+\doxysubsubsection{\texorpdfstring{hasData}{hasData}}
+{\footnotesize\ttfamily \label{class_chart_panel_a37df3c42caa5a36c276a151bd870ec08} 
+bool Chart\+Panel\+::has\+Data\hspace{0.3cm}{\ttfamily [private]}}
+
+Flag indicating whether there is data to display \Hypertarget{class_chart_panel_a527ec529f3527894276f6c2aaea44647}\index{ChartPanel@{ChartPanel}!xAxisLabel@{xAxisLabel}}
+\index{xAxisLabel@{xAxisLabel}!ChartPanel@{ChartPanel}}
+\doxysubsubsection{\texorpdfstring{xAxisLabel}{xAxisLabel}}
+{\footnotesize\ttfamily \label{class_chart_panel_a527ec529f3527894276f6c2aaea44647} 
+wx\+String Chart\+Panel\+::x\+Axis\+Label\hspace{0.3cm}{\ttfamily [private]}}
+
+Label for the X axis \Hypertarget{class_chart_panel_adc98701f830cb56a07d962a719100fc4}\index{ChartPanel@{ChartPanel}!yAxisLabel@{yAxisLabel}}
+\index{yAxisLabel@{yAxisLabel}!ChartPanel@{ChartPanel}}
+\doxysubsubsection{\texorpdfstring{yAxisLabel}{yAxisLabel}}
+{\footnotesize\ttfamily \label{class_chart_panel_adc98701f830cb56a07d962a719100fc4} 
+wx\+String Chart\+Panel\+::y\+Axis\+Label\hspace{0.3cm}{\ttfamily [private]}}
+
+Label for the Y axis 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+NIC/\+Desktop/jpo2025/\+Air\+\_\+quality\+\_\+app/\mbox{\hyperlink{_chart_panel_8h}{Chart\+Panel.\+h}}\item 
+C\+:/\+Users/\+NIC/\+Desktop/jpo2025/\+Air\+\_\+quality\+\_\+app/\mbox{\hyperlink{_chart_panel_8cpp}{Chart\+Panel.\+cpp}}\end{DoxyCompactItemize}

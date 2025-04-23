@@ -1,0 +1,14 @@
+<map id="DownloadJsonAndSaveToFile" name="DownloadJsonAndSaveToFile">
+<area shape="rect" id="Node000001" title="Downloads JSON from URL, optionally transforms it, and saves to file." alt="" coords="869,43,1064,69"/>
+<area shape="rect" id="Node000002" href="$class_side_panel.html#a920e04991a93a73bd552e0ec5f4c9de7" title="Initializes the sensor database." alt="" coords="643,5,821,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="853,44,821,40,821,35,853,39"/>
+<area shape="rect" id="Node000006" href="$class_side_panel.html#acc1207b950f645b43dd39d0486711587" title="Handles the &quot;Choose Station&quot; button click." alt="" coords="408,68,592,95"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="853,65,593,79,592,74,853,59"/>
+<area shape="rect" id="Node000003" href="$class_side_panel.html#a9611a48ab1140b6cec16b7242245e51f" title="Handles the &quot;Choose Sensor&quot; button click." alt="" coords="404,16,595,43"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="628,31,596,31,596,26,628,25"/>
+<area shape="rect" id="Node000004" href="$class_side_panel.html#a88e71582eb561d8a3d79a3d3122a3bf0" title="Binds event handlers to UI components." alt="" coords="201,43,356,69"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="389,45,357,49,356,44,388,40"/>
+<area shape="rect" id="Node000005" href="$class_side_panel.html#a59c59232b2f6429074af7491737de164" title="Constructor for the SidePanel." alt="" coords="5,43,153,69"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="185,59,153,59,153,53,185,53"/>
+<area shape="poly" id="edge6_Node000006_Node000004" title=" " alt="" coords="392,72,356,68,357,62,392,66"/>
+</map>

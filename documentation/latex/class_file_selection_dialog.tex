@@ -1,0 +1,224 @@
+\doxysection{File\+Selection\+Dialog Class Reference}
+\hypertarget{class_file_selection_dialog}{}\label{class_file_selection_dialog}\index{FileSelectionDialog@{FileSelectionDialog}}
+
+
+A dialog that displays a list of files and allows the user to select one.  
+
+
+
+
+{\ttfamily \#include $<$File\+Selection\+Dialog.\+h$>$}
+
+
+
+Inheritance diagram for File\+Selection\+Dialog\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=180pt]{class_file_selection_dialog__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for File\+Selection\+Dialog\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=180pt]{class_file_selection_dialog__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_file_selection_dialog_a75931c333739f3045f3c5b8a59bf982a}{File\+Selection\+Dialog}} (wx\+Window \texorpdfstring{$\ast$}{*}parent, const std\+::vector$<$ std\+::string $>$ \&files)
+\begin{DoxyCompactList}\small\item\em Constructor that creates a file selection dialog. \end{DoxyCompactList}\item 
+wx\+String \mbox{\hyperlink{class_file_selection_dialog_a9160da26782cc11ba79d5b20db8046d0}{Get\+Selected\+File}} () const
+\begin{DoxyCompactList}\small\item\em Gets the name of the file that was selected. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_file_selection_dialog_af7c91c7a0e0960390d5338748eee1eda}{On\+Double\+Click}} (wx\+Command\+Event \&event)
+\begin{DoxyCompactList}\small\item\em Event handler for double-\/click events on the file list. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_file_selection_dialog_ab388acb0ec3f67ebba76b3940890e18c}{On\+OK}} (wx\+Command\+Event \&event)
+\begin{DoxyCompactList}\small\item\em Event handler for OK button clicks. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+wx\+List\+Box \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_file_selection_dialog_abe8703255b3ac8bb921bdb2e23499f9b}{file\+List\+Box}}
+\begin{DoxyCompactList}\small\item\em List\+Box widget that displays the file names. \end{DoxyCompactList}\item 
+wx\+String \mbox{\hyperlink{class_file_selection_dialog_ae116ceb79d0a72a722e46a454aea8bfc}{selected\+File}}
+\begin{DoxyCompactList}\small\item\em Stores the name of the selected file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A dialog that displays a list of files and allows the user to select one. 
+
+This dialog presents a list of file names and provides functionality for selecting a file either by double-\/clicking on it or by selecting it and clicking the OK button. The dialog validates that a selection is made before closing with OK. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_file_selection_dialog_a75931c333739f3045f3c5b8a59bf982a}\index{FileSelectionDialog@{FileSelectionDialog}!FileSelectionDialog@{FileSelectionDialog}}
+\index{FileSelectionDialog@{FileSelectionDialog}!FileSelectionDialog@{FileSelectionDialog}}
+\doxysubsubsection{\texorpdfstring{FileSelectionDialog()}{FileSelectionDialog()}}
+{\footnotesize\ttfamily \label{class_file_selection_dialog_a75931c333739f3045f3c5b8a59bf982a} 
+File\+Selection\+Dialog\+::\+File\+Selection\+Dialog (\begin{DoxyParamCaption}\item[{wx\+Window \texorpdfstring{$\ast$}{*}}]{parent}{, }\item[{const std\+::vector$<$ std\+::string $>$ \&}]{files}{}\end{DoxyParamCaption})}
+
+
+
+Constructor that creates a file selection dialog. 
+
+Constructor that creates a dialog with a list of files to select from.
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & Pointer to the parent window \\
+\hline
+{\em files} & Vector of strings containing the file names to display\\
+\hline
+\end{DoxyParams}
+Creates a modal dialog with a listbox containing file names, and OK/\+Cancel buttons. The dialog allows users to select a file either by double-\/clicking or using the OK button.
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & Pointer to the parent window \\
+\hline
+{\em files} & Vector of strings containing the file names to display \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{class_file_selection_dialog_a75931c333739f3045f3c5b8a59bf982a_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_file_selection_dialog_a9160da26782cc11ba79d5b20db8046d0}\index{FileSelectionDialog@{FileSelectionDialog}!GetSelectedFile@{GetSelectedFile}}
+\index{GetSelectedFile@{GetSelectedFile}!FileSelectionDialog@{FileSelectionDialog}}
+\doxysubsubsection{\texorpdfstring{GetSelectedFile()}{GetSelectedFile()}}
+{\footnotesize\ttfamily \label{class_file_selection_dialog_a9160da26782cc11ba79d5b20db8046d0} 
+wx\+String File\+Selection\+Dialog\+::\+Get\+Selected\+File (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Gets the name of the file that was selected. 
+
+Returns the name of the selected file.
+
+\begin{DoxyReturn}{Returns}
+wx\+String The name of the selected file, or empty string if no file was selected
+\end{DoxyReturn}
+This method should be called after the dialog has been closed with wx\+ID\+\_\+\+OK status to retrieve the name of the file that was selected.
+
+\begin{DoxyReturn}{Returns}
+wx\+String The name of the selected file, or empty string if no file was selected 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_file_selection_dialog_a9160da26782cc11ba79d5b20db8046d0_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_file_selection_dialog_af7c91c7a0e0960390d5338748eee1eda}\index{FileSelectionDialog@{FileSelectionDialog}!OnDoubleClick@{OnDoubleClick}}
+\index{OnDoubleClick@{OnDoubleClick}!FileSelectionDialog@{FileSelectionDialog}}
+\doxysubsubsection{\texorpdfstring{OnDoubleClick()}{OnDoubleClick()}}
+{\footnotesize\ttfamily \label{class_file_selection_dialog_af7c91c7a0e0960390d5338748eee1eda} 
+void File\+Selection\+Dialog\+::\+On\+Double\+Click (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Event handler for double-\/click events on the file list. 
+
+Handler for double-\/click events on the file list.
+
+Selects the file under the cursor and closes the dialog with OK status.
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & The wx\+Command\+Event associated with the double-\/click\\
+\hline
+\end{DoxyParams}
+When a file is double-\/clicked, it is selected and the dialog is closed with an OK status. The selected file can then be retrieved using \doxylink{class_file_selection_dialog_a9160da26782cc11ba79d5b20db8046d0}{Get\+Selected\+File()}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & The wx\+Command\+Event associated with the double-\/click \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{class_file_selection_dialog_af7c91c7a0e0960390d5338748eee1eda_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_file_selection_dialog_ab388acb0ec3f67ebba76b3940890e18c}\index{FileSelectionDialog@{FileSelectionDialog}!OnOK@{OnOK}}
+\index{OnOK@{OnOK}!FileSelectionDialog@{FileSelectionDialog}}
+\doxysubsubsection{\texorpdfstring{OnOK()}{OnOK()}}
+{\footnotesize\ttfamily \label{class_file_selection_dialog_ab388acb0ec3f67ebba76b3940890e18c} 
+void File\+Selection\+Dialog\+::\+On\+OK (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Event handler for OK button clicks. 
+
+Handler for OK button clicks.
+
+If a file is selected, closes the dialog with OK status. Otherwise, displays a message asking the user to select a file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & The wx\+Command\+Event associated with the button click\\
+\hline
+\end{DoxyParams}
+Validates that a file is selected before closing the dialog with an OK status. If no file is selected, displays a message asking the user to make a selection.
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & The wx\+Command\+Event associated with the button click \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{class_file_selection_dialog_ab388acb0ec3f67ebba76b3940890e18c_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_file_selection_dialog_abe8703255b3ac8bb921bdb2e23499f9b}\index{FileSelectionDialog@{FileSelectionDialog}!fileListBox@{fileListBox}}
+\index{fileListBox@{fileListBox}!FileSelectionDialog@{FileSelectionDialog}}
+\doxysubsubsection{\texorpdfstring{fileListBox}{fileListBox}}
+{\footnotesize\ttfamily \label{class_file_selection_dialog_abe8703255b3ac8bb921bdb2e23499f9b} 
+wx\+List\+Box\texorpdfstring{$\ast$}{*} File\+Selection\+Dialog\+::file\+List\+Box\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+List\+Box widget that displays the file names. 
+
+\Hypertarget{class_file_selection_dialog_ae116ceb79d0a72a722e46a454aea8bfc}\index{FileSelectionDialog@{FileSelectionDialog}!selectedFile@{selectedFile}}
+\index{selectedFile@{selectedFile}!FileSelectionDialog@{FileSelectionDialog}}
+\doxysubsubsection{\texorpdfstring{selectedFile}{selectedFile}}
+{\footnotesize\ttfamily \label{class_file_selection_dialog_ae116ceb79d0a72a722e46a454aea8bfc} 
+wx\+String File\+Selection\+Dialog\+::selected\+File\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Stores the name of the selected file. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+NIC/\+Desktop/jpo2025/\+Air\+\_\+quality\+\_\+app/\mbox{\hyperlink{_file_selection_dialog_8h}{File\+Selection\+Dialog.\+h}}\item 
+C\+:/\+Users/\+NIC/\+Desktop/jpo2025/\+Air\+\_\+quality\+\_\+app/\mbox{\hyperlink{_file_selection_dialog_8cpp}{File\+Selection\+Dialog.\+cpp}}\end{DoxyCompactItemize}

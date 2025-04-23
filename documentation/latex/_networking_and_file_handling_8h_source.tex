@@ -1,0 +1,33 @@
+\doxysection{Networking\+And\+File\+Handling.\+h}
+\hypertarget{_networking_and_file_handling_8h_source}{}\label{_networking_and_file_handling_8h_source}\index{C:/Users/NIC/Desktop/jpo2025/Air\_quality\_app/NetworkingAndFileHandling.h@{C:/Users/NIC/Desktop/jpo2025/Air\_quality\_app/NetworkingAndFileHandling.h}}
+\mbox{\hyperlink{_networking_and_file_handling_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ NETWORKING\_AND\_FILE\_HANDLING\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ NETWORKING\_AND\_FILE\_HANDLING\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#define\ \_CRT\_SECURE\_NO\_WARNINGS}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <wx/wx.h>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <curl/curl.h>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <json/json.h>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00022\ std::string\ \mbox{\hyperlink{_networking_and_file_handling_8h_a8f708e900743cda467d4319beac4238c}{FormatDateForFilename}}(\textcolor{keyword}{const}\ std::string\&\ dateStr);}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00034\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{_networking_and_file_handling_8h_a412076dc9057b61c2607ad9f30b0416d}{WriteCallback}}(\textcolor{keywordtype}{void}*\ contents,\ \textcolor{keywordtype}{size\_t}\ size,\ \textcolor{keywordtype}{size\_t}\ nmemb,\ std::string*\ s);}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00042\ Json::Value\ \mbox{\hyperlink{_networking_and_file_handling_8h_a63aea19c2fbd7abdc744bd541562c5fd}{PerformHttpGet}}(\textcolor{keyword}{const}\ std::string\&\ url);}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00051\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{_networking_and_file_handling_8h_a68628279954d524a9bbbd035bad37465}{SaveToFile}}(Json::Value\&\ data,\ \textcolor{keyword}{const}\ std::string\&\ filePath);}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00060\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{_networking_and_file_handling_8h_a25763df7523e3d7e655e6c93b8d5a6f0}{DownloadJsonAndSaveToFile}}(\textcolor{keyword}{const}\ std::string\&\ url,\ \textcolor{keyword}{const}\ std::string\&\ filePath,\ std::function<Json::Value(\textcolor{keyword}{const}\ Json::Value\&)>\ transformer\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00068\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{_networking_and_file_handling_8h_a5d1292ab7578bba9ebca794b2ab58e01}{DownloadJsonAndSaveData}}(\textcolor{keyword}{const}\ std::string\&\ url,\ \textcolor{keyword}{const}\ std::string\&\ dirPath);}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00076\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{_networking_and_file_handling_8h_afef78a69dbcc72ef6d453ae87b8b196e}{LoadJsonFromFile}}(\textcolor{keyword}{const}\ std::string\&\ filePath,\ Json::Value\&\ output);}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ NETWORKING\_AND\_FILE\_HANDLING\_H}}
+
+\end{DoxyCode}

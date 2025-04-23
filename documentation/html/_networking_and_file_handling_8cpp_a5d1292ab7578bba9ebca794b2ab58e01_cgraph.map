@@ -1,0 +1,11 @@
+<map id="DownloadJsonAndSaveData" name="DownloadJsonAndSaveData">
+<area shape="rect" id="Node000001" title="Downloads air quality data, filters valid entries, and saves to a file with date&#45;based name." alt="" coords="5,56,194,83"/>
+<area shape="rect" id="Node000002" href="$_networking_and_file_handling_8cpp.html#a8f708e900743cda467d4319beac4238c" title="Formats a date string into a filename&#45;friendly format (YYYY&#45;MM&#45;DD_HH)" alt="" coords="242,5,404,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="161,53,245,33,247,39,162,58"/>
+<area shape="rect" id="Node000003" href="$_networking_and_file_handling_8cpp.html#a63aea19c2fbd7abdc744bd541562c5fd" title="Performs an HTTP GET request to the specified URL and returns parsed JSON." alt="" coords="266,56,380,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="194,67,251,67,251,72,194,72"/>
+<area shape="rect" id="Node000005" href="$_networking_and_file_handling_8cpp.html#a68628279954d524a9bbbd035bad37465" title="Saves JSON data to a file with indentation." alt="" coords="280,107,366,133"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="162,81,265,104,264,110,161,86"/>
+<area shape="rect" id="Node000004" href="$_networking_and_file_handling_8cpp.html#adfe4aa3ee2d2b8a4376b59dbe5c48535" title="Callback function for CURL to handle received data by appending to a string." alt="" coords="452,56,554,83"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="380,67,437,67,437,72,380,72"/>
+</map>

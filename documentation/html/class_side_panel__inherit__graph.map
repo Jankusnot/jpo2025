@@ -1,0 +1,5 @@
+<map id="SidePanel" name="SidePanel">
+<area shape="rect" id="Node000001" title="Panel containing controls for station, sensor, and file selection." alt="" coords="5,80,86,107"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="10,5,81,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="48,48,48,80,43,80,43,48"/>
+</map>

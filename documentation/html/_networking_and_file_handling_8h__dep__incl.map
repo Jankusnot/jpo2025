@@ -1,0 +1,16 @@
+<map id="C:/Users/NIC/Desktop/jpo2025/Air_quality_app/NetworkingAndFileHandling.h" name="C:/Users/NIC/Desktop/jpo2025/Air_quality_app/NetworkingAndFileHandling.h">
+<area shape="rect" id="Node000001" title="Header file defining networking and file handling functionality." alt="" coords="166,5,392,64"/>
+<area shape="rect" id="Node000002" href="$_data_processing_8h.html" title="Functions for processing data from JSON files and calculating statistics." alt="" coords="84,112,242,171"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="238,76,196,114,193,110,234,72"/>
+<area shape="rect" id="Node000004" href="$_side_panel_8h.html" title=" " alt="" coords="201,219,357,277"/>
+<area shape="poly" id="edge7_Node000001_Node000004" title=" " alt="" coords="282,79,282,218,276,218,276,79"/>
+<area shape="rect" id="Node000007" href="$_networking_and_file_handling_8cpp.html" title="Implementation of networking and file handling functionality." alt="" coords="317,112,556,171"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="336,70,395,109,392,114,333,75"/>
+<area shape="rect" id="Node000003" href="$_data_processing_8cpp.html" title="Implementation of data processing functions for JSON time series data." alt="" coords="5,219,177,277"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="137,185,113,220,108,217,132,182"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="208,179,249,216,246,220,204,183"/>
+<area shape="rect" id="Node000005" href="$_side_panel_8cpp.html" title="Implementation of the SidePanel class." alt="" coords="111,325,266,384"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="246,291,215,327,211,323,242,288"/>
+<area shape="rect" id="Node000006" href="$main_8cpp.html" title="Main application file for the Air Quality monitoring application." alt="" coords="291,325,446,384"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="315,288,346,323,342,327,311,291"/>
+</map>

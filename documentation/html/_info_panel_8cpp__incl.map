@@ -1,0 +1,9 @@
+<map id="C:/Users/NIC/Desktop/jpo2025/Air_quality_app/InfoPanel.cpp" name="C:/Users/NIC/Desktop/jpo2025/Air_quality_app/InfoPanel.cpp">
+<area shape="rect" id="Node000001" title="Implementation of the InfoPanel class." alt="" coords="6,5,161,64"/>
+<area shape="rect" id="Node000002" href="$_info_panel_8h.html" title="Header for the InfoPanel class which displays data analysis information." alt="" coords="40,112,127,139"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="86,64,86,96,80,96,80,64"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,187,76,213"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="78,141,58,175,53,172,73,138"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="99,187,152,213"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="93,138,113,172,109,175,88,141"/>
+</map>

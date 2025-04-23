@@ -1,0 +1,25 @@
+\doxysection{Info\+Panel.\+h}
+\hypertarget{_info_panel_8h_source}{}\label{_info_panel_8h_source}\index{C:/Users/NIC/Desktop/jpo2025/Air\_quality\_app/InfoPanel.h@{C:/Users/NIC/Desktop/jpo2025/Air\_quality\_app/InfoPanel.h}}
+\mbox{\hyperlink{_info_panel_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ INFO\_PANEL\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ INFO\_PANEL\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <wx/wx.h>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_info_panel_aa745a61546a1e221333a93abce979f1a}{InfoPanel}}\ :\ \textcolor{keyword}{public}\ wxPanel\ \{}
+\DoxyCodeLine{00021\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00022\ \ \ \ \ wxStaticText*\ \mbox{\hyperlink{class_info_panel_a93ae46822620d1300e8657ff6482f80f}{titleText}};\ }
+\DoxyCodeLine{00023\ \ \ \ \ wxStaticText*\ \mbox{\hyperlink{class_info_panel_a312be0505a0a4fd9aeb513c7d318d0fd}{statsText}};\ }
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{class_info_panel_aa745a61546a1e221333a93abce979f1a}{InfoPanel}}(wxWindow*\ parent);}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_info_panel_a22cfb29d4ad8089386ce33ebe4b0ccae}{UpdateStatistics}}(\textcolor{keyword}{const}\ wxString\&\ key,\ \textcolor{keywordtype}{double}\ max,\ \textcolor{keywordtype}{double}\ min,\ \textcolor{keywordtype}{double}\ avg,\ \textcolor{keyword}{const}\ wxString\&\ trend);}
+\DoxyCodeLine{00047\ \};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ INFO\_PANEL\_H}}
+
+\end{DoxyCode}

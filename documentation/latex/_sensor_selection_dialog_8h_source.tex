@@ -1,0 +1,33 @@
+\doxysection{Sensor\+Selection\+Dialog.\+h}
+\hypertarget{_sensor_selection_dialog_8h_source}{}\label{_sensor_selection_dialog_8h_source}\index{C:/Users/NIC/Desktop/jpo2025/Air\_quality\_app/SensorSelectionDialog.h@{C:/Users/NIC/Desktop/jpo2025/Air\_quality\_app/SensorSelectionDialog.h}}
+\mbox{\hyperlink{_sensor_selection_dialog_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ SENSOR\_SELECTION\_DIALOG\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ SENSOR\_SELECTION\_DIALOG\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <wx/wx.h>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <json/json.h>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_sensor_selection_dialog_a33476ee8af7794fd1863048242b7771b}{SensorSelectionDialog}}\ :\ \textcolor{keyword}{public}\ wxDialog\ \{}
+\DoxyCodeLine{00022\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00026\ \ \ \ \ wxListBox*\ \mbox{\hyperlink{class_sensor_selection_dialog_a9cbb1dedb8105226560eabbd9799c2fb}{sensorListBox}};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00031\ \ \ \ \ std::vector<int>\ \mbox{\hyperlink{class_sensor_selection_dialog_a4d8802899654ff91b7e232e94794bb2e}{sensorIds}};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_sensor_selection_dialog_a0ff925a421f2b891e96914c15bb7fa5e}{selectedId}};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00041\ \ \ \ \ wxString\ \mbox{\hyperlink{class_sensor_selection_dialog_ad7dfaef258dda75b503c304f240c7dbf}{selectedParamName}};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00052\ \ \ \ \ \mbox{\hyperlink{class_sensor_selection_dialog_a33476ee8af7794fd1863048242b7771b}{SensorSelectionDialog}}(wxWindow*\ parent,\ \textcolor{keyword}{const}\ Json::Value\&\ sensors);}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_sensor_selection_dialog_a6856be4b5d18cefdec62b9e164b4ccf8}{OnDoubleClick}}(wxCommandEvent\&\ event);}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_sensor_selection_dialog_a0822560809bae236798279dd8c52007d}{GetSelectedSensor}}(\textcolor{keywordtype}{int}\&\ \textcolor{keywordtype}{id},\ wxString\&\ paramName);}
+\DoxyCodeLine{00073\ \};}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SENSOR\_SELECTION\_DIALOG\_H}}
+
+\end{DoxyCode}

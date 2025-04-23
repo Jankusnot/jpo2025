@@ -1,0 +1,5 @@
+<map id="InfoPanel" name="InfoPanel">
+<area shape="rect" id="Node000001" title="Panel that displays statistical analysis of air quality data." alt="" coords="5,80,82,107"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="8,5,79,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="46,48,46,80,41,80,41,48"/>
+</map>

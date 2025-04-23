@@ -1,0 +1,112 @@
+\doxysection{Side\+Panel.\+h}
+\hypertarget{_side_panel_8h_source}{}\label{_side_panel_8h_source}\index{C:/Users/NIC/Desktop/jpo2025/Air\_quality\_app/SidePanel.h@{C:/Users/NIC/Desktop/jpo2025/Air\_quality\_app/SidePanel.h}}
+\mbox{\hyperlink{_side_panel_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ SIDE\_PANEL\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ SIDE\_PANEL\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#define\ \_CRT\_SECURE\_NO\_WARNINGS}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <wx/wx.h>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <wx/font.h>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <wx/sizer.h>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <wx/msgdlg.h>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <wx/listbox.h>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <wx/stattext.h>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <thread>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <mutex>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <json/json.h>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <filesystem>}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_station_selection_dialog_8h}{StationSelectionDialog.h}}"{}}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_sensor_selection_dialog_8h}{SensorSelectionDialog.h}}"{}}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_file_selection_dialog_8h}{FileSelectionDialog.h}}"{}}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_chart_panel_8h}{ChartPanel.h}}"{}}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_info_panel_8h}{InfoPanel.h}}"{}}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_data_processing_8h}{DataProcessing.h}}"{}}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_networking_and_file_handling_8h}{NetworkingAndFileHandling.h}}"{}}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00042\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_side_panel_a59c59232b2f6429074af7491737de164}{SidePanel}}\ :\ \textcolor{keyword}{public}\ wxPanel\ \{}
+\DoxyCodeLine{00043\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00046\ \ \ \ \ wxButton*\ \mbox{\hyperlink{class_side_panel_ab75d6b2fccf141a4bb29b60a0b8e3bbe}{btn1}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00047\ \ \ \ \ wxButton*\ \mbox{\hyperlink{class_side_panel_a6ae1ae5d777e05ab55c1d55d92a50e4f}{btn2}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00048\ \ \ \ \ wxButton*\ \mbox{\hyperlink{class_side_panel_ad2144732d669a93389bb16e5635308bf}{btn3}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00049\ \ \ \ \ wxButton*\ \mbox{\hyperlink{class_side_panel_aeebc55137ea47dc8244844f90be8dd93}{btn4}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00050\ \ \ \ \ wxStaticText*\ \mbox{\hyperlink{class_side_panel_ad9c912525eee37472a73960254d07c7b}{selectedStationText}};\ }
+\DoxyCodeLine{00051\ \ \ \ \ wxStaticText*\ \mbox{\hyperlink{class_side_panel_ac85240294d0db3052c7d4702cbf7c6ce}{selectedSensorText}};\ \ }
+\DoxyCodeLine{00052\ \ \ \ \ wxStaticText*\ \mbox{\hyperlink{class_side_panel_a4208f006b8b9821b3f5586e51fb9a3bc}{selectedFileText}};\ \ \ \ }
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_side_panel_a83298b36ec294e39ca0ff7c4285329c3}{selectedStationId}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00058\ \ \ \ \ wxString\ \mbox{\hyperlink{class_side_panel_a4cd4e657afe9de55b7a9336208ec43ae}{selectedStationName}};\ \ \ \ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_side_panel_a13a858f4af67d6a4af18170c502baefe}{selectedSensorId}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00060\ \ \ \ \ wxString\ \mbox{\hyperlink{class_side_panel_a01c4978abe60d650704d0e9ecb377c22}{selectedSensorParamName}};\ }
+\DoxyCodeLine{00061\ \ \ \ \ wxString\ \mbox{\hyperlink{class_side_panel_a36638731096fc58128a86830ff861d5c}{selectedFileName}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00066\ \ \ \ \ \mbox{\hyperlink{class_info_panel}{InfoPanel}}*\ \mbox{\hyperlink{class_side_panel_ad07bb916a741273a1d80c09d0d727524}{infoPanel}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00067\ \ \ \ \ \mbox{\hyperlink{class_chart_panel}{ChartPanel}}*\ \mbox{\hyperlink{class_side_panel_a77404fe8300b1ce9d654f2dc3e923870}{chartPanel}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \mbox{\hyperlink{class_side_panel_a9206fc905c039bdea90d4276173e661b}{STATIONS\_API\_URL}}\ =\ \textcolor{stringliteral}{"{}http://api.gios.gov.pl/pjp-\/api/rest/station/findAll"{}};\ \ \ \ \ }
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \mbox{\hyperlink{class_side_panel_af53a064ba327c7dc0aa2dee75bd98de4}{SENSORS\_API\_URL}}\ =\ \textcolor{stringliteral}{"{}http://api.gios.gov.pl/pjp-\/api/rest/station/sensors/"{}};\ \ \ \ \ }
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \mbox{\hyperlink{class_side_panel_aa325e71ef93ab32e2d5ef3f6c2cf77f2}{SENSOR\_API\_URL}}\ =\ \textcolor{stringliteral}{"{}http://api.gios.gov.pl/pjp-\/api/rest/data/getData/"{}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \mbox{\hyperlink{class_side_panel_af2076a7ea56bf756d4561a00d3a7a2f8}{DATABASE\_DIRECTORRY}}\ =\ \textcolor{stringliteral}{"{}measurements"{}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \mbox{\hyperlink{class_side_panel_af1fece9fa813c4f41aa2c066844c01aa}{DATABASE\_STATIONS}}\ =\ \mbox{\hyperlink{class_side_panel_af2076a7ea56bf756d4561a00d3a7a2f8}{DATABASE\_DIRECTORRY}}\ +\ \textcolor{stringliteral}{"{}/stations.json"{}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00084\ \ \ \ \ \mbox{\hyperlink{class_side_panel_a59c59232b2f6429074af7491737de164}{SidePanel}}(wxWindow*\ parent);}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_side_panel_a4cfc93c7d7f9da39ff5b6efb963c838f}{ConnectToPanels}}(\mbox{\hyperlink{class_info_panel}{InfoPanel}}*\ info,\ \mbox{\hyperlink{class_chart_panel}{ChartPanel}}*\ chart);}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_side_panel_a10d70023343f82fd48c9c8c04ee4bf74}{InitializeUI}}();}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_side_panel_a88e71582eb561d8a3d79a3d3122a3bf0}{BindEvents}}();}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_side_panel_a1ea056aa76ef1305594e117d8d970875}{UpdateSelectedStationDisplay}}();}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_side_panel_a51518c4623d1cb91c5fbc146d7b3ef71}{UpdateSelectedSensorDisplay}}();}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_side_panel_af64945eecdaa255c963bd8b6fb941eab}{UpdateSelectedFileDisplay}}();}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00131\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_side_panel_acc1207b950f645b43dd39d0486711587}{OnChoseStation}}(wxCommandEvent\&\ event);}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00137\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_side_panel_a9611a48ab1140b6cec16b7242245e51f}{OnChooseSensor}}(wxCommandEvent\&\ event);}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00143\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_side_panel_a04d8efdd1526e3d19ac6818ebe5094e7}{OnShowDataFiles}}(wxCommandEvent\&\ event);}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00149\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_side_panel_ab30d1e67ae65f13f47c578b22ee5cbc9}{OnViewStoredData}}(wxCommandEvent\&\ event);}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00161\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_side_panel_a920e04991a93a73bd552e0ec5f4c9de7}{InitializeSensorDatabase}}(\textcolor{keyword}{const}\ std::string\&\ STATION\_DIRECTORY,\ \textcolor{keyword}{const}\ std::string\&\ databasePath,\ \textcolor{keyword}{const}\ std::string\&\ apiUrl);}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00169\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_side_panel_a94d1d4ebb8acdd782724a69f9dc62249}{LoadSensorsData}}(\textcolor{keyword}{const}\ std::string\&\ databasePath,\ Json::Value\&\ sensors);}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00177\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_side_panel_a1e35e96cbbed4b2d36532adf205e99e9}{DownloadAllSensorsData}}(\textcolor{keyword}{const}\ std::string\&\ STATION\_DIRECTORY,\ \textcolor{keyword}{const}\ Json::Value\&\ sensors,\ std::vector<std::string>\&\ failedSensors);}
+\DoxyCodeLine{00178\ }
+\DoxyCodeLine{00183\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_side_panel_a64ce4e4f8cd027604a861f850b70de09}{ReportFailedDownloads}}(\textcolor{keyword}{const}\ std::vector<std::string>\&\ failedSensors);}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00190\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_side_panel_aea36bfda2a4231651e4f095f739078d1}{EnsureSelectedSensorData}}(\textcolor{keyword}{const}\ std::string\&\ STATION\_DIRECTORY,\ \textcolor{keyword}{const}\ std::vector<std::string>\&\ failedSensors);}
+\DoxyCodeLine{00191\ }
+\DoxyCodeLine{00200\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_side_panel_ac63b6cf557796685317d3439ce8d5aef}{DownloadSensorData}}(\textcolor{keywordtype}{int}\ sensorId,\ \textcolor{keyword}{const}\ std::string\&\ STATION\_DIRECTORY,\ std::vector<std::string>\&\ failedSensors,\ std::mutex\&\ mutex);}
+\DoxyCodeLine{00202\ }
+\DoxyCodeLine{00205\ }
+\DoxyCodeLine{00209\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_side_panel_a806ca5efc5c8b7e37a8aca3cf2fc6010}{CheckForDownloadedData}}();}
+\DoxyCodeLine{00210\ }
+\DoxyCodeLine{00216\ \ \ \ \ std::vector<int>\ \mbox{\hyperlink{class_side_panel_a078a7b9380c48c56550a703042d15c2e}{GetNumericDirectories}}(\textcolor{keyword}{const}\ std::string\&\ directory);}
+\DoxyCodeLine{00217\ }
+\DoxyCodeLine{00224\ \ \ \ \ Json::Value\ \mbox{\hyperlink{class_side_panel_a6fd78ed8a429dd762f970d2d91b85d25}{FilterItemsByExistingDirectories}}(\textcolor{keyword}{const}\ Json::Value\&\ allItems,\ \textcolor{keyword}{const}\ std::vector<int>\&\ dirIds);}
+\DoxyCodeLine{00225\ }
+\DoxyCodeLine{00231\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_side_panel_ae67c71d129ba553da7212c85441c56d1}{SelectStation}}(Json::Value\&\ filteredStations);}
+\DoxyCodeLine{00232\ }
+\DoxyCodeLine{00237\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_side_panel_aca16abb2598a09dc2cb0e509ac2ccf1c}{SelectSensor}}();}
+\DoxyCodeLine{00239\ \};}
+\DoxyCodeLine{00240\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,11 @@
+<map id="ProcessFileData" name="ProcessFileData">
+<area shape="rect" id="Node000001" title="Processes JSON data from a file and updates the info and chart panels with the results." alt="" coords="5,81,124,108"/>
+<area shape="rect" id="Node000002" href="$_data_processing_8cpp.html#a67190f314f5c8c9a3625244c7d22e6ed" title="Analyzes time series data to determine and describe the trend direction and magnitude." alt="" coords="208,5,317,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="91,78,171,42,192,34,193,39,173,46,93,83"/>
+<area shape="rect" id="Node000003" href="$_networking_and_file_handling_8cpp.html#afef78a69dbcc72ef6d453ae87b8b196e" title="Loads and parses JSON data from a file into the provided output value." alt="" coords="198,56,326,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="124,84,183,77,183,82,124,90"/>
+<area shape="rect" id="Node000004" href="$class_chart_panel.html#a761109a895ecc2421165e7c6c4467abb" title="Sets the data to be displayed in the chart." alt="" coords="175,107,350,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="124,100,160,104,159,109,124,105"/>
+<area shape="rect" id="Node000005" href="$class_info_panel.html#a22cfb29d4ad8089386ce33ebe4b0ccae" title="Updates the displayed statistics with new data." alt="" coords="172,157,353,184"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="93,106,173,143,193,150,191,155,171,148,91,111"/>
+</map>

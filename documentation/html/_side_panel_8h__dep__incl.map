@@ -1,0 +1,7 @@
+<map id="C:/Users/NIC/Desktop/jpo2025/Air_quality_app/SidePanel.h" name="C:/Users/NIC/Desktop/jpo2025/Air_quality_app/SidePanel.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="95,5,250,64"/>
+<area shape="rect" id="Node000002" href="$_side_panel_8cpp.html" title="Implementation of the SidePanel class." alt="" coords="5,112,161,171"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="140,78,109,113,105,110,136,74"/>
+<area shape="rect" id="Node000003" href="$main_8cpp.html" title="Main application file for the Air Quality monitoring application." alt="" coords="185,112,341,171"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="209,74,240,110,236,113,205,78"/>
+</map>

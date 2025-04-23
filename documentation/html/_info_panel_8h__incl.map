@@ -1,0 +1,7 @@
+<map id="C:/Users/NIC/Desktop/jpo2025/Air_quality_app/InfoPanel.h" name="C:/Users/NIC/Desktop/jpo2025/Air_quality_app/InfoPanel.h">
+<area shape="rect" id="Node000001" title="Header for the InfoPanel class which displays data analysis information." alt="" coords="6,5,161,64"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,112,76,139"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="72,65,56,99,51,97,67,63"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="99,112,152,139"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="99,63,116,97,111,99,95,65"/>
+</map>

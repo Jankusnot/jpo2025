@@ -1,0 +1,38 @@
+<map id="C:/Users/NIC/Desktop/jpo2025/Air_quality_app/DataProcessing.cpp" name="C:/Users/NIC/Desktop/jpo2025/Air_quality_app/DataProcessing.cpp">
+<area shape="rect" id="Node000001" title="Implementation of data processing functions for JSON time series data." alt="" coords="306,5,478,64"/>
+<area shape="rect" id="Node000002" href="$_data_processing_8h.html" title="Functions for processing data from JSON files and calculating statistics." alt="" coords="329,112,455,139"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="395,64,395,96,389,96,389,64"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="82,261,152,288"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="339,142,280,161,219,189,176,220,141,252,137,248,172,216,216,184,278,156,338,137"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="670,187,759,213"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="449,137,656,183,655,188,448,142"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="476,261,550,288"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="404,137,495,248,491,251,400,141"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="5,261,59,288"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="329,132,255,139,174,149,101,166,74,176,55,189,46,201,39,216,34,247,29,246,34,214,41,198,52,185,72,172,100,161,173,144,254,133,329,127"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="727,261,785,288"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="454,137,529,156,609,184,662,213,725,251,722,255,659,217,607,189,528,161,453,142"/>
+<area shape="rect" id="Node000008" href="$_info_panel_8h.html" title="Header for the InfoPanel class which displays data analysis information." alt="" coords="66,187,153,213"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="343,142,169,186,167,181,342,137"/>
+<area shape="rect" id="Node000009" href="$_chart_panel_8h.html" title="Header file for the ChartPanel class that renders data charts." alt="" coords="498,187,595,213"/>
+<area shape="poly" id="edge10_Node000002_Node000009" title=" " alt="" coords="420,137,507,177,505,182,418,142"/>
+<area shape="rect" id="Node000012" href="$_networking_and_file_handling_8h.html" title="Header file defining networking and file handling functionality." alt="" coords="229,187,422,213"/>
+<area shape="poly" id="edge16_Node000002_Node000012" title=" " alt="" coords="382,141,349,177,345,173,378,137"/>
+<area shape="poly" id="edge8_Node000008_Node000003" title=" " alt="" coords="113,214,117,245,112,246,108,214"/>
+<area shape="poly" id="edge9_Node000008_Node000006" title=" " alt="" coords="98,216,58,253,55,249,94,212"/>
+<area shape="poly" id="edge11_Node000009_Node000003" title=" " alt="" coords="498,210,354,231,168,264,167,258,354,226,497,205"/>
+<area shape="poly" id="edge12_Node000009_Node000005" title=" " alt="" coords="543,215,528,248,523,246,538,213"/>
+<area shape="poly" id="edge13_Node000009_Node000007" title=" " alt="" coords="584,211,713,256,712,261,582,216"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="651,261,704,288"/>
+<area shape="poly" id="edge14_Node000009_Node000010" title=" " alt="" coords="571,212,642,251,640,256,568,216"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="575,261,628,288"/>
+<area shape="poly" id="edge15_Node000009_Node000011" title=" " alt="" coords="558,212,585,247,581,250,554,215"/>
+<area shape="poly" id="edge17_Node000012_Node000003" title=" " alt="" coords="290,216,168,259,166,254,288,211"/>
+<area shape="poly" id="edge21_Node000012_Node000006" title=" " alt="" coords="268,216,74,263,73,258,266,211"/>
+<area shape="rect" id="Node000013" title=" " alt="" coords="177,261,255,288"/>
+<area shape="poly" id="edge18_Node000012_Node000013" title=" " alt="" coords="308,216,249,255,246,250,305,212"/>
+<area shape="rect" id="Node000014" title=" " alt="" coords="279,261,364,288"/>
+<area shape="poly" id="edge19_Node000012_Node000014" title=" " alt="" coords="327,214,326,246,320,246,322,214"/>
+<area shape="rect" id="Node000015" title=" " alt="" coords="387,261,453,288"/>
+<area shape="poly" id="edge20_Node000012_Node000015" title=" " alt="" coords="343,212,393,250,390,254,340,216"/>
+</map>

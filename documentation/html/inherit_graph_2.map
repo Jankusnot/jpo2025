@@ -1,0 +1,9 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,56,81,83"/>
+<area shape="rect" id="Node000001" href="$class_file_selection_dialog.html" title="A dialog that displays a list of files and allows the user to select one." alt="" coords="139,5,272,32"/>
+<area shape="poly" id="edge2_Node000000_Node000001" title=" " alt="" coords="95,51,159,30,161,35,96,56"/>
+<area shape="rect" id="Node000002" href="$class_sensor_selection_dialog.html" title="A dialog that displays a list of sensors and allows the user to select one." alt="" coords="129,56,282,83"/>
+<area shape="poly" id="edge3_Node000000_Node000002" title=" " alt="" coords="96,67,128,67,128,72,96,72"/>
+<area shape="rect" id="Node000003" href="$class_station_selection_dialog.html" title="A dialog that displays a list of stations sorted by distance from a reference location." alt="" coords="129,107,282,133"/>
+<area shape="poly" id="edge4_Node000000_Node000003" title=" " alt="" coords="96,83,161,104,159,109,95,88"/>
+</map>

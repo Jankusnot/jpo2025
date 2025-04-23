@@ -1,0 +1,313 @@
+\doxysection{Station\+Selection\+Dialog Class Reference}
+\hypertarget{class_station_selection_dialog}{}\label{class_station_selection_dialog}\index{StationSelectionDialog@{StationSelectionDialog}}
+
+
+A dialog that displays a list of stations sorted by distance from a reference location.  
+
+
+
+
+{\ttfamily \#include $<$Station\+Selection\+Dialog.\+h$>$}
+
+
+
+Inheritance diagram for Station\+Selection\+Dialog\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=195pt]{class_station_selection_dialog__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Station\+Selection\+Dialog\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=195pt]{class_station_selection_dialog__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_station_selection_dialog_a387dde94ddd2317d305f7bb9e5cb6a02}{Station\+Selection\+Dialog}} (wx\+Window \texorpdfstring{$\ast$}{*}parent, const Json\+::\+Value \&stations\+Data)
+\begin{DoxyCompactList}\small\item\em Constructor that creates a station selection dialog. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_station_selection_dialog_abeceef97887c7044707f6fc3c1ffe245}{Get\+Selected\+Station}} (int \&id, wx\+String \&name)
+\begin{DoxyCompactList}\small\item\em Gets information about the selected station. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_station_selection_dialog_ac40707e4ad5279551fb189087de4c131}{Read\+Reference\+Coordinates}} ()
+\begin{DoxyCompactList}\small\item\em Reads reference coordinates from config.\+ini file. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_station_selection_dialog_a1da9a4530e7ae9a4eb51508f007e774f}{Calculate\+Distance}} (double lat1, double lon1, double lat2, double lon2)
+\begin{DoxyCompactList}\small\item\em Calculates distance between two geographical coordinates using the Haversine formula. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_station_selection_dialog_aa2f1b4ecef94e424a5cd735e50bdbf0c}{On\+Double\+Click}} (wx\+Command\+Event \&event)
+\begin{DoxyCompactList}\small\item\em Event handler for double-\/click events on the station list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+wx\+List\+Box \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_station_selection_dialog_ac0ed7e9861f81d2a3f4e698649d2a438}{station\+List\+Box}}
+\begin{DoxyCompactList}\small\item\em List\+Box widget that displays the station names and distances. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{struct_station_info}{Station\+Info}} $>$ \mbox{\hyperlink{class_station_selection_dialog_afd26db7543e0eff6c2d89fa5ecd8ee61}{stations}}
+\begin{DoxyCompactList}\small\item\em Vector storing the information about stations. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_station_selection_dialog_aafaf748eba79a0c91edcc6bc656bbe21}{ref\+Latitude}}
+\begin{DoxyCompactList}\small\item\em Reference latitude used for distance calculation. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_station_selection_dialog_a84a2f3dc3b13e52d4f1210824bd0debe}{ref\+Longitude}}
+\begin{DoxyCompactList}\small\item\em Reference longitude used for distance calculation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A dialog that displays a list of stations sorted by distance from a reference location. 
+
+This dialog presents a list of stations parsed from JSON data, calculates their distance from a reference location (loaded from config or using defaults), sorts them by distance, and allows the user to select one. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_station_selection_dialog_a387dde94ddd2317d305f7bb9e5cb6a02}\index{StationSelectionDialog@{StationSelectionDialog}!StationSelectionDialog@{StationSelectionDialog}}
+\index{StationSelectionDialog@{StationSelectionDialog}!StationSelectionDialog@{StationSelectionDialog}}
+\doxysubsubsection{\texorpdfstring{StationSelectionDialog()}{StationSelectionDialog()}}
+{\footnotesize\ttfamily \label{class_station_selection_dialog_a387dde94ddd2317d305f7bb9e5cb6a02} 
+Station\+Selection\+Dialog\+::\+Station\+Selection\+Dialog (\begin{DoxyParamCaption}\item[{wx\+Window \texorpdfstring{$\ast$}{*}}]{parent}{, }\item[{const Json\+::\+Value \&}]{stations}{}\end{DoxyParamCaption})}
+
+
+
+Constructor that creates a station selection dialog. 
+
+Constructor that creates a dialog for selecting a station from JSON data and sorts by distance.
+
+Creates a dialog with a list of stations parsed from JSON data and sorted by distance from a reference location.
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & Pointer to the parent window \\
+\hline
+{\em stations\+Data} & JSON value containing the station data array\\
+\hline
+\end{DoxyParams}
+Creates a modal dialog with a listbox containing station names and their distances from a reference location, along with OK and Cancel buttons.
+
+The constructor\+:
+\begin{DoxyEnumerate}
+\item Loads reference coordinates from config.\+ini
+\item Parses the JSON data to extract station information
+\item Calculates the distance from each station to the reference point
+\item Sorts stations by distance
+\item Populates the listbox with station names and distances
+\end{DoxyEnumerate}
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & Pointer to the parent window \\
+\hline
+{\em stations} & JSON value containing an array of station objects with id, station\+Name, gegr\+Lat, and gegr\+Lon fields \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_station_selection_dialog_a387dde94ddd2317d305f7bb9e5cb6a02_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_station_selection_dialog_a1da9a4530e7ae9a4eb51508f007e774f}\index{StationSelectionDialog@{StationSelectionDialog}!CalculateDistance@{CalculateDistance}}
+\index{CalculateDistance@{CalculateDistance}!StationSelectionDialog@{StationSelectionDialog}}
+\doxysubsubsection{\texorpdfstring{CalculateDistance()}{CalculateDistance()}}
+{\footnotesize\ttfamily \label{class_station_selection_dialog_a1da9a4530e7ae9a4eb51508f007e774f} 
+double Station\+Selection\+Dialog\+::\+Calculate\+Distance (\begin{DoxyParamCaption}\item[{double}]{lat1}{, }\item[{double}]{lon1}{, }\item[{double}]{lat2}{, }\item[{double}]{lon2}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Calculates distance between two geographical coordinates using the Haversine formula. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lat1} & Latitude of first location in degrees \\
+\hline
+{\em lon1} & Longitude of first location in degrees \\
+\hline
+{\em lat2} & Latitude of second location in degrees \\
+\hline
+{\em lon2} & Longitude of second location in degrees \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+double Distance in kilometers
+\end{DoxyReturn}
+The Haversine formula calculates the great-\/circle distance between two points on the Earth\textquotesingle{}s surface given their longitude and latitude.
+
+
+\begin{DoxyParams}{Parameters}
+{\em lat1} & Latitude of first location in degrees \\
+\hline
+{\em lon1} & Longitude of first location in degrees \\
+\hline
+{\em lat2} & Latitude of second location in degrees \\
+\hline
+{\em lon2} & Longitude of second location in degrees \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+double Distance in kilometers 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_station_selection_dialog_a1da9a4530e7ae9a4eb51508f007e774f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_station_selection_dialog_abeceef97887c7044707f6fc3c1ffe245}\index{StationSelectionDialog@{StationSelectionDialog}!GetSelectedStation@{GetSelectedStation}}
+\index{GetSelectedStation@{GetSelectedStation}!StationSelectionDialog@{StationSelectionDialog}}
+\doxysubsubsection{\texorpdfstring{GetSelectedStation()}{GetSelectedStation()}}
+{\footnotesize\ttfamily \label{class_station_selection_dialog_abeceef97887c7044707f6fc3c1ffe245} 
+bool Station\+Selection\+Dialog\+::\+Get\+Selected\+Station (\begin{DoxyParamCaption}\item[{int \&}]{id}{, }\item[{wx\+String \&}]{name}{}\end{DoxyParamCaption})}
+
+
+
+Gets information about the selected station. 
+
+Retrieves selected station information if a valid selection exists.
+
+Retrieves the ID and name of the selected station.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em id} & Reference to store the ID of the selected station \\
+\hline
+\mbox{\texttt{ out}}  & {\em name} & Reference to store the name of the selected station \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool True if a station was selected, false otherwise
+\end{DoxyReturn}
+This method should be called after the dialog has been closed with wx\+ID\+\_\+\+OK status to retrieve information about the station that was selected.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em id} & Reference to store the ID of the selected station \\
+\hline
+\mbox{\texttt{ out}}  & {\em name} & Reference to store the name of the selected station \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool True if a station was selected and valid information was retrieved, false if no selection was made or the selection is invalid 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_station_selection_dialog_abeceef97887c7044707f6fc3c1ffe245_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_station_selection_dialog_aa2f1b4ecef94e424a5cd735e50bdbf0c}\index{StationSelectionDialog@{StationSelectionDialog}!OnDoubleClick@{OnDoubleClick}}
+\index{OnDoubleClick@{OnDoubleClick}!StationSelectionDialog@{StationSelectionDialog}}
+\doxysubsubsection{\texorpdfstring{OnDoubleClick()}{OnDoubleClick()}}
+{\footnotesize\ttfamily \label{class_station_selection_dialog_aa2f1b4ecef94e424a5cd735e50bdbf0c} 
+void Station\+Selection\+Dialog\+::\+On\+Double\+Click (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Event handler for double-\/click events on the station list. 
+
+Handler for double-\/click events that confirms selection and closes the dialog.
+
+Closes the dialog with OK status when a station is double-\/clicked.
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & The wx\+Command\+Event associated with the double-\/click\\
+\hline
+\end{DoxyParams}
+When a station is double-\/clicked, the dialog is closed with an OK status. The selected station can then be retrieved using \doxylink{class_station_selection_dialog_abeceef97887c7044707f6fc3c1ffe245}{Get\+Selected\+Station()}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & The wx\+Command\+Event associated with the double-\/click \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_station_selection_dialog_aa2f1b4ecef94e424a5cd735e50bdbf0c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_station_selection_dialog_ac40707e4ad5279551fb189087de4c131}\index{StationSelectionDialog@{StationSelectionDialog}!ReadReferenceCoordinates@{ReadReferenceCoordinates}}
+\index{ReadReferenceCoordinates@{ReadReferenceCoordinates}!StationSelectionDialog@{StationSelectionDialog}}
+\doxysubsubsection{\texorpdfstring{ReadReferenceCoordinates()}{ReadReferenceCoordinates()}}
+{\footnotesize\ttfamily \label{class_station_selection_dialog_ac40707e4ad5279551fb189087de4c131} 
+void Station\+Selection\+Dialog\+::\+Read\+Reference\+Coordinates (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Reads reference coordinates from config.\+ini file. 
+
+Reads user location coordinates from config file or sets defaults if not found.
+
+If coordinates are not found in the config file, default values are used.
+
+Attempts to read latitude and longitude values from the config.\+ini file located in the application directory. If the file or values are not found, default coordinates for the central point of Poland (52.\+11433, 19.\+42367) are used. Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_station_selection_dialog_ac40707e4ad5279551fb189087de4c131_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_station_selection_dialog_aafaf748eba79a0c91edcc6bc656bbe21}\index{StationSelectionDialog@{StationSelectionDialog}!refLatitude@{refLatitude}}
+\index{refLatitude@{refLatitude}!StationSelectionDialog@{StationSelectionDialog}}
+\doxysubsubsection{\texorpdfstring{refLatitude}{refLatitude}}
+{\footnotesize\ttfamily \label{class_station_selection_dialog_aafaf748eba79a0c91edcc6bc656bbe21} 
+double Station\+Selection\+Dialog\+::ref\+Latitude\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Reference latitude used for distance calculation. 
+
+\Hypertarget{class_station_selection_dialog_a84a2f3dc3b13e52d4f1210824bd0debe}\index{StationSelectionDialog@{StationSelectionDialog}!refLongitude@{refLongitude}}
+\index{refLongitude@{refLongitude}!StationSelectionDialog@{StationSelectionDialog}}
+\doxysubsubsection{\texorpdfstring{refLongitude}{refLongitude}}
+{\footnotesize\ttfamily \label{class_station_selection_dialog_a84a2f3dc3b13e52d4f1210824bd0debe} 
+double Station\+Selection\+Dialog\+::ref\+Longitude\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Reference longitude used for distance calculation. 
+
+\Hypertarget{class_station_selection_dialog_ac0ed7e9861f81d2a3f4e698649d2a438}\index{StationSelectionDialog@{StationSelectionDialog}!stationListBox@{stationListBox}}
+\index{stationListBox@{stationListBox}!StationSelectionDialog@{StationSelectionDialog}}
+\doxysubsubsection{\texorpdfstring{stationListBox}{stationListBox}}
+{\footnotesize\ttfamily \label{class_station_selection_dialog_ac0ed7e9861f81d2a3f4e698649d2a438} 
+wx\+List\+Box\texorpdfstring{$\ast$}{*} Station\+Selection\+Dialog\+::station\+List\+Box\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+List\+Box widget that displays the station names and distances. 
+
+\Hypertarget{class_station_selection_dialog_afd26db7543e0eff6c2d89fa5ecd8ee61}\index{StationSelectionDialog@{StationSelectionDialog}!stations@{stations}}
+\index{stations@{stations}!StationSelectionDialog@{StationSelectionDialog}}
+\doxysubsubsection{\texorpdfstring{stations}{stations}}
+{\footnotesize\ttfamily \label{class_station_selection_dialog_afd26db7543e0eff6c2d89fa5ecd8ee61} 
+std\+::vector$<$\mbox{\hyperlink{struct_station_info}{Station\+Info}}$>$ Station\+Selection\+Dialog\+::stations\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Vector storing the information about stations. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+NIC/\+Desktop/jpo2025/\+Air\+\_\+quality\+\_\+app/\mbox{\hyperlink{_station_selection_dialog_8h}{Station\+Selection\+Dialog.\+h}}\item 
+C\+:/\+Users/\+NIC/\+Desktop/jpo2025/\+Air\+\_\+quality\+\_\+app/\mbox{\hyperlink{_station_selection_dialog_8cpp}{Station\+Selection\+Dialog.\+cpp}}\end{DoxyCompactItemize}

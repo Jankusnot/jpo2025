@@ -1,0 +1,31 @@
+\doxysection{File\+Selection\+Dialog.\+h}
+\hypertarget{_file_selection_dialog_8h_source}{}\label{_file_selection_dialog_8h_source}\index{C:/Users/NIC/Desktop/jpo2025/Air\_quality\_app/FileSelectionDialog.h@{C:/Users/NIC/Desktop/jpo2025/Air\_quality\_app/FileSelectionDialog.h}}
+\mbox{\hyperlink{_file_selection_dialog_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ FIEL\_SELECTION\_DIALOG\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ FIEL\_SELECTION\_DIALOG\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <wx/wx.h>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_file_selection_dialog_a75931c333739f3045f3c5b8a59bf982a}{FileSelectionDialog}}\ :\ \textcolor{keyword}{public}\ wxDialog\ \{}
+\DoxyCodeLine{00022\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{class_file_selection_dialog_a75931c333739f3045f3c5b8a59bf982a}{FileSelectionDialog}}(wxWindow*\ parent,\ \textcolor{keyword}{const}\ std::vector<std::string>\&\ files);}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00036\ \ \ \ \ wxString\ \mbox{\hyperlink{class_file_selection_dialog_a9160da26782cc11ba79d5b20db8046d0}{GetSelectedFile}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00042\ \ \ \ \ wxListBox*\ \mbox{\hyperlink{class_file_selection_dialog_abe8703255b3ac8bb921bdb2e23499f9b}{fileListBox}};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00047\ \ \ \ \ wxString\ \mbox{\hyperlink{class_file_selection_dialog_ae116ceb79d0a72a722e46a454aea8bfc}{selectedFile}};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_file_selection_dialog_af7c91c7a0e0960390d5338748eee1eda}{OnDoubleClick}}(wxCommandEvent\&\ event);}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_file_selection_dialog_ab388acb0ec3f67ebba76b3940890e18c}{OnOK}}(wxCommandEvent\&\ event);}
+\DoxyCodeLine{00067\ \};}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

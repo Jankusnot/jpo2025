@@ -1,0 +1,5 @@
+<map id="PerformHttpGet" name="PerformHttpGet">
+<area shape="rect" id="Node000001" title="Performs an HTTP GET request to the specified URL and returns parsed JSON." alt="" coords="5,5,119,32"/>
+<area shape="rect" id="Node000002" href="$_networking_and_file_handling_8cpp.html#adfe4aa3ee2d2b8a4376b59dbe5c48535" title="Callback function for CURL to handle received data by appending to a string." alt="" coords="167,5,269,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="119,16,151,16,151,21,119,21"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="ChartPanel::OnPaint" name="ChartPanel::OnPaint">
+<area shape="rect" id="Node000001" title="Event handler for paint events." alt="" coords="213,5,354,32"/>
+<area shape="rect" id="Node000002" href="$class_chart_panel.html#af4d12480f516ac3f934fe55f6c3d7e24" title="Constructor for ChartPanel." alt="" coords="5,5,165,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="197,21,165,21,165,16,197,16"/>
+</map>

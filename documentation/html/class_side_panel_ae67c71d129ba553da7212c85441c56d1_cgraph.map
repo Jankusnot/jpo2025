@@ -1,0 +1,9 @@
+<map id="SidePanel::SelectStation" name="SidePanel::SelectStation">
+<area shape="rect" id="Node000001" title="Prompts the user to select a station." alt="" coords="5,80,172,107"/>
+<area shape="rect" id="Node000002" href="$class_station_selection_dialog.html#abeceef97887c7044707f6fc3c1ffe245" title="Gets information about the selected station." alt="" coords="234,5,387,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="135,77,222,50,223,56,137,82"/>
+<area shape="rect" id="Node000003" href="$class_side_panel.html#a51518c4623d1cb91c5fbc146d7b3ef71" title="Updates the selected sensor display text." alt="" coords="220,72,401,115"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="172,91,204,91,204,96,172,96"/>
+<area shape="rect" id="Node000004" href="$class_side_panel.html#a1ea056aa76ef1305594e117d8d970875" title="Updates the selected station display text." alt="" coords="220,139,401,181"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="137,105,223,131,222,136,135,110"/>
+</map>

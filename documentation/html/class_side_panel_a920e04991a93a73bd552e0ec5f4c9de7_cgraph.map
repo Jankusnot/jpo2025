@@ -1,0 +1,11 @@
+<map id="SidePanel::InitializeSensorDatabase" name="SidePanel::InitializeSensorDatabase">
+<area shape="rect" id="Node000001" title="Initializes the sensor database." alt="" coords="5,23,183,65"/>
+<area shape="rect" id="Node000002" href="$_networking_and_file_handling_8cpp.html#ab72b7149ef19e7fd22902fb3f296c8c2" title="Downloads JSON from URL, optionally transforms it, and saves to file." alt="" coords="231,31,426,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="183,41,215,41,215,47,183,47"/>
+<area shape="rect" id="Node000003" href="$_networking_and_file_handling_8cpp.html#a63aea19c2fbd7abdc744bd541562c5fd" title="Performs an HTTP GET request to the specified URL and returns parsed JSON." alt="" coords="474,5,587,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="426,29,458,25,459,30,427,34"/>
+<area shape="rect" id="Node000005" href="$_networking_and_file_handling_8cpp.html#a68628279954d524a9bbbd035bad37465" title="Saves JSON data to a file with indentation." alt="" coords="488,56,574,83"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="427,54,473,59,472,65,426,59"/>
+<area shape="rect" id="Node000004" href="$_networking_and_file_handling_8cpp.html#adfe4aa3ee2d2b8a4376b59dbe5c48535" title="Callback function for CURL to handle received data by appending to a string." alt="" coords="635,5,738,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="588,16,620,16,620,21,588,21"/>
+</map>

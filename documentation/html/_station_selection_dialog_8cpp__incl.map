@@ -1,0 +1,17 @@
+<map id="C:/Users/NIC/Desktop/jpo2025/Air_quality_app/StationSelectionDialog.cpp" name="C:/Users/NIC/Desktop/jpo2025/Air_quality_app/StationSelectionDialog.cpp">
+<area shape="rect" id="Node000001" title="Implementation of the StationSelectionDialog class." alt="" coords="223,5,434,64"/>
+<area shape="rect" id="Node000002" href="$_station_selection_dialog_8h.html" title="Dialog for selecting a station sorted by distance from reference location." alt="" coords="246,112,411,139"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="331,64,331,96,326,96,326,64"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,187,76,213"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="278,142,92,188,90,183,277,137"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="100,187,195,213"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="298,142,194,183,192,178,296,137"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="219,187,321,213"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="320,141,292,176,287,173,316,138"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="345,187,429,213"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="341,138,370,173,365,176,337,141"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="454,187,528,213"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="358,137,450,177,448,182,356,142"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="552,187,609,213"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="374,137,538,183,536,188,373,142"/>
+</map>

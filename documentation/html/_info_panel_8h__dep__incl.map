@@ -1,0 +1,17 @@
+<map id="C:/Users/NIC/Desktop/jpo2025/Air_quality_app/InfoPanel.h" name="C:/Users/NIC/Desktop/jpo2025/Air_quality_app/InfoPanel.h">
+<area shape="rect" id="Node000001" title="Header for the InfoPanel class which displays data analysis information." alt="" coords="291,5,446,64"/>
+<area shape="rect" id="Node000002" href="$_data_processing_8h.html" title="Functions for processing data from JSON files and calculating statistics." alt="" coords="148,112,306,171"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="319,75,267,114,264,109,316,71"/>
+<area shape="rect" id="Node000004" href="$_side_panel_8h.html" title=" " alt="" coords="201,219,357,277"/>
+<area shape="poly" id="edge7_Node000001_Node000004" title=" " alt="" coords="356,79,320,172,297,219,292,217,315,170,351,78"/>
+<area shape="rect" id="Node000006" href="$main_8cpp.html" title="Main application file for the Air Quality monitoring application." alt="" coords="316,325,471,384"/>
+<area shape="poly" id="edge8_Node000001_Node000006" title=" " alt="" coords="374,79,394,325,389,325,369,79"/>
+<area shape="rect" id="Node000007" href="$_info_panel_8cpp.html" title="Implementation of the InfoPanel class." alt="" coords="431,112,586,171"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="420,71,472,109,469,114,417,75"/>
+<area shape="rect" id="Node000003" href="$_data_processing_8cpp.html" title="Implementation of data processing functions for JSON time series data." alt="" coords="5,219,177,277"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="179,182,130,220,126,216,176,178"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="250,183,267,217,262,219,246,186"/>
+<area shape="rect" id="Node000005" href="$_side_panel_8cpp.html" title="Implementation of the SidePanel class." alt="" coords="136,325,291,384"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="255,292,234,326,229,324,251,289"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="323,286,364,323,361,327,320,290"/>
+</map>

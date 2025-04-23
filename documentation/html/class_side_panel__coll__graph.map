@@ -1,0 +1,11 @@
+<map id="SidePanel" name="SidePanel">
+<area shape="rect" id="Node000001" title="Panel containing controls for station, sensor, and file selection." alt="" coords="19,172,99,199"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="23,5,95,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="35,45,21,62,11,82,8,95,11,107,28,143,49,170,45,173,24,145,6,109,3,95,6,80,17,59,31,41"/>
+<area shape="rect" id="Node000003" href="$class_info_panel.html" title="Panel that displays statistical analysis of air quality data." alt="" coords="21,81,97,108"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="62,47,62,81,56,81,56,47"/>
+<area shape="rect" id="Node000004" href="$class_chart_panel.html" title="A panel that displays time&#45;series data as a line chart." alt="" coords="121,81,207,108"/>
+<area shape="poly" id="edge5_Node000004_Node000002" title=" " alt="" coords="91,39,148,79,145,83,88,43"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="62,124,62,171,56,171,56,124"/>
+<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="150,123,125,150,88,174,85,169,121,146,146,119"/>
+</map>

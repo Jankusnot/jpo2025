@@ -1,0 +1,5 @@
+<map id="SidePanel::LoadSensorsData" name="SidePanel::LoadSensorsData">
+<area shape="rect" id="Node000001" title="Loads sensor data from the database." alt="" coords="5,5,198,32"/>
+<area shape="rect" id="Node000002" href="$_networking_and_file_handling_8cpp.html#afef78a69dbcc72ef6d453ae87b8b196e" title="Loads and parses JSON data from a file into the provided output value." alt="" coords="246,5,374,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="198,16,230,16,230,21,198,21"/>
+</map>
