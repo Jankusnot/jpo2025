@@ -1,0 +1,17 @@
+Wymagania dla programu:
+-system - MS Windows
+-procesor - jakikolwiek
+-karta graficzna - nie wymagana
+-pamięć ram - 8 MB
+-miejsce na dysku - 33MB
+-zalecana rozdzielczość - conajmniej 1550x800
+-połączenie z internetem
+-wyłączenie antywirusa... chyba
+
+Wymagania do zbudowania rozwiązania:
+-Program był kompilowany w Visual studio 2022 community
+-bilbioteki:
+ -libcurl
+ -jsoncpp
+ -wxwidgets	// Biblioteka dołączona została z użyciem poradnika: "https://www.youtube.com/watch?v=ONYW3hBbk-8"
+		// więc aktualnie do kompilacji wymaga dodania zmiennych środowikowych

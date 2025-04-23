@@ -1,5 +1,3 @@
 # jpo2025
-plan dzialania:<br/>
-1: úciπgnij dane z API<br/>
-2: baza danych json<br/>
-3: pobranie danych historycznych z bazy
+plan dzia≈Çania:<br/>
+1: SURVIVE
