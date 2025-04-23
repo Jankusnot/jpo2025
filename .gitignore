@@ -32,8 +32,6 @@
 *.app
 
 # moje
+archiwum/
 .vs/
-Pogoda/x64/
-Pogoda/Pogoda/
-Pogoda/measurements/
-*.rar
+Air_quality_app/*/
