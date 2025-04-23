@@ -19,11 +19,11 @@
   *                and a "param" object that contains a "paramName" field
   */
 SensorSelectionDialog::SensorSelectionDialog(wxWindow* parent, const Json::Value& sensors)
-    : wxDialog(parent, wxID_ANY, "Select Sensor", wxDefaultPosition, wxSize(300, 200)) {
+    : wxDialog(parent, wxID_ANY, "Select Sensor", wxDefaultPosition, wxSize(400, 300)) {
     wxBoxSizer* mainSizer = new wxBoxSizer(wxVERTICAL);
 
     // Create listbox to display sensors
-    sensorListBox = new wxListBox(this, wxID_ANY, wxDefaultPosition, wxSize(280, 150));
+    sensorListBox = new wxListBox(this, wxID_ANY, wxDefaultPosition, wxSize(350, 200));
     mainSizer->Add(sensorListBox, 1, wxEXPAND | wxALL, 10);
 
     // Add OK and Cancel buttons

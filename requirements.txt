@@ -3,10 +3,10 @@ Wymagania dla programu:
 -procesor - jakikolwiek
 -karta graficzna - nie wymagana
 -pamięć ram - 8 MB
--miejsce na dysku - 33MB
+-miejsce na dysku - 30MB
 -zalecana rozdzielczość - conajmniej 1550x800
 -połączenie z internetem
--wyłączenie antywirusa... chyba
+-wyłączenie antywirusa... chyba...
 
 Wymagania do zbudowania rozwiązania:
 -Program był kompilowany w Visual studio 2022 community

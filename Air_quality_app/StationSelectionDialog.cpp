@@ -52,8 +52,33 @@ StationSelectionDialog::StationSelectionDialog(wxWindow* parent, const Json::Val
                 StationInfo info;
                 info.id = station["id"].asInt();
                 info.name = wxString::FromUTF8(station["stationName"].asString().c_str());
-                info.latitude = std::stod(station["gegrLat"].asString());
-                info.longitude = std::stod(station["gegrLon"].asString());
+                try {
+                    // Use stringstream with classic locale to ensure correct decimal point handling
+                    std::string latStr = station["gegrLat"].asString();
+                    std::string lonStr = station["gegrLon"].asString();
+
+                    std::istringstream latStream(latStr);
+                    std::istringstream lonStream(lonStr);
+
+                    // Set classic "C" locale to ensure period as decimal separator
+                    latStream.imbue(std::locale::classic());
+                    lonStream.imbue(std::locale::classic());
+
+                    latStream >> info.latitude;
+                    lonStream >> info.longitude;
+
+                    if (latStream.fail() || lonStream.fail()) {
+                        wxLogWarning("Failed to parse coordinates for station %s", info.name);
+                        info.latitude = 0.0;
+                        info.longitude = 0.0;
+                    }
+                }
+                catch (const std::exception& e) {
+                    wxLogWarning("Exception parsing coordinates for station %s: %s",
+                    info.name, e.what());
+                    info.latitude = 0.0;
+                    info.longitude = 0.0;
+                }
 
                 // Calculate distance from reference point
                 info.distance = CalculateDistance(refLatitude, refLongitude, info.latitude, info.longitude);
